@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
+gem 'thin'
+
 gem "haml",'3.1.4'
 gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
