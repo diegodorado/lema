@@ -1,4 +1,11 @@
 Lema::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
+  root :to => "home#index"
+
+   # Feel free to change '/admin' to any namespace you need.
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
