@@ -22,36 +22,21 @@
     = csrf_meta_tag
     
   %body{:class => body_classes.join(' ')}
-    %header
-      .container
-        =render :partial => "layouts/header"
+    =render :partial => "layouts/header"
     #content{:role => "main"}
       .container
         =render :partial => "layouts/alerts"
-        = yield
-    %footer
-      .container
-        =render :partial => "layouts/footer"
+      = yield
+    =render :partial => "layouts/footer"
     -#load users and chat for all pages
     -# = app_js_load :users=> user_list, :user_id=> user_id, :chat=> true
     -# = javascript_tag yield :app_js_load
     -# = javascript_tag "app.start();"
 
+    =render :partial => "layouts/ga"
+    =render :partial => "layouts/chrome-frame"
 
-    -#  asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
-    %script
-      var _gaq=[["_setAccount","UA-29367210-1"],["_trackPageview"],["_trackPageLoadTime"]];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-      g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-      s.parentNode.insertBefore(g,s)}(document,"script"));
+
     
 
-    -# 
-      Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-      chromium.org/developers/how-tos/chrome-frame-getting-started
-    
-    <!--[if lt IE 7]>
-    %script{ :src => "//ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js" }
-    %script
-      window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})});
-    <![endif]-->    
+

@@ -10,10 +10,14 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem "devise"
 gem 'jquery-rails'
 
+
+
 group :assets do
   gem 'sass-rails',   '3.1.4'
+  gem 'compass-rails'  
+  #gem 'compass_twitter_bootstrap', '2.0.1.2'
+  gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
   gem 'coffee-rails', '~> 3.1.1'
-  gem 'less-rails-bootstrap', '2.0.4'  
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -22,6 +26,8 @@ group :production do
 end
 
 group :development do
+#  gem 'guard-livereload'
+#  gem 'rack-livereload'
   gem "annotate"
   gem 'sqlite3'
   gem 'sqlite3-ruby'

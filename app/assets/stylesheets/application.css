@@ -5,5 +5,14 @@
  *= require 'bp'
  *= require 'tb'
  *= require 'main' 
+ *= require 'home' 
+ *= require_self
 */
+
+/* Special grid styles
+TODO: remove this! (for development purpose only)
+-------------------------------------------------- */
+.show-grid [class*="span"] {
+  background: rgba(200,200,200,0.5);
+}
 

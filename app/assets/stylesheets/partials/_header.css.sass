@@ -1,0 +1,25 @@
+@import "compass"
+@import "compass_twitter_bootstrap/mixins"
+
+header
+  background: url('header-bg.png') top center no-repeat
+  padding: 32px 0 20px
+  a
+    text-transform: uppercase
+    display: block
+    &:hover
+      text-decoration: none
+  .brand
+    font-family: LektonRegular
+    font-size: 20px
+  nav
+    font-family: LektonBold
+    font-size: 15px
+    ul
+      +inline-block-list
+      a
+        padding: 9px 20px
+      .first a
+        padding-left: 0
+      .last a
+        padding-right: 0

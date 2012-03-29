@@ -1,0 +1,72 @@
+@import "compass"
+@import "compass_twitter_bootstrap/mixins"
+@import "social/*.png"
+$social-sprite-dimensions: true
+
+footer
+  background: #050504 url('footer-bg.png') top center no-repeat
+  padding: 26px 0 20px
+  color: #fff
+  ul
+    +no-bullets
+    margin: 0
+  a
+    color: inherit
+    &:hover
+      text-decoration: none
+  h5
+    margin-bottom: 12px      
+  .logo
+    margin: 26px 0 0 15px
+  .share-links
+    +all-social-sprites
+    ul
+      +horizontal-list(3px)
+      li a
+        display: block
+    .rss
+      font-size: 0
+      a
+        display:block
+      span
+        font-family: LektonBold
+        font-size: 12px
+        line-height: 30px
+  .divider
+    margin: 19px 0 23px
+    border-bottom: 1px dashed #BEBEBE
+  .footer-contact
+    text-transform: uppercase
+    h5
+      color: #fff
+      font-family: LektonRegular
+      font-size: 15px
+    h6
+      color: #8C8C8B
+      font-family: LektonBold
+      font-size: 12px
+  .footer-nav    
+    font-family: LektonBold
+    font-size: 12px
+    text-transform: uppercase
+  .credits
+    margin-top: 38px
+    line-height: 30px
+    font-family: LektonRegular
+    font-size: 10px
+    .design
+      display: block
+      width: 68px
+      background: url('design-logo.png') no-repeat center right
+  .links h5, .blogs h5
+    font-family: LektonRegular
+    font-size: 11px
+    text-transform: uppercase
+  .links
+    ul
+      font-family: LektonItalic
+      font-size: 12px
+  .blogs
+    ul
+      font-family: LektonItalic
+      font-size: 10px
