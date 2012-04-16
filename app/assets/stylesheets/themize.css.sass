@@ -1,0 +1,352 @@
+@import "compass"
+
+//todo: make sprites of colored stuff
+@import "footer-logo/*.png"
+$footer-logo-sprite-dimensions: true
+
+=themize($color, $name)
+  header
+    a
+      +link-colors(#fff,$color,$color)
+      &.active
+        color: $color
+    .container
+      background: rgba($color,0.2)
+  footer
+    .links h5, .blogs h5, a:hover
+      color: $color
+    .share-links ul li a:hover
+      +box-shadow($color 0 0 20px)
+      +border-radius(4px)
+    .logo
+      +footer-logo-sprite($name)
+
+  .collapsible.links
+    h4
+      border: 1px solid $color
+      background: #fff url('arrows/#{$name}-collapsible-h4.png') 10px center no-repeat
+    &.open h4, h4:hover
+      background-image: url('arrows/#{$name}-collapsible-h4-open.png')
+
+  .collapsible.pdf
+    .collapse
+      ul li a
+        background: url('icons/#{$name}-pdf.png') 0px center no-repeat
+        span
+          border: 1px solid $color
+
+
+  .collapsible.books
+    h4
+      background: rgba($color, 0.2)
+      &:before
+        content: ''  //prepend middle dot
+      a
+        background: url('arrows/collapsible-h4.png') 10px center no-repeat
+    &.open h4, h4:hover
+      background-image: none
+
+
+  .pagination
+    border-top: 3px solid $color
+    .active, a:hover
+      color: $color
+    .left a
+      background: url('arrows/#{$name}-prev.png') left center no-repeat
+    .right a
+      background: url('arrows/#{$name}-next.png') right center no-repeat
+
+  .highlight
+    .wrapper h3
+      color: $color
+    .handler a
+      background: url('arrows/#{$name}-down.png') center center no-repeat
+      width: image-width('arrows/#{$name}-down.png')
+      height: image-height('arrows/#{$name}-down.png')
+    &.open .handler a
+      background-image: url('arrows/#{$name}-up.png')
+
+  .collapsible
+    h4
+      background: $color url('arrows/collapsible-h4.png') 10px center no-repeat
+    &.open h4, h4:hover
+      background-image: url('arrows/collapsible-h4-open.png')
+
+
+  article
+    time
+      color: $color
+    &:last-child, &.last
+      border-color: transparent
+      margin-bottom: 73px
+
+
+$green: #0f0
+$orange: #FF931E
+$yellow: #ff0
+$purple: #A2299C
+$red: #DE0000
+$blue: #3FA9C7
+
+body.trayectoria
+  +themize($green,'green')
+  .pagination
+    height: 130px
+    a, span
+      line-height: 16px
+    .left a, .right a
+      line-height: 130px
+    .years
+      border-bottom: 1px dashed #BEBEBE
+      margin-top: 31px
+      height: 34px
+      margin-bottom: 18px
+
+  .highlight
+    border-top: 3px solid $green
+    .wrapper
+      background: #000
+      h2, a, p
+        color: #B3B3B3
+    //todo: fix this strange behaviour... do it through js with animations---
+    .wrapper
+      height: 85px
+      *
+        visibility: hidden 
+      h2
+        visibility: visible
+        margin-top: 30px
+    &.open
+      .wrapper
+        height: auto
+        *
+          visibility: visible
+        h2
+          margin-top: 0
+
+      
+
+//todo:fix body classes
+body.home.index
+  +themize($orange,'orange')
+
+body.obra
+  +themize($red,'red')
+
+body.agenda
+  +themize($purple,'purple')
+
+  article
+    &:first-child, &.first
+      margin-top: 85px
+
+
+body.bitacora
+  +themize($yellow,'yellow')
+
+  .pagination
+    height: 65px
+    a, span
+      line-height: 65px
+
+  .highlight
+    border-top: 3px solid #EDECED
+    border-bottom: 3px solid #EDECED
+    .wrapper
+      background: $yellow
+      h2 
+        color: #666
+      p
+        color: #000
+
+  article
+    border-color: $yellow
+    h2
+      color: $yellow
+    p
+      color: #ccc
+      
+
+body.ticho
+  +themize($orange,'orange')
+
+body.capacitacion
+  +themize($blue,'blue')
+
+
+
+
+.collapsible.links
+  h4
+    color: #666
+    height: 18px
+    line-height: 18px
+    &:before
+      content: ''  //no middle dot
+
+  .collapse
+    ul
+      margin: 8px 0 0
+      li
+        border-bottom: 1px solid #666
+        margin-bottom: 17px
+        a, p
+          font-family: LektonRegular
+          font-size: 13px
+        a
+          display: block
+          margin-bottom: 14px
+          color: #666
+        p
+          margin-bottom: 17px
+          color: #999
+
+.collapsible.photos
+  .collapse
+    ul
+      list-style: none
+      margin: 6px 0 -10px -10px
+      overflow: hidden
+      li
+        float: left
+        margin: 0 0 10px 10px 
+        a
+          display: block
+          img
+            display: block
+
+.collapsible.pdf
+  .collapse
+    ul
+      list-style: none
+      margin: 0 0 -6px 0
+      li a
+        margin-bottom: 6px
+        display: block
+        padding-left: 35px
+        span
+          background: #fff
+          height: 32px
+          line-height: 32px
+          padding-left: 12px
+          display: block
+          font-family: LektonRegular
+          font-size: 13px
+
+
+
+.collapsible
+  h4
+    font-family: LektonRegular
+    font-size: 12px
+    text-transform: uppercase
+    letter-spacing: 1px  
+    height: 20px
+    line-height: 20px
+    margin-bottom: 6px
+    cursor: pointer
+    padding-left: 28px
+    &:before
+      content: '\00B7'  //prepend middle dot
+  &:last-child .collapse, &.last .collapse
+    margin-bottom: 6px
+  &.open
+    .collapse
+      height: auto
+      margin-bottom: 12px
+    &:last-child .collapse, &.last .collapse
+      margin-bottom: 12px
+
+
+
+.pagination
+  background: #fff
+  font-family: LektonBold
+  font-size: 16px
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin: 0
+  a, span
+    color: #4D4D4D
+    float: none
+    padding: 0
+    border: 0
+    &:hover
+      background: none
+  .left, .right
+    a
+      white-space: nowrap
+      display: block
+  .left
+    text-align: left
+    a
+      padding-left: 40px
+  .center
+    text-align: center
+  .right
+    text-align: right
+    a
+      padding-right: 40px
+
+
+
+
+  
+.highlight
+  .wrapper
+    height: 0
+    overflow: hidden
+    h2
+      font-size: 21px
+    h3
+      font-size: 16px
+    a
+      font-family: BuenardRegular
+      font-size: 13px
+    h2,h3
+      font-family: LektonBold
+      line-height: 21px
+      text-transform: uppercase
+      letter-spacing: 1px  
+      margin-bottom: 23px
+    p
+      font-family: BuenardRegular
+      font-size: 18px
+      line-height: 26px
+      margin: 0 0 42px
+  .handler
+    height: 17px
+    background: #3C3C3B
+    text-align: center
+    cursor: pointer
+    a
+      display: inline-block
+  &.open 
+    .wrapper
+      height: auto
+      padding: 80px 0 0
+
+
+
+article
+  margin-top: 42px
+  border-bottom: 12px solid #fff
+  h2, time
+    font-family: LektonBold
+    letter-spacing: 1px  
+    line-height: 24px
+  time
+    font-size: 20px
+  h2
+    color: #4D4D4D
+    font-size: 21px
+    text-transform: uppercase
+    margin-bottom: 24px
+    a, a:visited, a:active
+      color: inherit
+  p
+    font-family: BuenardRegular
+    font-size: 18px
+    margin: 0 0 26px
+    color: #666
+    line-height: 22px
