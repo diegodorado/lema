@@ -2,8 +2,7 @@
   .container
     .row
       .span1
-        .logo
-          =image_tag 'footer-logo.png'
+        %a.logo(href="#")
       .span8
         .row.share-links
           .span2.offset5
@@ -20,10 +19,8 @@
                 %a.social-plus(href="#")
               %li
                 %a.social-delicious(href="#")
-          .span1.rss
-            %a(href="#")
-              %span.social-rss
-              %span RSS
+          .span1
+            %a.social-rss(href="#") RSS
         .row
           .span8.divider
         .row

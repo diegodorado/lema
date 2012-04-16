@@ -5,6 +5,15 @@ Lema::Application.routes.draw do
 
   root :to => "home#index"
 
+
+  match '/trayectoria' => 'home#trayectoria'
+  match '/obra-escrita' => 'home#obra', :as => :obra
+  match '/agenda' => 'home#agenda'
+  match '/bitacora' => 'home#bitacora'
+  match '/ticho-ediciones' => 'home#ticho', :as => :ticho
+  match '/capacitacion' => 'home#capacitacion'
+
+
    # Feel free to change '/admin' to any namespace you need.
   # The priority is based upon order of creation:
   # first created -> highest priority.

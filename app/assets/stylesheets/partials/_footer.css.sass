@@ -4,7 +4,7 @@
 $social-sprite-dimensions: true
 
 footer
-  background: #050504 url('footer-bg.png') top center no-repeat
+  background: url('footer-bg.png') top center no-repeat
   padding: 26px 0 20px
   color: #fff
   ul
@@ -12,31 +12,28 @@ footer
     margin: 0
   a
     color: inherit
+    display: block
     &:hover
       text-decoration: none
   h5
-    margin-bottom: 12px      
+    line-height: 21px      
   .logo
     margin: 26px 0 0 15px
   .share-links
     +all-social-sprites
     ul
       +horizontal-list(3px)
-      li a
-        display: block
-    .rss
-      font-size: 0
-      a
-        display:block
-      span
-        font-family: LektonBold
-        font-size: 12px
-        line-height: 30px
+    .social-rss
+      font-family: LektonBold
+      font-size: 12px
+      line-height: 30px
+      padding-left: 34px
   .divider
     margin: 19px 0 23px
     border-bottom: 1px dashed #BEBEBE
   .footer-contact
     text-transform: uppercase
+    letter-spacing: 1px    
     h5
       color: #fff
       font-family: LektonRegular
@@ -48,20 +45,26 @@ footer
   .footer-nav    
     font-family: LektonBold
     font-size: 12px
+    line-height: 21px
     text-transform: uppercase
+    letter-spacing: 1px    
+    a
+      height: 21px
   .credits
     margin-top: 38px
-    line-height: 30px
+    line-height: 36px
     font-family: LektonRegular
     font-size: 10px
+    letter-spacing: 3px
     .design
-      display: block
-      width: 68px
+      width: 88px
+      height: 30px
       background: url('design-logo.png') no-repeat center right
   .links h5, .blogs h5
     font-family: LektonRegular
     font-size: 11px
     text-transform: uppercase
+    letter-spacing: 1px    
   .links
     ul
       font-family: LektonItalic
@@ -70,3 +73,9 @@ footer
     ul
       font-family: LektonItalic
       font-size: 10px
+      li a
+        +social-sprite(blogger)
+        width: auto
+        margin-left: 3px
+        margin-bottom: 7px
+        padding-left: 24px

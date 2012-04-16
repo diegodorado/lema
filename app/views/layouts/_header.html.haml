@@ -2,20 +2,13 @@
   .container
     .row
       .span2
-        %a.brand(href="#") Guillermo <br/>Lema
+        %a.brand(href="#{root_path}") Guillermo <br/>Lema
       .span7
         %nav
           %ul
-            %li.first
-              %a(href="#") Trayectoria
-            %li
-              %a(href="#") Obra Escrita
-            %li
-              %a(href="#") Agenda
-            %li
-              %a.active(href="#") Bitacora
-            %li
-              %a(href="#") Ticho Ediciones
-            %li.last
-              %a(href="#") Capacitación
-
+            %li.first #{link_to "Trayectoria", trayectoria_path, :class=> ('active' if current_page?(trayectoria_path))}
+            %li #{link_to "Obra Escrita", obra_path, :class=> ('active' if current_page?(obra_path))}
+            %li #{link_to "Agenda", agenda_path, :class=> ('active' if current_page?(agenda_path))}
+            %li #{link_to "Bitacora", bitacora_path, :class=> ('active' if current_page?(bitacora_path))}
+            %li #{link_to "Ticho Ediciones", ticho_path, :class=> ('active' if current_page?(ticho_path))}
+            %li.last #{link_to "Capacitación", capacitacion_path, :class=> ('active' if current_page?(capacitacion_path))}

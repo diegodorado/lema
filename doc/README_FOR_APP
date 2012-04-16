@@ -15,8 +15,6 @@ estrellas A blancas. desplazamiento independiente de las B pasan por detrás del
 estrellas B grises. desplazamiento independiente de las A. pasan por fuera del área de contenido.
 fondo 
 
-Además te adjunto las fuentes de google que utilizamos.
-
 
 Va la descripción de los archivos por secciones:
 
@@ -68,4 +66,13 @@ Aparte te estoy debiendo el comportamiento de las animaciones de navegación.
 
 
 Por útlimo pidió que tuviera estadísticas, se le puede instalar google analytics?
+
+#cambios
+cambie las miniaturas a 100x100 + 10 de margen, de otro modo no me daban las medidas
+las fechas: pasé todo en minusculas (2010-MAR-14 => 2010-mar-14)
+no me pasaste un ejemplo de audio
+ajusté los espacios entre caracteres a 1px cuando era .7 o .8
+fijar posicion de links relacionados, y cantidad... uno solo con una lista?
+resolver audios y videos: servicios a utilizar... vimeo y soundcloud? o audio propio?
+definir fuentes alternativas con alto similar
 

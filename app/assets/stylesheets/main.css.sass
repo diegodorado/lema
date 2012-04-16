@@ -1,15 +1,29 @@
+@import "tb"
 @import "partials/fonts"
 @import "partials/header"
 @import "partials/footer"
+@import "partials/agenda"
+@import "partials/bitacora"
+@import "partials/capacitacion"
+@import "partials/home"
+@import "partials/obra"
+@import "partials/ticho"
+@import "partials/trayectoria"
 @import "devise"
+//moved to dev temporary for dev performance
+//@import "themize"
 
 @import "compass/layout/grid-background"
 
 html
   height: 100%
 
-body #content .container
-  //+grid-background(9, 92, 20)
-  //+grid-background(9, 92, 20, 1.5em, 0px, rgba(100, 100, 225, 0.25),rgba(100, 225,100, 0.25), rgba(225, 100, 100, 0.25))
-  +grid-background(9, 92, 20, 1.5em, 0px, rgba(225, 225, 225, 0.25))
+body 
+  background: #050504
+  overflow-y: scroll  
+  a:visited, a:active
+    color: inherit
+
+  #content .container
+    +grid-background(9, 92, 20)
 
