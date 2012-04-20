@@ -49,11 +49,11 @@ $footer-logo-sprite-dimensions: true
 
   .pagination
     border-top: 3px solid $color
-    .active, a:hover
+    .current, a:hover
       color: $color
-    .left a
+    .prev a
       background: url('arrows/#{$name}-prev.png') left center no-repeat
-    .right a
+    .next a
       background: url('arrows/#{$name}-next.png') right center no-repeat
 
   .highlight
@@ -271,12 +271,13 @@ body.capacitacion
     float: none
     padding: 0
     border: 0
+    display: inline-block
+    white-space: nowrap
     &:hover
       background: none
-  .left, .right
-    a
-      white-space: nowrap
-      display: block
+  .left,.right
+    min-height: 65px
+  
   .left
     text-align: left
     a

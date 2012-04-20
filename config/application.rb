@@ -46,5 +46,12 @@ module Lema
     config.assets.version = '1.0'
     
     config.sass.preferred_syntax = :sass
+    
+    config.generators do |g| 
+      #g.orm :active_record 
+      g.template_engine :haml 
+      #g.test_framework :test_unit, :fixture => true 
+    end     
+
   end
 end

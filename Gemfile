@@ -10,19 +10,20 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem "devise"
 gem 'jquery-rails'
 
+gem 'kaminari'
+gem 'paperclip'
 
 
 group :assets do
   gem 'sass-rails',   '3.1.4'
   gem 'compass-rails'  
-  #gem 'compass_twitter_bootstrap', '2.0.1.2'
   gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
 group :production do
-  gem 'pg'
+#  gem 'pg'
 end
 
 group :development do

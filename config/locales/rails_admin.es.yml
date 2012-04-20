@@ -5,7 +5,7 @@ es:
     pagination:
       previous: "&laquo; Anterior"
       next: "Siguiente &raquo;"
-      truncate: "…"
+      truncate: "..."
   admin:
     misc:
       search: "Buscar"

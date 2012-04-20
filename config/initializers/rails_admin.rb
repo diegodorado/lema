@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  # config.excluded_models = [User]
+  config.excluded_models = [User]
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [User]
@@ -56,7 +56,7 @@ RailsAdmin.config do |config|
   # RailsAdmin will try his best to provide the best defaults for each section, for each field.
   # Try to override as few things as possible, in the most generic way. Try to avoid setting labels for models and attributes, use ActiveRecord I18n API instead.
   # Less code is better code!
-  # config.model MyModel do
+  config.model Post do
   #   # Cross-section field configuration
   #   object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
   #   label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
@@ -65,14 +65,15 @@ RailsAdmin.config do |config|
   #   parent OtherModel             # Set parent model for navigation. MyModel will be nested below. OtherModel will be on first position of the dropdown
   #   navigation_label              # Sets dropdown entry's name in navigation. Only for parents!
   #   # Section specific configuration:
-  #   list do
-  #     filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
+    list do
+      field :title
+      field :published_at
   #     items_per_page 100    # Override default_items_per_page
-  #     sort_by :id           # Sort column (default is primary key)
+      sort_by :published_at           # Sort column (default is primary key)
   #     sort_reverse true     # Sort direction (default is true for primary key, last created first)
   #     # Here goes the fields configuration for the list view
-  #   end
-  # end
+    end
+  end
 
   # Your model's configuration, to help you get started:
 

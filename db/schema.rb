@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327230757) do
+ActiveRecord::Schema.define(:version => 20120419193002) do
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.integer  "photoable_id"
+    t.string   "photoable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "post_links", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.string   "description"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.datetime "published_at"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "audio"
+    t.string   "video"
+  end
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
