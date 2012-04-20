@@ -1,0 +1,50 @@
+%article
+  .row
+    .span2
+      %time(datetime="2012-03-14") #{I18n.localize post.published_at, :format => '%Y-%b-%d'}
+    .span5
+      %h2
+        %a(href="#") #{post.title}
+      %p #{post.body}
+      -unless post.photos.empty?
+        .collapsible.photos
+          %h4 Fotos (#{post.photos.count})
+          .collapse
+            %ul
+              - post.photos.each do |p|
+                %li
+                  %a(href="#")
+                    %img(src="#{p.image.url(:thumb)}")
+      -if post.video?
+        .collapsible
+          %h4 Video
+          .collapse
+            =post.video.html_safe
+      -if post.audio?
+        .collapsible
+          %h4 Audio
+          .collapse
+            =post.audio.html_safe
+      .collapsible.pdf
+        %h4 Pdf
+        .collapse
+          %ul
+            %li
+              %a(href="#") 
+                %span LA VOZ DE LA SOMBRA . GUILLERMO LEMA Fragmento
+            %li
+              %a(href="#") 
+                %span LA VOZ DE LA SOMBRA . GUILLERMO LEMA Fragmento
+          
+    .span2
+      .collapsible.links.open
+        %h4 links relacionados
+        .collapse
+          %ul
+            %li
+              %a(href="#") wwww.budapest.com
+              %p En el marco del ciclo de música contemporánea “Pierre Boulez”
+            %li
+              %a(href="#") wwww.budapest.com
+              %p En el marco del ciclo de música contemporánea “Pierre Boulez”
+
