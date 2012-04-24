@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/vwall/compass-twitter-bootstrap.git
-  revision: 1a7b5ce54efaf764eb317127521f7630964a3da7
-  specs:
-    compass_twitter_bootstrap (2.0.1.2)
-      compass
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -51,13 +44,13 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.2.0)
+    coffee-script-source (1.3.1)
     compass (0.12.1)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.0.rc.3)
-      compass (~> 0.12.rc.0)
+    compass-rails (1.0.1)
+      compass (~> 0.12.0)
     daemons (1.1.8)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
@@ -71,7 +64,7 @@ GEM
     faker (1.0.1)
       i18n (~> 0.4)
     fastercsv (1.5.4)
-    fssm (0.2.8.1)
+    fssm (0.2.9)
     haml (3.1.4)
     hike (1.2.1)
     hpricot (0.8.6)
@@ -93,10 +86,10 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.18)
-    multi_json (1.2.0)
+    multi_json (1.3.2)
     mysql2 (0.3.11)
     orm_adapter (0.0.7)
-    paperclip (2.5.2)
+    paperclip (2.7.0)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
@@ -147,7 +140,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.2)
-    sass (3.1.15)
+    sass (3.1.16)
     sass-rails (3.1.4)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
@@ -158,7 +151,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.5)
+    sqlite3 (1.3.6)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
     thin (1.3.1)
@@ -170,9 +163,9 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.9.4)
+    turn (0.9.5)
       ansi
-    tzinfo (0.3.32)
+    tzinfo (0.3.33)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
@@ -184,9 +177,9 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bootstrap-sass (~> 2.0.2)
   coffee-rails (~> 3.1.1)
   compass-rails
-  compass_twitter_bootstrap!
   devise
   execjs
   faker
@@ -195,7 +188,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2
-  paperclip
+  paperclip (= 2.7.0)
   populator
   rails (= 3.1.1)
   rails_admin

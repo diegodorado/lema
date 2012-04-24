@@ -11,13 +11,14 @@ gem "devise"
 gem 'jquery-rails'
 
 gem 'kaminari'
-gem 'paperclip'
+gem 'paperclip', '2.7.0'
 
 
 group :assets do
   gem 'sass-rails',   '3.1.4'
   gem 'compass-rails'  
-  gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
+  #gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
+  gem 'bootstrap-sass', '~> 2.0.2'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
