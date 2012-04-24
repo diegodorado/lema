@@ -6,7 +6,7 @@ gem 'thin'
 
 gem "haml",'3.1.4'
 gem 'fastercsv' # Only required on Ruby 1.8 and below
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails_admin' #, :git => 'git://github.com/sferik/rails_admin.git'
 gem "devise"
 gem 'jquery-rails'
 
@@ -29,11 +29,8 @@ group :production do
 end
 
 group :development do
-#  gem 'guard-livereload'
-#  gem 'rack-livereload'
   gem "annotate"
   gem 'sqlite3'
-  gem 'sqlite3-ruby'
   gem "faker"
   gem "populator"
 end

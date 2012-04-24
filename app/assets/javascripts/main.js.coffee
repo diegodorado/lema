@@ -13,3 +13,21 @@ $ ->
     e.preventDefault()
     $(this).closest('.highlight').toggleClass 'open'
 
+  #scrollorama
+  window.scrollorama = $.scrollorama
+    blocks: ".scrollblock"
+    enablePin:false
+    
+  scrollorama.onBlockChange ->
+    i = scrollorama.blockIndex
+    current_block = scrollorama.settings.blocks.eq(i).closest('.container').attr("id")
+    console.log scrollorama
+    $("#console").text "onBlockChange | blockIndex:" + i + " | current block: " + current_block
+
+
+
+  scrollorama.animate "#space-t1-s", {duration: 500,    property: "top",  end: 500}
+  scrollorama.animate "#space-t1", {duration: 1000,    property: "top",  end: 400}
+  scrollorama.animate "#space-o1", {duration: 600,    property: "top",  end: 0}
+  scrollorama.animate "#space-o1-s", {duration: 1000,    property: "top",  end: 0}
+

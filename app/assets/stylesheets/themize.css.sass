@@ -4,14 +4,14 @@
 @import "footer-logo/*.png"
 $footer-logo-sprite-dimensions: true
 
-=themize($color, $name)
+
+=themize_layout($color, $name)
   header
+    background-color: $color //rgba($color,0.2)
     a
       +link-colors(#fff,$color,$color)
       &.active
         color: $color
-    .container
-      background: rgba($color,0.2)
   footer
     .links h5, .blogs h5, a:hover
       color: $color
@@ -21,6 +21,8 @@ $footer-logo-sprite-dimensions: true
     .logo
       +footer-logo-sprite($name)
 
+
+=themize($color, $name)
   .collapsible.links
     h4
       border: 1px solid $color
@@ -87,8 +89,10 @@ $yellow: #ff0
 $purple: #A2299C
 $red: #DE0000
 $blue: #3FA9C7
+$dark_blue: #0000ff
 
 body.trayectoria
+  +themize_layout($green,'green')
   +themize($green,'green')
   .pagination
     height: 130px
@@ -128,12 +132,20 @@ body.trayectoria
 
 //todo:fix body classes
 body.home.index
-  +themize($orange,'orange')
-
+  +themize_layout($dark_blue,'dark_blue')
+  header
+    border-bottom: 3px solid $dark_blue
+  #content
+    margin-top: 90px    
+  footer
+    border-top: 3px solid $dark_blue
+    
 body.obra
+  +themize_layout($red,'red')
   +themize($red,'red')
 
 body.agenda
+  +themize_layout($purple,'purple')
   +themize($purple,'purple')
 
   article
@@ -142,6 +154,7 @@ body.agenda
 
 
 body.bitacora
+  +themize_layout($yellow,'yellow')
   +themize($yellow,'yellow')
 
   .pagination
@@ -168,9 +181,11 @@ body.bitacora
       
 
 body.ticho
+  +themize_layout($orange,'orange')
   +themize($orange,'orange')
 
 body.capacitacion
+  +themize_layout($blue,'blue')
   +themize($blue,'blue')
 
 
