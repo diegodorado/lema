@@ -30,7 +30,7 @@ namespace :db do
         nil
         ]
 
-      post.sidebar_title = ['links relacionados', 'información']
+      post.sidebar_title = ['links relacionados', 'informacion']
       post.sidebar_body = [
         "* [link1](http://google.com)\n* [link2](http://google.com)\n* [link3](http://google.com)\n",
         nil

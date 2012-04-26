@@ -1,6 +1,12 @@
 class Book < ActiveRecord::Base
 
-  has_attached_file :cover, :styles => { :medium => "300x430#" }
+  has_attached_file :cover, {
+      :styles => { :medium => "300x430#" },
+      :storage => :s3, 
+      :s3_credentials => "#{Rails.root}/config/s3.yml",
+      :path => "/book_covers/:style/:id/:filename" 
+    }
+
 
   # add a delete_<asset_name> method: 
   attr_accessor :delete_cover
