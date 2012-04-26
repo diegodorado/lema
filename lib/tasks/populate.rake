@@ -4,8 +4,8 @@ namespace :db do
     require 'populator'
     require 'faker'
 
-    #[Category, Product, Person].each(&:delete_all)
-    Post.delete_all
+    [Post, Book].each(&:delete_all)
+
     Post.populate 20 do |post|
       post.title = Populator.words(4..10).titleize
       post.body = Populator.sentences(2..15)
@@ -27,6 +27,12 @@ namespace :db do
         nil,
         nil,
         nil,
+        nil
+        ]
+
+      post.sidebar_title = ['links relacionados', 'información']
+      post.sidebar_body = [
+        "* [link1](http://google.com)\n* [link2](http://google.com)\n* [link3](http://google.com)\n",
         nil
         ]
 

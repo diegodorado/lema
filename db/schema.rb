@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,10 +10,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419193002) do
+ActiveRecord::Schema.define(:version => 20120426164955) do
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.text     "points_of_sale"
+    t.text     "buy_online"
+    t.boolean  "obra_escrita"
+    t.boolean  "ticho_ediciones"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+  end
+
+  create_table "pdfs", :force => true do |t|
+    t.string   "title"
+    t.integer  "pdfable_id"
+    t.string   "pdfable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
 
   create_table "photos", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.integer  "photoable_id"
     t.string   "photoable_type"
     t.datetime "created_at"
@@ -42,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20120419193002) do
     t.datetime "updated_at"
     t.string   "audio"
     t.string   "video"
+    t.string   "sidebar_title"
+    t.text     "sidebar_body"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

@@ -11,13 +11,18 @@ gem "devise"
 gem 'jquery-rails'
 
 gem 'kaminari'
-gem 'paperclip', '2.7.0'
+gem 'paperclip' , '2.7.0' #this is for ruby 1.8.7
+
+
+gem "redcarpet",'2.1.0'
+gem 'aws-s3', '0.6.2'
+gem 'aws-sdk', '1.3.3'
+gem "friendly_id", "~> 4.0.0.beta8"
 
 
 group :assets do
   gem 'sass-rails',   '3.1.4'
   gem 'compass-rails'  
-  #gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
   gem 'bootstrap-sass', '~> 2.0.2'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'

@@ -108,6 +108,7 @@ es:
       confirmation: "Si, estoy seguro"
       delete_confirmation: "Confirmación de borrado"
       bulk_delete: "Los siguientes objetos serán eliminados, lo cual puede eliminar o dejar huérfanas algunas de sus dependencias relacionadas:"
+      new_model: 'Nuevo'
     export:
       confirmation: "Exportar a %{name}"
       select: "Seleccione los campos para la exportación"
