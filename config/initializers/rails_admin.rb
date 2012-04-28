@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  config.excluded_models = [User]
+  config.excluded_models = [User, Pdf, Photo, PostLink]
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [User]
@@ -73,7 +73,48 @@ RailsAdmin.config do |config|
   #     sort_reverse true     # Sort direction (default is true for primary key, last created first)
   #     # Here goes the fields configuration for the list view
     end
+    
+    edit do
+      group :sidebar do
+        label "Sidebar"
+        help "la barra lateral se mostrara si hay datos solamente..."
+        active false
+      end
+      field :sidebar_title do
+        label "Titulo"
+        group :sidebar
+      end
+      field :sidebar_body do
+        label "Contenido"
+        group :sidebar
+      end
+      include_all_fields
+    end
+    weight -1
+    
   end
+
+
+  config.model Course do
+    list do
+      field :category
+      field :title
+    end
+
+    edit do
+      field :category do
+        partial "form_category_select"
+      end
+      include_all_fields
+    end
+    
+  end
+
+  config.model Book do
+    label "Beautiful box" 
+    label_plural "Beautiful boxen"
+  end
+
 
   # Your model's configuration, to help you get started:
 
@@ -94,6 +135,26 @@ RailsAdmin.config do |config|
       field :file
     end
   end
+
+  config.model Category do
+  
+    object_label_method do
+      :full_name
+    end
+
+
+    edit do
+      field :locale, :enum
+      field :name
+    end
+  end
+
+  def custom_label_method
+    "#{I18n.t 'language_name', :locale => self.locale} - #{self.name}"
+  end
+
+
+
 
   # config.model User do
   #   # Found associations:

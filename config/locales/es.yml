@@ -176,8 +176,12 @@ es:
 
     models:
       user: 'Usuario'
+      post: 'Entrada'
+      
     attributes:
       user:
         password: "Contraseña"
         password_confirmation: "Confirmar Contraseña"
+      post:
+        body: 'Contenido'
         

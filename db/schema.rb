@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426164955) do
+ActiveRecord::Schema.define(:version => 20120427181446) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(:version => 20120426164955) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string "name"
+    t.string "locale"
+  end
+
+  create_table "courses", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "title"
+    t.text     "body"
+    t.text     "specification"
+    t.text     "objective"
+    t.text     "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pdfs", :force => true do |t|

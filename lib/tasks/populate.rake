@@ -4,9 +4,9 @@ namespace :db do
     require 'populator'
     require 'faker'
 
-    [Post, Book].each(&:delete_all)
+    [Post, Book, Category, Course].each(&:delete_all)
 
-    Post.populate 20 do |post|
+    Post.populate 60..100 do |post|
       post.title = Populator.words(4..10).titleize
       post.body = Populator.sentences(2..15)
       post.published_at = 2.years.ago..Time.now
@@ -37,6 +37,33 @@ namespace :db do
         ]
 
     end
-    
+
+
+    Book.populate 10..20 do |book|
+      book.title = Populator.words(4..10).titleize
+      book.body = Populator.sentences(2..15)
+      book.points_of_sale = Populator.sentences(2..3)
+      book.buy_online = Populator.sentences(2..3)
+      book.obra_escrita = [true,false]
+      book.ticho_ediciones = (not book.obra_escrita)
+    end
+
+
+    Category.populate 40..60 do |cat|
+      cat.name = Populator.words(4..10).titleize
+      cat.locale = [:es, :en, :cs, :it, :fr]
+    end
+
+    Course.populate 60..100 do |course|
+      course.title = Populator.words(4..10).titleize
+      course.category_id = Category.all.collect(&:id).sort_by{rand}.first
+      course.body = Populator.sentences(2..15)
+      course.specification = Populator.sentences(2..15)
+      course.objective = Populator.sentences(2..15)
+      course.summary = Populator.sentences(2..15)
+    end
+
+
+
   end
 end
