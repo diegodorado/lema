@@ -111,8 +111,8 @@ RailsAdmin.config do |config|
   end
 
   config.model Book do
-    label "Beautiful box" 
-    label_plural "Beautiful boxen"
+    label "Libro" 
+    label_plural "Libros"
   end
 
 
