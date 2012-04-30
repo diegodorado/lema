@@ -1,0 +1,2 @@
+class TichoController < ApplicationController
+end

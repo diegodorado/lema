@@ -1,0 +1,5 @@
+.container
+  -@posts.each do |p|
+    = render :partial => 'shared/post',:locals => { :post => p} 
+
+= paginate @posts

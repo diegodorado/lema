@@ -1,0 +1,49 @@
+%article
+  .row
+    .span2
+      %time(datetime="2012-03-14") #{I18n.localize post.published_at, :format => '%Y-%b-%d'}
+    .span5
+      %h2
+        %a(href="#") #{post.title}
+      .post-body
+        :markdown
+          #{post.body}
+      -unless post.photos.empty?
+        .collapsible.photos
+          %a.arrow-link(href="#") Fotos
+          .collapse
+            %ul.photo-list
+              - post.photos.each do |p|
+                %li
+                  %a(href="#")
+                    %img(src="#{p.image.url(:thumb)}")
+      -if post.video?
+        .collapsible
+          %a.arrow-link(href="#") Video
+          .collapse
+            =post.video.html_safe
+      -if post.audio?
+        .collapsible
+          %a.arrow-link(href="#") Audio
+          .collapse
+            =post.audio.html_safe
+      -unless post.pdfs.empty?
+        .collapsible.pdf
+          %a.arrow-link(href="#") Pdf
+          .collapse
+            %ul.pdf-list
+              - post.pdfs.each do |pdf|
+                %li
+                  %a(href="#{pdf.file.url}") 
+                    %span.title #{pdf.title}
+                    %span.size #{number_to_human_size(pdf.file.size)}
+
+          
+    -if post.sidebar_title? and post.sidebar_body? 
+      .span2
+        .collapsible.sidebar.open
+          %a.arrow-link.inverted(href="#") #{post.sidebar_title}
+          .collapse
+            :markdown
+              #{post.sidebar_body}
+            

@@ -1,0 +1,15 @@
+.highlight.open
+  .wrapper.collapse
+    .container
+      .row
+        .span7.offset2
+          %h2 En orden cronológico
+          %p
+            we have made serious efforts to trace the copyright owners of all text and other copyright material included on this website but have been unable to do so in some cases. we are willing to acknowledge any rightful copyright owner on proof of copyright ownership or, if that owner prefers, to remove the item from the websiteable to do so in some cases. we are willing to acknowledge any rightful copyright owner on proof of copyrigable to do so in some cases. we are willing to acknowledge any rightful copyright owner on proof of cop
+  .handler
+    %a(href="#")
+.container
+  -@posts.each do |p|
+    = render :partial => 'shared/post',:locals => { :post => p} 
+
+= paginate @posts

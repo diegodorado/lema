@@ -1,0 +1,28 @@
+.highlight.open
+  .wrapper.collapse
+    .container
+      .row
+        .span2
+          %h3 contacto
+          %a(href="mailto:glema@guillermolema.com.ar") glema@guillermolema.com.ar
+        .span7
+          %h2 GUILLERMO LEMA (1964)
+          %p
+            Escritor que atraviesa la poesía, la narrativa literaria  y el ensayo filosófico de un modo integrador. Trabaja fuera de género para lograr fidelidad entre sus ideas y sus obras. Realiza textos para música clásica contemporánea. Performer, en sus poesías sonoras busca recuperar la escucha de la musicalidad de diversas lenguas. Fue profesor en la Facultad de Filosoífa y Letras de Brno, República checa. Sus obras fueron traducidas al francés, al checo y al danés.  
+      .row
+        .span9
+          =image_tag 'lema-trayectoria.png'
+  .handler
+    %a(href="#")
+.heading
+  .container
+    .row
+      .span7.offset2
+        %h2 lema historial
+    
+.container
+  -@posts.each do |p|
+    = render :partial => 'shared/post',:locals => { :post => p} 
+
+= paginate @posts, {:years => @years }
+
