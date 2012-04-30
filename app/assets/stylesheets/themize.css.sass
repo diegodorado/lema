@@ -29,11 +29,6 @@ $footer-logo-sprite-dimensions: true
       border: 1px solid $color
 
 
-  .book-list .book
-    h3
-      background: rgba($color, 0.2)
-
-
   .pagination
     border-top: 3px solid $color
     .current, a:hover
@@ -72,6 +67,26 @@ $footer-logo-sprite-dimensions: true
     &:last-child, &.last
       border-color: transparent
       margin-bottom: 73px
+
+  //book related
+  .book-title
+    background: $color
+
+  .book .content 
+    .specification, .body h4
+      color: $color
+
+
+  .book-list li.book
+    &.open .book-link
+      background: url('arrows/#{$name}-down.png') 18px center no-repeat
+    h3
+      background: rgba($color, 0.2)
+    .book-link
+      background: url('arrows/#{$name}-next.png') 18px center no-repeat
+      &:hover
+        color: $color
+           
 
 
 $green: #0f0
@@ -121,8 +136,7 @@ body.trayectoria
 
       
 
-//todo:fix body classes
-body.home.index
+body.home
   +themize_layout($dark_blue,'dark_blue')
   header
     border-bottom: 3px solid $dark_blue
@@ -367,4 +381,130 @@ article
     p
       font-family: inherit
       font-size: inherit
-      line-height: inherit    
+      line-height: inherit   
+
+
+//book related
+.book-title
+  overflow: hidden
+  .span3
+    margin-top: 8px
+    text-align: center
+  h2
+    margin-top: 17px
+    color: #fff
+    font-size: 32px
+    text-transform: uppercase
+    line-height: 40px
+  hr
+    margin: 5px 0 17px 0
+    border: 1px solid #fff
+    width: 2000px
+    height: 0
+
+
+
+.book
+  .image
+    padding: 12px 0
+    text-align: right
+  .content
+    padding: 50px 0
+    font-size: 18px
+    font-family: BuenardRegular
+    line-height: 22px
+    p
+      font: inherit
+    .specification
+      margin-bottom: 50px
+    .body
+      color: #666
+      margin-bottom: 44px
+      h4
+        font-family: LektonRegular
+        font-size: 15px
+        text-transform: uppercase
+        letter-spacing: 1px  
+        line-height: 18px
+        margin: 50px 0
+    .links          
+      .arrow-link
+        color: #1D1D1B
+  .sidebar
+    padding: 50px 0
+
+
+.book-list
+  margin: 85px 0
+  list-style: none
+  background: url('stars.jpg')
+  li.book
+    .collapse
+      background: #F7F7EB
+    &.open .collapse
+      height: auto
+
+    h3
+      height: 100px
+      position: relative
+      font-size: 32px
+      padding: 0
+      margin: 0
+      text-transform: uppercase
+      white-space: nowrap
+      border-bottom: 6px solid #F7F7EB
+      .book-link
+        color: #fff
+        line-height: 100px
+        display: block
+        padding-left: 62px
+
+
+
+
+body.obra.show, body.ticho.show
+  #content
+    border-top: none
+    .book
+      background: #fff
+      padding-bottom: 85px
+      .pdf-list
+        margin-top: 12px
+      
+body.obra
+  #content
+    background: url('white-stars.png'), url('grey-stars.png')
+    background-color: #EDECED
+    border-top: 3px solid $red
+    border-bottom: 3px solid $red
+
+
+body.ticho
+  #content
+    background: url('white-stars.png'), url('grey-stars.png')
+    background-color: #EDECED
+    border-top: 3px solid $orange
+    border-bottom: 3px solid $orange
+
+  .highlight
+    .wrapper
+      background: #000
+      .span2
+        margin-top: 48px
+      h2, a, p
+        color: #B3B3B3
+
+  .book
+    h3
+      .pdf-link
+        position: absolute
+        +replace-text('icons/white-pdf-big.png')
+        top: 0
+        right: 0
+        height: 100px
+        width: 70px
+        display: block
+        &:hover
+          background-image: url('icons/orange-pdf-big.png')
+
+

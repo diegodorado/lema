@@ -38,7 +38,7 @@ namespace :db do
 
     Book.populate 10..20 do |book|
       book.title = Populator.words(2..6).titleize
-      book.specification = "#{Faker::Company.name}\n#{Faker::Address.street_address}\n#{rand(1000)} paginas"
+      book.specification = "#{Faker::Company.name}\n\n#{Faker::Address.street_address}\n\n#{rand(1000)} paginas"
       book.body = Populator.sentences(2..15)
       book.points_of_sale = Populator.sentences(2..3)
       book.buy_online = Populator.sentences(2..3)

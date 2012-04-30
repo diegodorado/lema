@@ -26,6 +26,14 @@ class Book < ActiveRecord::Base
   def section_enum
     [['Obra Escrita', :oe],['Ticho Ediciones', :te]]
   end
+  
+  def ticho?
+    section == 'te'
+  end
+
+  def obra?
+    section == 'oe'
+  end
 
 
 end

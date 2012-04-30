@@ -7,7 +7,7 @@ $ ->
     #el[0].scrollHeight to get .collapse height
 
   #todo: just for obra-escrita
-  $("body").on "click", ".book-list h3 a", (e) ->
+  $("body.obra").on "click", ".book-list h3 a", (e) ->
     e.preventDefault()
     $(this).closest('.book').toggleClass 'open'
 

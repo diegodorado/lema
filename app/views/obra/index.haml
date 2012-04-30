@@ -1,21 +1,25 @@
 .container
   %ul.book-list
-
     -@books.each do |b|
       %li.book
         %h3
-          %a(href="#") #{b.title}
-        .collapse.row
-          .span3.image
-            =image_tag b.cover.url
-          .span4.content
-            .specification
-              hola<br/>hola<br/>hola<br/>
-            .body
-              hola<br/>hola<br/>hola<br/>
-            .links
-              =link_to 'seguir leyendo', obra_show_path(b.id), :class => 'arrow-link'
-              =link_to 'hojear', obra_show_path(b.id), :class => 'arrow-link'
-          .span2.sidebar
-            =link_to 'puntos de venta', obra_show_path(b.id), :class => 'arrow-link'
-            =link_to 'comprar online', obra_show_path(b.id), :class => 'arrow-link'
+          =link_to truncate(b.title,:length => 50), obra_show_path(b.id), :class=>'book-link'
+        .collapse
+          .row
+            .span3.image
+              =image_tag b.cover.url
+            .span4.content
+              .specification
+                :markdown
+                  #{b.specification}
+              .body
+                :markdown
+                  #{truncate(b.body, :omission => " ...", :length => 180, :separator => ' ')}
+              .links
+                =link_to 'seguir leyendo', obra_show_path(b.id), :class => 'arrow-link'
+                =link_to 'hojear', obra_show_path(b.id), :class => 'arrow-link'
+            .span2.sidebar
+              =link_to 'puntos de venta', obra_show_path(b.id), :class => 'arrow-link'
+              =link_to 'comprar online', obra_show_path(b.id), :class => 'arrow-link'
+              
+              

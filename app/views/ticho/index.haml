@@ -1,0 +1,21 @@
+.highlight.open
+  .wrapper.collapse
+    .container
+      .row
+        .span2
+          =image_tag 'orange-ticho-logo.png'
+        .span7
+          %h2 Ticho Ediciones
+          %p
+            we have made serious efforts to trace the copyright owners of all text and other copyright material included on this website but have been unable to do so in some cases. we are willing to acknowledge any rightful copyright owner on proof of copyright ownership or, if that owner prefers, to remove the item from the websiteable to do so in some cases. we are willing to acknowledge any rightful copyright owner on proof of copyrigable to do so in some cases. we are willing to acknowledge any rightful copyright owner on proof of cop
+  .handler
+    %a(href="#")
+    
+.container
+  %ul.book-list
+    -@books.each do |b|
+      %li.book
+        %h3
+          =link_to truncate(b.title,:length => 50), ticho_show_path(b.id), :class=>'book-link'
+          -unless b.pdfs.empty?
+            =link_to 'pdf', b.pdfs.first.file.url, :class=>'pdf-link'

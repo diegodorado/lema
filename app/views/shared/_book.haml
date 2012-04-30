@@ -1,0 +1,52 @@
+.book-title
+  .container
+    .row
+      .span3
+        =image_tag 'white-ticho-logo.png' if book.ticho?
+      .span6
+        %h2 #{book.title}
+        %hr
+
+.container
+  .book.row
+    .span3.image
+      =image_tag book.cover.url
+    .span4.content
+      .specification
+        :markdown
+          #{book.specification}
+      .body
+        :markdown
+          #{book.body}
+
+      .collapsible.photos.pdf.open
+        %a.arrow-link(href="#")  hojear
+        .collapse
+          -unless book.photos.empty?
+            %ul.photo-list
+              - book.photos.each do |p|
+                %li
+                  %a(href="#")
+                    %img(src="#{p.image.url(:thumb)}")
+
+          -unless book.pdfs.empty?
+            %ul.pdf-list
+              - book.pdfs.each do |pdf|
+                %li
+                  %a(href="#{pdf.file.url}") 
+                    %span.title #{pdf.title}
+                    %span.size #{number_to_human_size(pdf.file.size)}
+
+        
+    -if book.obra?
+      .span2.sidebar
+        .collapsible.open
+          %a.arrow-link.inverted(href="#")  puntos de venta
+          .collapse
+            :markdown
+              #{book.points_of_sale}
+        .collapsible.open
+          %a.arrow-link.inverted(href="#")  comprar online
+          .collapse
+            :markdown
+              #{book.buy_online}
