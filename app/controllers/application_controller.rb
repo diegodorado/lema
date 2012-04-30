@@ -231,8 +231,8 @@ class ApplicationController < ActionController::Base
       end
 
       config.model Category do
-        label "Categoría" 
-        label_plural "Categorías"
+        label "Categoria" 
+        label_plural "Categorias"
       
         field :locale, :enum do
           label "Idioma"
@@ -247,8 +247,6 @@ class ApplicationController < ActionController::Base
         end
 
 
-        edit do
-        end
       end
 
 
