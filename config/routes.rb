@@ -4,14 +4,17 @@ Lema::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index"
+  match '/trayectoria' => 'trayectoria#index'
+  match '/obra-escrita' => 'obra#index', :as => :obra
+  match '/obra-escrita/:id' => 'obra#show', :as => :obra_show
+  match '/agenda' => 'agenda#index'
+  match '/bitacora' => 'bitacora#index'
+  match '/ticho-ediciones' => 'ticho#index', :as => :ticho
+  match '/ticho-ediciones/:id' => 'ticho#show', :as => :ticho_show
+  match '/capacitacion' => 'capacitacion#index'
 
-
-  match '/trayectoria' => 'home#trayectoria'
-  match '/obra-escrita' => 'home#obra', :as => :obra
-  match '/agenda' => 'home#agenda'
-  match '/bitacora' => 'home#bitacora'
-  match '/ticho-ediciones' => 'home#ticho', :as => :ticho
-  match '/capacitacion' => 'home#capacitacion'
+  #todo:remove this
+  match '/sombra' => 'obra#show'
 
 
   resources :posts do

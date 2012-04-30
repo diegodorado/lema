@@ -1,5 +1,8 @@
 class Category < ActiveRecord::Base
   has_many :courses
+  validates :locale, :presence => true  
+  validates :name, :presence => true  
+
 
   def self.by_locale
     Hash[
@@ -15,7 +18,7 @@ class Category < ActiveRecord::Base
   end
   
   def locale_enum
-    locales.map{ |l| [(I18n.t 'language_name', :locale => l),l]}
+    Category.locales.map{ |l| [(I18n.t 'language_name', :locale => l),l]}
   end
 
 

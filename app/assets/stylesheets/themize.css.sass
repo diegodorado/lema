@@ -23,30 +23,15 @@ $footer-logo-sprite-dimensions: true
 
 
 =themize($color, $name)
-  .collapsible.links
-    h4
+  .pdf-list li a
+    background: url('icons/#{$name}-pdf.png') 0px center no-repeat
+    .title
       border: 1px solid $color
-      background: #fff url('arrows/#{$name}-collapsible-h4.png') 10px center no-repeat
-    &.open h4, h4:hover
-      background-image: url('arrows/#{$name}-collapsible-h4-open.png')
-
-  .collapsible.pdf
-    .collapse
-      ul li a
-        background: url('icons/#{$name}-pdf.png') 0px center no-repeat
-        span
-          border: 1px solid $color
 
 
-  .collapsible.books
-    h4
+  .book-list .book
+    h3
       background: rgba($color, 0.2)
-      &:before
-        content: ''  //prepend middle dot
-      a
-        background: url('arrows/collapsible-h4.png') 10px center no-repeat
-    &.open h4, h4:hover
-      background-image: none
 
 
   .pagination
@@ -68,11 +53,17 @@ $footer-logo-sprite-dimensions: true
     &.open .handler a
       background-image: url('arrows/#{$name}-up.png')
 
-  .collapsible
-    h4
-      background: $color url('arrows/collapsible-h4.png') 10px center no-repeat
-    &.open h4, h4:hover
-      background-image: url('arrows/collapsible-h4-open.png')
+  .arrow-link
+    background: $color url('arrows/white-link.png') 10px center no-repeat
+  .collapsible.open .arrow-link, .arrow-link:hover
+    background-image: url('arrows/white-link-open.png')
+
+  //inverted style
+  .arrow-link.inverted
+    border: 1px solid $color
+    background: #fff url('arrows/#{$name}-link.png') 10px center no-repeat
+  .collapsible.open .arrow-link.inverted, .arrow-link.inverted:hover
+    background-image: url('arrows/#{$name}-link-open.png')
 
 
   article
@@ -192,13 +183,6 @@ body.capacitacion
 
 
 .collapsible.sidebar
-  h4
-    color: #666
-    height: 18px
-    line-height: 18px
-    &:before
-      content: ''  //no middle dot
-
   .collapse
     color: #999
     ul
@@ -206,64 +190,77 @@ body.capacitacion
       li
         border-bottom: 1px solid #666
         margin-bottom: 17px
-        a, p
-          font-family: LektonRegular
-          font-size: 13px
-        a
-          display: block
-          margin-bottom: 14px
-          color: #666
-        p
-          margin-bottom: 17px
-          color: #999
+    a, p
+      font-family: LektonRegular
+      font-size: 13px
+    a
+      display: block
+      margin-bottom: 14px
+      color: #666
+    p
+      margin-bottom: 17px
+      color: #999
 
-.collapsible.photos
-  .collapse
-    ul
-      list-style: none
-      margin: 6px 0 -10px -10px
-      overflow: hidden
-      li
-        float: left
-        margin: 0 0 10px 10px 
-        a
-          display: block
-          img
-            display: block
-
-.collapsible.pdf
-  .collapse
-    ul
-      list-style: none
-      margin: 0 0 -6px 0
-      li a
-        margin-bottom: 6px
+.photo-list
+  list-style: none
+  margin: 6px 0 -10px -10px
+  overflow: hidden
+  li
+    float: left
+    margin: 0 0 10px 10px 
+    a
+      display: block
+      img
         display: block
-        padding-left: 35px
-        span
-          background: #fff
-          height: 32px
-          line-height: 32px
-          padding-left: 12px
-          display: block
-          font-family: LektonRegular
-          font-size: 13px
 
 
-
-.collapsible
-  h4
-    font-family: LektonRegular
-    font-size: 12px
-    text-transform: uppercase
-    letter-spacing: 1px  
-    height: 20px
-    line-height: 20px
+.pdf-list
+  list-style: none
+  margin: 0 0 -6px 0
+  li a
     margin-bottom: 6px
-    cursor: pointer
-    padding-left: 28px
-    &:before
-      content: '\00B7'  //prepend middle dot
+    display: block
+    padding-left: 35px
+    position: relative    
+    font-family: LektonRegular
+    font-size: 13px
+    .title
+      background: #fff
+      color: #4D4D4D
+      height: 32px
+      line-height: 32px
+      padding-left: 12px
+      display: block
+    .size
+      color: #999999
+      position: absolute
+      bottom: 5px
+      right: 5px
+
+.arrow-link
+  display: block
+  font-family: LektonRegular
+  font-size: 12px
+  text-transform: uppercase
+  letter-spacing: 1px  
+  height: 20px
+  line-height: 20px
+  margin-bottom: 6px
+  padding-left: 28px
+  color: #fff !important
+  &:before
+    content: '\00B7'  //prepend middle dot
+
+
+//inverted style
+.arrow-link.inverted
+  color: #666 !important
+  height: 18px
+  line-height: 18px
+  &:before
+    content: ''  //no middle dot
+      
+.collapsible      
   &:last-child .collapse, &.last .collapse
     margin-bottom: 6px
   &.open

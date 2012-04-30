@@ -1,5 +1,10 @@
 class Book < ActiveRecord::Base
 
+  validates :section, :presence => true  
+  validates :title, :presence => true  
+  validates :body, :presence => true  
+
+
   has_attached_file :cover, {
       :styles => { :medium => "300x430#" },
       :storage => :s3, 
@@ -17,5 +22,10 @@ class Book < ActiveRecord::Base
 
   accepts_nested_attributes_for :photos, :allow_destroy => true
   accepts_nested_attributes_for :pdfs, :allow_destroy => true
+
+  def section_enum
+    [['Obra Escrita', :oe],['Ticho Ediciones', :te]]
+  end
+
 
 end

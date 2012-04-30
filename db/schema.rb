@@ -10,21 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427181446) do
+ActiveRecord::Schema.define(:version => 20120430184906) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.text     "points_of_sale"
     t.text     "buy_online"
-    t.boolean  "obra_escrita"
-    t.boolean  "ticho_ediciones"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "section"
+    t.text     "specification"
   end
 
   create_table "categories", :force => true do |t|
@@ -65,15 +65,6 @@ ActiveRecord::Schema.define(:version => 20120427181446) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "post_links", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
-    t.string   "description"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|

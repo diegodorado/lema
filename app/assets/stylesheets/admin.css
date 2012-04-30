@@ -1,3 +1,11 @@
 /*
  *= require 'markdown-editor'
+ *= require_self
 */
+
+/*hidden textareas must have explicit width
+to behave correctly... forcing width for this app*/
+.editor textarea {
+  width: 522px !important;
+}
+

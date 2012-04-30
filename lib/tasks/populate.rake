@@ -30,22 +30,19 @@ namespace :db do
         nil
         ]
 
-      post.sidebar_title = ['links relacionados', 'informacion']
-      post.sidebar_body = [
-        "* [link1](http://google.com)\n* [link2](http://google.com)\n* [link3](http://google.com)\n",
-        nil
-        ]
+      post.sidebar_title = ['links relacionados', 'informacion', nil]
+      post.sidebar_body = "* [#{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n* #{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n* #{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n"
 
     end
 
 
     Book.populate 10..20 do |book|
-      book.title = Populator.words(4..10).titleize
+      book.title = Populator.words(2..6).titleize
+      book.specification = "#{Faker::Company.name}\n#{Faker::Address.street_address}\n#{rand(1000)} páginas"
       book.body = Populator.sentences(2..15)
       book.points_of_sale = Populator.sentences(2..3)
       book.buy_online = Populator.sentences(2..3)
-      book.obra_escrita = [true,false]
-      book.ticho_ediciones = (not book.obra_escrita)
+      book.section = [:oe, :te]
     end
 
 
@@ -58,9 +55,9 @@ namespace :db do
       course.title = Populator.words(4..10).titleize
       course.category_id = Category.all.collect(&:id).sort_by{rand}.first
       course.body = Populator.sentences(2..15)
-      course.specification = Populator.sentences(2..15)
-      course.objective = Populator.sentences(2..15)
-      course.summary = Populator.sentences(2..15)
+      course.specification = Populator.sentences(2..5)
+      course.objective = Populator.sentences(2..5)
+      course.summary = Populator.sentences(2..3)
     end
 
 

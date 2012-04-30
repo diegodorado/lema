@@ -1,9 +1,16 @@
 $ ->
-  $("body").on "click", ".collapsible h4", (e) ->
+  $("body").on "click", ".collapsible .arrow-link", (e) ->
+    e.preventDefault()
     $(this).closest('.collapsible').toggleClass 'open'
     #$collapser = $(this)
     #$collapsible = $collapser.next('.collapse')
     #el[0].scrollHeight to get .collapse height
+
+  #todo: just for obra-escrita
+  $("body").on "click", ".book-list h3 a", (e) ->
+    e.preventDefault()
+    $(this).closest('.book').toggleClass 'open'
+
 
   #todo: only for ie  
   $("article:last-child").addClass "last"
