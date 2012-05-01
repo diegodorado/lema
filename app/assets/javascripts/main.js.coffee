@@ -6,10 +6,14 @@ $ ->
     #$collapsible = $collapser.next('.collapse')
     #el[0].scrollHeight to get .collapse height
 
-  #todo: just for obra-escrita
   $("body.obra").on "click", ".book-list h3 a", (e) ->
     e.preventDefault()
     $(this).closest('.book').toggleClass 'open'
+
+
+  $("body.capacitacion").on "click", ".collapsible.categories .right", (e) ->
+    e.preventDefault()
+    $(this).closest('.collapsible').toggleClass 'open'
 
 
   #todo: only for ie  
@@ -20,10 +24,18 @@ $ ->
     e.preventDefault()
     $(this).closest('.highlight').toggleClass 'open'
 
+
+
+  $('.course-tabs a').click (e) ->
+    e.preventDefault()
+    $(this).tab('show')
+
+
+initScrollorama: ->
   #scrollorama
   window.scrollorama = $.scrollorama
     blocks: ".scrollblock"
-    enablePin:false
+    enablePin: false
     
   scrollorama.onBlockChange ->
     i = scrollorama.blockIndex

@@ -1,33 +1,48 @@
+.courses-title
+  .container
+    .row
+      .span1
+        =image_tag 'search.png'
+      .span8
+        %h2 Buscar en Cursos
+        %hr
+
 .container
   .row
     .span3
-      %nav
+      %nav.locales
+        %h4 
+          %a.all-courses(href="#{capacitacion_path}") ver todos los cursos
+        %h4 cursos por idioma
+        
         -@locales.each do |locale,categories|
-          .collapsible.categories.open
-            .category-title
-              %a.locale(href="#")
+          -class_name = (@locale==locale.to_s) ? 'open active' : ''
+          .collapsible.categories{:class=>"#{class_name}"}
+            .locale-title
+              %a.left(href="#{capacitacion_locale_path(locale)}")
                 =image_tag "flags/#{locale}.png"
                 =I18n.t 'language_name', :locale => locale
-              .category
+              %a.right(href="#")
                 =I18n.t 'categories', :locale => locale
             .collapse
               %ul.category-list
                 -categories.each do |category|
-                  %li
-                    %a(href="#")
+                  -class_name = (@category_id==category.id) ? 'active' : ''
+                  %li{:class=>"#{class_name}"}
+                    %a{:href=> capacitacion_category_path(category.id)}
                       =category.name
     .span6
       -@courses.each do |course|
         -locale = course.category.locale
-        %article.course
+        %article.course[course]
           .row
             .span1
               =image_tag "flags/#{locale}.png"
             .span5
-              %h3
-                %a(href="#") #{course.category.name}
-              %h2
-                %a(href="#") #{course.title}
+              %h3.category
+                %a(href="#{capacitacion_category_path(course.category_id)}") #{course.category.name}
+              %h2.title
+                %a(href="#{capacitacion_show_path(course.id)}") #{course.title}
               .course-body
                 :markdown
                   #{course.body}
@@ -41,14 +56,33 @@
                         %span.title #{pdf.title}
                         %span.size #{number_to_human_size(pdf.file.size)}
 
-              
+          -selector = "#course_#{course.id} .tab-content"
           .row
             .span1
-              =I18n.t 'specification', :locale => locale
-              =I18n.t 'objective', :locale => locale
-              =I18n.t 'summary', :locale => locale
+              %ul.course-tabs
+                %li.active
+                  %a{:href=>"#",:data =>{:target => "#{selector} .specification"}}
+                    =I18n.t 'specification', :locale => locale
+                %li
+                  %a{:href=>"#",:data =>{:target => "#{selector} .objective"}}
+                    =I18n.t 'objective', :locale => locale
+                %li
+                  %a{:href=>"#",:data =>{:target => "#{selector} .summary"}}
+                    =I18n.t 'summary', :locale => locale
+            
             .span5
-              = course.category.locale
+              .tab-content
+                .tab-pane.active.specification
+                  :markdown
+                    #{course.specification}
+                .tab-pane.objective
+                  :markdown
+                    #{course.objective}
+                .tab-pane.summary
+                  :markdown
+                    #{course.summary}
+            
+              
 
 = paginate @courses
   
