@@ -1,41 +1,19 @@
-Te paso un link para bajar las pantallas en Illustrator. 
-http://www.correccionesweb.com.ar/guillermo-lema/pantallas-illustrator-cs3.zip
-
-Te sigo debiendo la obertura que va en esta semana.
-
-
-
-Cada archivo tiene la siguiente estructura de layers:
-MEDIDAS cotas con las distancias marcadas en pixels
-GUIAS con la grilla utilizada
-NOTAS anotaciones de funcionamiento
-BOTONERA encabezado y pie
-contenidos textos, espacio para imagenes, etc
-estrellas A blancas. desplazamiento independiente de las B pasan por detrás del contenido (dentro de los 980px)
-estrellas B grises. desplazamiento independiente de las A. pasan por fuera del área de contenido.
-fondo 
-
-
-Va la descripción de los archivos por secciones:
-
 GENERAL
 Guillermo Lema web 00_visualizador_de_imagenes-cs3.ai
 Estilos para el visualizador de imágenes
 
 TRAYECTORIA
 Guillermo Lema web 01_trayectoria_A-cs3.ai
-Entrada a la sección con 10 entradas por página. La entrada superior (de fecha más reciente) presenta desplegados los menues colapsables de contenidos.
-Acá habría que ver lo que te comenté de la navegación por año. fijate como lo puse. Imaginé que al clickear en la flecha para ir más atrás en los años, estos desplacen a los siguientes 5 que haya registro. Si es muy chino o no es posible vemos cómo resolverlo.
+Entrada a la sección con 10 entradas por página. 
+La entrada superior (de fecha más reciente) presenta desplegados 
+los menues colapsables de contenidos.
+Acá habría que ver lo que te comenté de la navegación por año.
+ fijate como lo puse. Imaginé que al clickear en la flecha para ir más
+  atrás en los años, estos desplacen a los siguientes 5 que haya registro.
+   Si es muy chino o no es posible vemos cómo resolverlo.
 Guillermo Lema web 01_trayectoria_B-cs3.ai
 Muestra de funcionamiento del perfil sin desplegar (ver capa NOTAS en el archivo)
 
-OBRA ESCRITA 
-Guillermo Lema web 02_obra_escrita_A-cs3.ai
-Entrada a la sección obra escrita con todos los libros cerradas
-Guillermo Lema web 02_obra_escrita_B-cs3.ai
-Ejemplo de un libro desplegado
-Guillermo Lema web 02_obra_escrita_C-cs3.ai
-Ejemplo página propia de un libro
 
 AGENDA
 Guillermo Lema web 03_agenda-cs3.ai
@@ -45,20 +23,15 @@ BITACORA
 Guillermo Lema web 04_bitacora-cs3.ai
 Entrada a la sección con 10 entradas por página.
 
-TICHO EDICIONES
-Guillermo Lema web 05_ticho_ediciones_A-cs3.ai
-Misma estructura que en obra escrita con link para descarga directa en pdf
-Guillermo Lema web 05_ticho_ediciones_B-cs3.ai
-Ejemplo página propia de publicación de ticho.
-Habría que contemplar casos en que los titulares superen una línea de extensión.
-En esos casos el plano naranja debería extenderse.
-
 
 CAPACITACION
 Guillermo Lema web 06_capacitaciones-cs3.ai
 ya la charlamos bastante, por las dudas; 
-al entrar muestra todos los cursos ordenados alfabeticamente por la categoría. Al entrar todos los botones de categorías están cerrados, se despliegan al clickear en la palabra categoría o en la flecha.
-Al clickear en una bandera muestra todos los cursos en ese idioma, al clickear una categoría se muestran todos los cursos de esa categoría en ese idioma. 
+al entrar muestra todos los cursos ordenados alfabeticamente por la categoría. 
+Al entrar todos los botones de categorías están cerrados, 
+se despliegan al clickear en la palabra categoría o en la flecha.
+Al clickear en una bandera muestra todos los cursos en ese idioma, 
+al clickear una categoría se muestran todos los cursos de esa categoría en ese idioma. 
 
 
 
@@ -67,24 +40,6 @@ Aparte te estoy debiendo el comportamiento de las animaciones de navegación.
 
 Por útlimo pidió que tuviera estadísticas, se le puede instalar google analytics?
 
-#cambios
-cambie las miniaturas a 100x100 + 10 de margen, de otro modo no me daban las medidas
-las fechas: pasé todo en minusculas (2010-MAR-14 => 2010-mar-14)
-ajusté los espacios entre caracteres a 1px cuando era .7 o .8
-
-fijar posicion de links relacionados, y cantidad... uno solo con una lista?
-resolver audios y videos: servicios a utilizar... vimeo y soundcloud? o audio propio?
-definir fuentes alternativas con alto similar
-
-
-
-orden solapas derecha:
-
-* puntos de venta
-* comprar online
-* informacion
-* links relacionados
-* links al curso
 
 
 modelos:

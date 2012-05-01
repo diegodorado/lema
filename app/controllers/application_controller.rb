@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def rails_admin_dynamic_config
 
-      model_list = [ Category, User, Book, Post, Pdf, Photo ]
+      model_list = [ Category, User, Book, Post, Pdf, Photo, Course ]
 
       model_list.each do |m|
           RailsAdmin::Config.reset_model( m )
@@ -99,10 +99,59 @@ class ApplicationController < ActionController::Base
       config.model Course do
         label "Curso" 
         label_plural "Cursos"
-      
+
+
+
+        field :category do
+          label "Categoria"
+        end
+        field :title do
+          label "Titulo"
+        end
+
+
+        field :specification do
+          label "Ficha"
+          group :extra
+        end
+        field :objective do
+          label "Objetivo"
+          group :extra
+        end
+        field :summary do
+          label "Contenido"
+          group :extra
+        end
+
+        field :body do
+          label "Contenido"
+          group :default
+        end
+
+        field :pdfs do
+          label "PDFs"
+          group :media
+        end
+        
+        group :extra do
+          label "Extra"
+          help "Ficha, Objetivo y Contenido."
+          active false
+        end
+
+
+        group :media do
+          label "Media"
+          help "PDFs."
+          active false
+        end
+
         list do
-          field :category
-          field :title
+          exclude_fields_if do
+            true
+          end
+          include_fields :title, :category
+          sort_by :title
         end
 
         edit do

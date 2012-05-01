@@ -12,6 +12,14 @@ class Category < ActiveRecord::Base
     ]
   end
 
+  def self.locales_with_categories
+    Hash[
+      self.locales.map do |l| 
+        [l, where(:locale => l).order(:name)]
+      end
+    ]
+  end
+
   
   def self.locales
     [:es, :en, :cs, :it, :fr]

@@ -1,13 +1,54 @@
-#test(style="background:#fff")
-  =I18n.t 'language_name', :locale => :es
-  =I18n.t 'specification', :locale => :es
-  =I18n.t 'objective', :locale => :es
-  =I18n.t 'summary', :locale => :es
-  =I18n.t 'categories', :locale => :es
+.container
+  .row
+    .span3
+      %nav
+        -@locales.each do |locale,categories|
+          .collapsible.categories.open
+            .category-title
+              %a.locale(href="#")
+                =image_tag "flags/#{locale}.png"
+                =I18n.t 'language_name', :locale => locale
+              .category
+                =I18n.t 'categories', :locale => locale
+            .collapse
+              %ul.category-list
+                -categories.each do |category|
+                  %li
+                    %a(href="#")
+                      =category.name
+    .span6
+      -@courses.each do |course|
+        -locale = course.category.locale
+        %article.course
+          .row
+            .span1
+              =image_tag "flags/#{locale}.png"
+            .span5
+              %h3
+                %a(href="#") #{course.category.name}
+              %h2
+                %a(href="#") #{course.title}
+              .course-body
+                :markdown
+                  #{course.body}
 
-#test2(style="background:#fff")
-  =I18n.t 'language_name', :locale => :cs
-  =I18n.t 'specification', :locale => :cs
-  =I18n.t 'objective', :locale => :cs
-  =I18n.t 'summary', :locale => :cs
-  =I18n.t 'categories', :locale => :cs
+
+              -unless course.pdfs.empty?
+                %ul.pdf-list
+                  - course.pdfs.each do |pdf|
+                    %li
+                      %a(href="#{pdf.file.url}") 
+                        %span.title #{pdf.title}
+                        %span.size #{number_to_human_size(pdf.file.size)}
+
+              
+          .row
+            .span1
+              =I18n.t 'specification', :locale => locale
+              =I18n.t 'objective', :locale => locale
+              =I18n.t 'summary', :locale => locale
+            .span5
+              = course.category.locale
+
+= paginate @courses
+  
