@@ -1,4 +1,5 @@
 $ ->
+
   $("body").on "click", ".collapsible .arrow-link", (e) ->
     e.preventDefault()
     $(this).closest('.collapsible').toggleClass 'open'

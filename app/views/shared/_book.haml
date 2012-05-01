@@ -24,10 +24,10 @@
         .collapse
           -unless book.photos.empty?
             %ul.photo-list
-              - book.photos.each do |p|
+              - book.photos.each do |photo|
                 %li
-                  %a(href="#")
-                    %img(src="#{p.image.url(:thumb)}")
+                  %a{:href=>"#{photo.image.url}", :rel=>"lightbox[book]"}
+                    %img(src="#{photo.image.url(:thumb)}")
 
           -unless book.pdfs.empty?
             %ul.pdf-list

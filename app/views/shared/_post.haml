@@ -13,10 +13,10 @@
           %a.arrow-link(href="#") Fotos
           .collapse
             %ul.photo-list
-              - post.photos.each do |p|
+              - post.photos.each do |photo|
                 %li
-                  %a(href="#")
-                    %img(src="#{p.image.url(:thumb)}")
+                  %a{:href=>"#{photo.image.url}", :rel=>"lightbox[post_#{post.id}]"}
+                    %img(src="#{photo.image.url(:thumb)}")
       -if post.video?
         .collapsible
           %a.arrow-link(href="#") Video

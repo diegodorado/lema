@@ -253,15 +253,11 @@ class ApplicationController < ActionController::Base
 
 
       config.model Photo do
-        field :title do
-          label "Titulo"
-        end
+        #field :title do
+        #  label "Titulo"
+        #end
         field :image do
           label "Imagen"
-        end
-        edit do
-          field :title
-          field :image
         end
       end
 

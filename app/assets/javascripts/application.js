@@ -8,7 +8,7 @@
 //= require jquery_ujs
 //= require bootstrap-collapse
 //= require bootstrap-tab
-//= require bootstrap-modal
+//= require lightbox
 //= require jquery.scrollorama
 //= require main
 
