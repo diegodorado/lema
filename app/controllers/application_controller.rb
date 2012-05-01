@@ -32,9 +32,31 @@ class ApplicationController < ActionController::Base
         label "Entrada" 
         label_plural "Entradas"
       
+        field :section, :enum do
+          label 'Seccion'
+          group :default
+        end
 
         field :title do
           label "Titulo"
+          group :default
+        end
+        field :published_at do
+          label "Publicado el"
+          group :default
+        end
+        field :draft do
+          label "Borrador"
+          help "No publicar esta entrada."          
+          group :default
+        end
+        field :history do
+          label "Historial"
+          help "Mostrar  en Trayectoria pasados 30 dias de su publicacion."          
+          group :default
+        end
+        field :body do
+          label "Contenido"
           group :default
         end
 
@@ -80,9 +102,15 @@ class ApplicationController < ActionController::Base
           exclude_fields_if do
             true
           end
-          include_fields :title, :published_at
+          include_fields :title, :draft, :history, :section, :published_at
           sort_by :published_at
         end
+
+          exclude_fields_if do
+            true
+          end
+          include_fields :title, :section
+
         
         edit do
           include_all_fields
@@ -108,6 +136,10 @@ class ApplicationController < ActionController::Base
         field :title do
           label "Titulo"
         end
+        field :body do
+          label "Contenido"
+          group :default
+        end
 
 
         field :specification do
@@ -123,10 +155,6 @@ class ApplicationController < ActionController::Base
           group :extra
         end
 
-        field :body do
-          label "Contenido"
-          group :default
-        end
 
         field :pdfs do
           label "PDFs"

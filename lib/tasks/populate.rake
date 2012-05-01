@@ -6,7 +6,7 @@ namespace :db do
 
     [Post, Book, Category, Course].each(&:delete_all)
 
-    Post.populate 60..100 do |post|
+    Post.populate 6 do |post|
       post.title = Populator.words(4..10).titleize
       post.body = Populator.sentences(2..15)
       post.published_at = 2.years.ago..Time.now
@@ -33,25 +33,36 @@ namespace :db do
       post.sidebar_title = ['links relacionados', 'informacion', nil]
       post.sidebar_body = "* [#{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n* #{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n* #{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n"
 
+      post.draft = false
+      post.history = [true, false]
+      post.section = [:ag, :bt]
+
     end
 
 
-    Book.populate 10..20 do |book|
+    Book.populate 3 do |book|
       book.title = Populator.words(2..6).titleize
       book.specification = "#{Faker::Company.name}\n\n#{Faker::Address.street_address}\n\n#{rand(1000)} paginas"
       book.body = Populator.sentences(2..15)
       book.points_of_sale = Populator.sentences(2..3)
       book.buy_online = Populator.sentences(2..3)
-      book.section = [:oe, :te]
+      book.section = :oe
+    end
+
+    Book.populate 3 do |book|
+      book.title = Populator.words(2..6).titleize
+      book.specification = "#{Faker::Company.name}\n\n#{Faker::Address.street_address}\n\n#{rand(1000)} paginas"
+      book.body = Populator.sentences(2..15)
+      book.section = :te
     end
 
 
-    Category.populate 40..60 do |cat|
-      cat.name = Populator.words(4..10).titleize
+    Category.populate 15 do |cat|
+      cat.name = Populator.words(2..7).titleize
       cat.locale = [:es, :en, :cs, :it, :fr]
     end
 
-    Course.populate 60..100 do |course|
+    Course.populate 6 do |course|
       course.title = Populator.words(4..10).titleize
       course.category_id = Category.all.collect(&:id).sort_by{rand}.first
       course.body = Populator.sentences(2..15)

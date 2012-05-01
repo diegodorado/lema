@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430184906) do
+ActiveRecord::Schema.define(:version => 20120501233139) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(:version => 20120430184906) do
     t.string   "video"
     t.string   "sidebar_title"
     t.text     "sidebar_body"
+    t.string   "section"
+    t.boolean  "draft"
+    t.boolean  "history"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

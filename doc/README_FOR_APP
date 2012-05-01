@@ -1,37 +1,16 @@
-GENERAL
-Guillermo Lema web 00_visualizador_de_imagenes-cs3.ai
-Estilos para el visualizador de imágenes
-
 TRAYECTORIA
 Guillermo Lema web 01_trayectoria_A-cs3.ai
 Entrada a la sección con 10 entradas por página. 
 La entrada superior (de fecha más reciente) presenta desplegados 
 los menues colapsables de contenidos.
+
+
 Acá habría que ver lo que te comenté de la navegación por año.
  fijate como lo puse. Imaginé que al clickear en la flecha para ir más
   atrás en los años, estos desplacen a los siguientes 5 que haya registro.
    Si es muy chino o no es posible vemos cómo resolverlo.
-Guillermo Lema web 01_trayectoria_B-cs3.ai
-Muestra de funcionamiento del perfil sin desplegar (ver capa NOTAS en el archivo)
 
 
-AGENDA
-Guillermo Lema web 03_agenda-cs3.ai
-Entrada a la sección con 10 entradas por página.
-
-BITACORA
-Guillermo Lema web 04_bitacora-cs3.ai
-Entrada a la sección con 10 entradas por página.
-
-
-CAPACITACION
-Guillermo Lema web 06_capacitaciones-cs3.ai
-ya la charlamos bastante, por las dudas; 
-al entrar muestra todos los cursos ordenados alfabeticamente por la categoría. 
-Al entrar todos los botones de categorías están cerrados, 
-se despliegan al clickear en la palabra categoría o en la flecha.
-Al clickear en una bandera muestra todos los cursos en ese idioma, 
-al clickear una categoría se muestran todos los cursos de esa categoría en ese idioma. 
 
 
 
@@ -39,14 +18,5 @@ Aparte te estoy debiendo el comportamiento de las animaciones de navegación.
 
 
 Por útlimo pidió que tuviera estadísticas, se le puede instalar google analytics?
-
-
-
-modelos:
-
-posts
-books
-courses
- todos tienen many pdfs, y many photos
 
 
