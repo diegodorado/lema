@@ -8,8 +8,8 @@ set :application,  "guillermolema.com.ar"
 server "guillermolema.com.ar", :app, :web, :db, :primary => true
 
 
-set :user, "guillermolema"
-set :deploy_to, "/home/guillermolema/guillermolema.com.ar"
+set :user, "lema"
+set :deploy_to, "/home/lema"
 set :deploy_via, :remote_cache
 set :scm_verbose, true
 
