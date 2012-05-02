@@ -41,7 +41,8 @@ class ApplicationController < ActionController::Base
           label "Titulo"
           group :default
         end
-        field :published_at do
+        field :published_at, :date do
+          date_format :simple
           label "Publicado el"
           group :default
         end
