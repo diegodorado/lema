@@ -5,19 +5,16 @@ gem 'rails', '3.1.1'
 gem 'thin'
 
 gem "haml",'3.1.4'
-gem 'fastercsv' # Only required on Ruby 1.8 and below
+#gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin' #, :git => 'git://github.com/sferik/rails_admin.git'
 gem "devise"
 gem 'jquery-rails'
 
 gem 'kaminari'
-gem 'paperclip' , '2.7.0' #this is for ruby 1.8.7
-
+gem 'paperclip' # , '2.7.0' #this is for ruby 1.8.7
 
 gem "redcarpet",'2.1.0'
-gem 'aws-s3', '0.6.2'
-gem 'aws-sdk', '1.3.3'
-gem "friendly_id", "~> 4.0.0.beta8"
+#gem "friendly_id", "~> 4.0.0.beta8"
 
 
 group :assets do
@@ -30,9 +27,10 @@ end
 
 group :production do
   #gem 'pg'
-  gem 'mysql2'
+  #gem 'mysql2'
   #gem 'execjs'
   #gem 'therubyracer'
+  gem 'sqlite3'
 end
 
 group :development do

@@ -6,10 +6,7 @@ class Book < ActiveRecord::Base
 
 
   has_attached_file :cover, {
-      :styles => { :medium => "300x430#" },
-      :storage => :s3, 
-      :s3_credentials => "#{Rails.root}/config/s3.yml",
-      :path => "/book_covers/:style/:id/:filename" 
+      :styles => { :medium => "222x344#", :thumb => "100x100#" }
     }
 
 

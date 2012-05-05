@@ -1,21 +1,12 @@
 development:
-  bucket: cooph_lema
-  access_key_id: AKIAI2MU7NNEQ4IBHLOQ
-  secret_access_key: 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
 test:
-  bucket: cooph_lema
-  access_key_id: AKIAI2MU7NNEQ4IBHLOQ
-  secret_access_key: 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
 production:
-  bucket: cooph_lema
-  access_key_id: AKIAI2MU7NNEQ4IBHLOQ
-  secret_access_key: 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
+  access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
+  bucket: <%= ENV['S3_BUCKET_NAME'] %>
 
 
 
-#access_key_id: <%= ENV['S3_ACCESS_KEY'] %>
-#secret_access_key: <%= ENV['S3_SECRET_KEY'] %>
-#bucket: <%= ENV['S3_BUCKET_NAME'] %>
 #And add this ENV VARIABLE in your heroku app
 
 #heroku config:add S3_ACCESS_KEY='your_key'

@@ -1,3 +1,7 @@
+
+
+
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
@@ -17,9 +21,14 @@ class ApplicationController < ActionController::Base
           RailsAdmin::Config.reset_model( m )
       end
 
-
+    RailsAdmin::Config::Actions.reset
 
     RailsAdmin.config do |config|
+
+
+
+
+
 
       config.current_user_method { current_user } # auto-generated
       config.main_app_name = Proc.new { |controller| [ "Guillermo Lema", "Admin - #{controller.params[:action].try(:titleize)}" ] }
@@ -29,16 +38,20 @@ class ApplicationController < ActionController::Base
 
 
       config.model Post do
+      
+
+      
         label "Entrada" 
         label_plural "Entradas"
+        #navigation_label 'Entradas, Cursos y Libros'
+        weight 0
       
-        field :section, :enum do
-          label 'Seccion'
-          group :default
-        end
-
         field :title do
           label "Titulo"
+          group :default
+        end
+        field :section, :enum do
+          label 'Seccion'
           group :default
         end
         field :published_at, :date do
@@ -49,11 +62,6 @@ class ApplicationController < ActionController::Base
         field :draft do
           label "Borrador"
           help "No publicar esta entrada."          
-          group :default
-        end
-        field :history do
-          label "Historial"
-          help "Mostrar  en Trayectoria pasados 30 dias de su publicacion."          
           group :default
         end
         field :body do
@@ -103,39 +111,27 @@ class ApplicationController < ActionController::Base
           exclude_fields_if do
             true
           end
-          include_fields :title, :draft, :history, :section, :published_at
+          include_fields :title, :draft, :section, :published_at
           sort_by :published_at
         end
 
-          exclude_fields_if do
-            true
-          end
-          include_fields :title, :section
-
-        
         edit do
           include_all_fields
-          include_fields :photos
-          include_fields :pdfs          
         end
-        weight -1
 
-
-        
       end
 
 
       config.model Course do
+        weight 1
         label "Curso" 
         label_plural "Cursos"
 
-
-
-        field :category do
-          label "Categoria"
-        end
         field :title do
           label "Titulo"
+        end
+        field :category do
+          label "Categoria"
         end
         field :body do
           label "Contenido"
@@ -193,23 +189,21 @@ class ApplicationController < ActionController::Base
       end
 
       config.model Book do
+        weight 2
+      
         label "Libro" 
         label_plural "Libros"
         
-        #field :obra_escrita do
-        #  pretty_value do
-        #    bindings[:object].obra_escrita? ? 'Si.' : 'No.'
-        #  end
-        #end
+        field :title do
+          label "Titulo"
+          group :default
+        end
+
         field :section, :enum do
           label 'Seccion'
           group :default
         end
 
-        field :title do
-          label "Titulo"
-          group :default
-        end
 
         field :specification do
           label "Especificaciones"
@@ -245,25 +239,17 @@ class ApplicationController < ActionController::Base
         end
 
         
-        group :sidebar do
-          label "Extra"
-          help "Datos para Obra escrita."
-          active false
-        end
-
-
         group :media do
           label "Media"
           help "Tapa del libro, Imagenes y PDF."
           active false
         end
 
-        edit do
-          include_all_fields
-          include_fields :photos
-          include_fields :pdfs
+        group :sidebar do
+          label "Extra"
+          help "Datos para Obra escrita."
+          active false
         end
-
 
         list do
           exclude_fields_if do
@@ -273,32 +259,60 @@ class ApplicationController < ActionController::Base
           sort_by :title
         end
 
-
-
-
+        edit do
+          include_all_fields
+        end
 
 
       end
 
 
       config.model Photo do
-        #field :title do
-        #  label "Titulo"
-        #end
+        weight 4
+      
+        label "Foto" 
+        label_plural "Fotos"
         field :image do
           label "Imagen"
+        end
+        field :photoable do
+          label "Registro Relacionado"
+          #pretty_value do
+          #  bindings[:object].photoable.title if bindings[:object].photoable
+          #end
+        end
+        list do
+          include_fields :image, :photoable
+        end
+        edit do
+          exclude_fields_if do
+            true
+          end        
+          include_fields :image
         end
       end
 
       config.model Pdf do
+        weight 3
+      
         field :title do
           label "Titulo"
         end
         field :file do
           label "Archivo"
         end
+        field :pdfable do
+          label "Registro Relacionado"
+        end
+
+        list do
+          include_fields :title, :pdfable
+        end
 
         edit do
+          exclude_fields_if do
+            true
+          end        
           field :title
           field :file
         end
@@ -307,7 +321,9 @@ class ApplicationController < ActionController::Base
       config.model Category do
         label "Categoria" 
         label_plural "Categorias"
-      
+        
+        parent Course
+        
         field :locale, :enum do
           label "Idioma"
         end

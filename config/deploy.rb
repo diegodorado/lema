@@ -1,11 +1,15 @@
+ssh_options[:auth_methods] = "publickey"
+ssh_options[:keys] = ["~/.ssh/common_rsa"]
+
 default_run_options[:pty] = true
 
 set :repository,  "git://github.com/diegodorado/lema.git"
 set :scm, :git
 
-set :application,  "guillermolema.com.ar"
+#set :application,  "guillermolema.com.ar"
+set :application,  "cooph.com.ar"
 
-server "guillermolema.com.ar", :app, :web, :db, :primary => true
+server application , :app, :web, :db, :primary => true
 
 
 set :user, "lema"
@@ -96,4 +100,23 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  task :list do
+    run "ls -la"
+  end
 end
+
+
+
+
+namespace :deploy do
+  namespace :db do
+    desc <<-DESC
+      push db
+    DESC
+    task :push do
+      status = system("rsync -avze 'ssh' db/development.sqlite3 #{user}@#{application}:#{latest_release}/db/production.sqlite3")
+      puts status ? "OK" : "FAILED"
+    end
+  end
+end
+

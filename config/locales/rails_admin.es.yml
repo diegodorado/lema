@@ -92,6 +92,10 @@ es:
         title: "Historial para %{model_label} '%{object_label}'"
         menu: "Historial"
         breadcrumb: "Historial"
+      publish:
+        title: "Publicar Post para %{model_label} '%{object_label}'"
+        menu: "Publicar Post"
+        breadcrumb: "Publicar Post"
     form:
       cancel: "Cancelar"
       basic_info: "Información básica"
