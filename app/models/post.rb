@@ -14,5 +14,4 @@ class Post < ActiveRecord::Base
     [['Agenda', :ag],['Agenda y Trayectoria', :at],['Bitacora', :bt]]
   end
 
-  
 end

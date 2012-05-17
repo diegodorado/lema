@@ -1,4 +1,4 @@
-ssh_options[:auth_methods] = "publickey"
+ssh_options[:auth_methods] = ["publickey"]
 ssh_options[:keys] = ["~/.ssh/common_rsa"]
 
 default_run_options[:pty] = true
@@ -26,6 +26,7 @@ _cset :assets_role, [:web]
 _cset :normalize_asset_timestamps, false
 
 before 'deploy:finalize_update', 'deploy:assets:symlink'
+before 'deploy:finalize_update', 'deploy:db:symlink'
 #after 'deploy:update_code', 'deploy:assets:precompile'
 
 namespace :deploy do
@@ -110,11 +111,14 @@ end
 
 namespace :deploy do
   namespace :db do
-    desc <<-DESC
-      push db
-    DESC
+    task :symlink, :roles => assets_role, :except => { :no_release => true } do
+      run <<-CMD
+        ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/production.sqlite3
+      CMD
+    end
+
     task :push do
-      status = system("rsync -avze 'ssh' db/development.sqlite3 #{user}@#{application}:#{latest_release}/db/production.sqlite3")
+      status = system("scp db/development.sqlite3 #{user}@#{application}:#{shared_path}/db/production.sqlite3")
       puts status ? "OK" : "FAILED"
     end
   end

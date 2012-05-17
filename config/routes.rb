@@ -16,6 +16,5 @@ Lema::Application.routes.draw do
   match '/capacitacion/category/:category_id' => 'capacitacion#category', :as => :capacitacion_category
   match '/capacitacion/course/:id' => 'capacitacion#show', :as => :capacitacion_show
 
-  match '/:model_name/:id/publish' => "rails_admin/main#publish", :as => :publish_post
 
 end

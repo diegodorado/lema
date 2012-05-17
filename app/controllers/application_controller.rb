@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
           RailsAdmin::Config.reset_model( m )
       end
 
-    RailsAdmin::Config::Actions.reset
+
 
     RailsAdmin.config do |config|
 

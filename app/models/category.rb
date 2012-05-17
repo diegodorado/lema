@@ -29,9 +29,12 @@ class Category < ActiveRecord::Base
     Category.locales.map{ |l| [(I18n.t 'language_name', :locale => l),l]}
   end
 
+  def locale_name
+    "#{I18n.t 'language_name', :locale => self.locale}"
+  end
 
   def full_name
-    "#{I18n.t 'language_name', :locale => self.locale} - #{self.name}"
+    "#{self.locale_name} - #{self.name}"
   end
   
 end
