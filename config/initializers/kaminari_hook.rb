@@ -2,10 +2,9 @@ module Kaminari
   module Helpers
     class Paginator
     
-      #def years
-      #  @options[:years]
-      #  @options[:current_year]
-      #end
+      def with_years?
+        @options[:years] and @options[:current_year]
+      end
 
       def render(&block)
         instance_eval(&block) # if @options[:num_pages] > 1

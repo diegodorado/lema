@@ -13,17 +13,14 @@
         .span2.prev_page
           = prev_page_tag unless current_page.first?
         .span5.center
-          -if years
+          -if with_years?
             .years
-
               #years_carousel.carousel
-                / Carousel items
                 .carousel-inner
                   -years.in_groups_of(8) do |years_group|
                     .item{:class=>('active' if years_group.include? current_year)}
                       -years_group.each do |year|
                         =@template.link_to_unless year.nil?, year, @template.trayectoria_path(:year=>year), :class => ('current' if year == current_year)
-                / Carousel nav
                 %a.carousel-control.left{"data-slide" => "prev", :href => "#years_carousel"} ‹
                 %a.carousel-control.right{"data-slide" => "next", :href => "#years_carousel"} ›        
           .pages
