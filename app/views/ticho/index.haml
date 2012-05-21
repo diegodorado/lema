@@ -12,10 +12,4 @@
     %a(href="#")
     
 .container
-  %ul.book-list
-    -@books.each do |b|
-      %li.book
-        %h3
-          =link_to truncate(b.title,:length => 50), ticho_show_path(b.id), :class=>'book-link'
-          -unless b.pdfs.empty?
-            =link_to 'pdf', b.pdfs.first.file.url, :class=>'pdf-link'
+  = render :partial => 'shared/book_list',:locals => { :books => @books}

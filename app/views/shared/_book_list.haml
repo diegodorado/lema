@@ -1,0 +1,29 @@
+%ul.book-list
+  -books.each do |book|
+    %li.book
+      %h3
+        =link_to truncate(book.title,:length => 50), book_path(book), :class=>'book-link'
+        -if book.ticho? and not book.pdfs.empty?
+          =link_to 'pdf', book.pdfs.first.file.url, :class=>'pdf-link'
+      .collapse
+        .row
+          .span3
+            .image-wrapper
+              .image
+                =image_tag book.cover.url(:medium)
+          .span4.content
+            .specification
+              :markdown
+                #{book.specification}
+            .body
+              :markdown
+                #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
+            .links
+              =link_to 'seguir leyendo', book_path(book), :class => 'arrow-link'
+              =link_to 'hojear', book_path(book), :class => 'arrow-link'
+          -if book.obra?
+            .span2.sidebar
+              =link_to 'puntos de venta', book_path(book), :class => 'arrow-link'
+              =link_to 'comprar online', book_path(book), :class => 'arrow-link'
+            
+

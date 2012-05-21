@@ -1,0 +1,229 @@
+@import "themize"
+$dark_blue: #0000ff
+    
+
+body.home
+  +themize_layout($dark_blue,home,'dark_blue', $dark_blue)
+  #content
+    margin-top: 90px    
+
+.scrollblock
+  position: relative
+  width: 100%
+
+#console
+  position: fixed
+  left: 15px
+  width: 500px
+  font-size: 14px
+  font-style: italic
+  background-color: #69697A
+  text-align: left
+  padding: 3px 10px
+  border-radius: 0 0 10px 10px
+  z-index: 9999
+  opacity: .8
+
+
+#space
+  background: #000 url('home/space/bg.png') center center
+  overflow: hidden
+  .scrollblock
+    height: 1929px
+    img
+      position: absolute
+
+
+#space-s1
+  top: 902px
+  left: -155px
+
+#space-o1, #space-o1-s
+  left: 30px
+  top: 604px
+
+#space-o2, #space-o2-s
+  right: 42px
+  top: 394px  
+
+#space-o3, #space-o3-s
+  left: 215px
+  top: 571px
+
+#space-t1, #space-t1-s
+  right: 334px
+  top: 121px
+
+#space-t2-s
+  right: -78px
+  top: 1313px
+
+
+#space-tb1,#space-tb2,#space-tb3
+  position: absolute
+  font-family: BuenardRegular
+
+#space-tb1
+  left: 112px
+  top: 299px
+  h3
+    border-bottom: 4px solid #fff
+    color: #fff
+    width: 537px
+    line-height: 45px
+    margin: 0
+    font-size: 29px
+    text-transform: uppercase
+    letter-spacing: 4px
+  h4
+    color: #fff
+    margin-top: 20px
+    font-size: 30px    
+    margin-left: 110px
+    &.l1
+      margin-top: 25px
+      margin-left: 193px
+
+#space-tb2
+  right: 76px
+  top: 703px
+  width: 288px
+  border: 1px solid #fff
+  background: #000
+  p
+    color: #fff
+    line-height: 17px
+    margin: 26px 33px
+    font-size: 15px
+    letter-spacing: -1px
+    text-align: justify
+
+#space-tb3
+  left: 222px
+  top: 1342px
+  h3
+    color: #fff
+    line-height: 45px
+    margin: 0
+    font-size: 52px
+    letter-spacing: 2px
+  p
+    color: #fff
+    margin-top: 64px
+    font-size: 23px
+    margin-left: 331px
+    font-family: BuenardRegular
+
+
+#eye
+  background: #000
+  overflow: hidden
+  .scrollblock
+    height: 1320px
+    img
+      position: absolute
+
+#eye-eye
+  left: 211px
+  top: 325px
+    
+#eye-tb1
+  color: #fff
+  position: absolute
+  left: 224px
+  top: 473px
+  width: 560px
+  h3
+    font-size: 55px
+    font-family: BuenardRegular
+    line-height: 70px
+  h4
+    margin-top: 60px
+    font-size: 23px
+    font-family: BuenardRegular
+    line-height: 23px
+    &.last
+      margin-top: 39px
+  h5
+    font-size: 36px
+    font-family: LektonItalic
+    line-height: 48px
+    letter-spacing: 1px
+    margin-top: 51px
+    &.last
+      margin-top: 38px
+
+
+#building
+  background: #000
+  overflow: hidden
+  color: #fff
+  .scrollblock
+    height: 1320px
+    img
+      position: absolute
+
+
+#building-tb1, #building-tb2, #building-tb3, #building-tb4
+  position: absolute
+  left: 224px
+
+@for $i from 1 through 7
+  #building-b#{$i} 
+    background: url('home/building/b#{$i}.png') top center repeat-y
+    width: image-width('home/building/b#{$i}.png')
+    position: absolute
+    height: 1000px
+
+#building-b1
+  left: 0px
+  top: 980px
+#building-b2
+  left: 679px
+  top: 988px
+#building-b3
+  left: 224px
+  top: 224px
+#building-b4
+  left: 224px
+  top: 224px
+#building-b5
+  left: 224px
+  top: 224px
+#building-b6
+  left: 224px
+  top: 224px
+#building-b7
+  left: 632px
+  top: 1100px
+
+#building-tb1
+  top: 147px
+  h3
+    font-size: 55px
+    line-height: 70px
+    font-family: BuenardRegular
+#building-tb2
+  top: 692px
+  h3
+    font-size: 55px
+    line-height: 55px
+    font-family: BuenardRegular
+  h5
+    font-size: 23px
+    font-family: BuenardRegular
+    line-height: 30px
+    margin-top: 28px
+#building-tb3
+  top: 972px
+  h3
+    line-height: 56px
+    font-size: 56px
+    font-family: LektonRegular
+  h4
+    font-size: 37px
+    font-family: LektonRegular
+    line-height: 43px
+    margin-bottom: 56px
+    width: 490px    
+

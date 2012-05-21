@@ -7,6 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-collapse
+//= require bootstrap-transition
+
+//= require bootstrap-carousel
 //= require bootstrap-tab
 //= require lightbox
 //= require jquery.scrollorama

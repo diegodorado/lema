@@ -6,10 +6,10 @@ namespace :db do
 
     [Post, Book, Category, Course].each(&:delete_all)
 
-    Post.populate 6 do |post|
+    Post.populate 1200 do |post|
       post.title = Populator.words(4..10).titleize
       post.body = Populator.sentences(2..15)
-      post.published_at = 2.years.ago..Time.now
+      post.published_at = 10.years.ago..Time.now
       post.video = [
         '<iframe width="100%" height="315" src="http://player.vimeo.com/video/5216980?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>',
         '<iframe width="100%" height="315" src="http://player.vimeo.com/video/18684332?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>',
@@ -34,13 +34,12 @@ namespace :db do
       post.sidebar_body = "* [#{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n* #{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n* #{Faker::Internet.domain_word}](http://#{Faker::Internet.domain_name})\n"
 
       post.draft = false
-      post.history = [true, false]
-      post.section = [:ag, :bt]
+      post.section = [:ag, :bt, :at]
 
     end
 
 
-    Book.populate 3 do |book|
+    Book.populate 10 do |book|
       book.title = Populator.words(2..6).titleize
       book.specification = "#{Faker::Company.name}\n\n#{Faker::Address.street_address}\n\n#{rand(1000)} paginas"
       book.body = Populator.sentences(2..15)
@@ -49,7 +48,7 @@ namespace :db do
       book.section = :oe
     end
 
-    Book.populate 3 do |book|
+    Book.populate 10 do |book|
       book.title = Populator.words(2..6).titleize
       book.specification = "#{Faker::Company.name}\n\n#{Faker::Address.street_address}\n\n#{rand(1000)} paginas"
       book.body = Populator.sentences(2..15)
@@ -57,12 +56,12 @@ namespace :db do
     end
 
 
-    Category.populate 15 do |cat|
+    Category.populate 50 do |cat|
       cat.name = Populator.words(2..7).titleize
       cat.locale = [:es, :en, :cs, :it, :fr]
     end
 
-    Course.populate 6 do |course|
+    Course.populate 70 do |course|
       course.title = Populator.words(4..10).titleize
       course.category_id = Category.all.collect(&:id).sort_by{rand}.first
       course.body = Populator.sentences(2..15)

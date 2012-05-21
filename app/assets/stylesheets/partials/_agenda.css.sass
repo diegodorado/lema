@@ -1,4 +1,8 @@
+@import "themize"
+
+$purple: #A2299C
+
 body.agenda
-  #content
-    background: url('white-stars.png'), url('grey-stars.png')
-    background-color: #EDECED
+  +themize_layout($purple,agenda,'purple', $purple)
+  +themize($purple,agenda,'purple')
+

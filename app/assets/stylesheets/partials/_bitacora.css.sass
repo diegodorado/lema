@@ -1,0 +1,22 @@
+@import "themize"
+$yellow: #ff0
+
+body.bitacora
+  +themize_layout($yellow,bitacora,'yellow', #EDECED)
+  +themize($yellow,bitacora,'yellow')
+
+  .highlight
+    border-bottom: 3px solid #EDECED
+    .wrapper
+      background: $yellow
+      h2 
+        color: #666
+      p
+        color: #000
+
+  article.post
+    border-color: $yellow
+    h2
+      color: $yellow
+    .post-body
+      color: #ccc

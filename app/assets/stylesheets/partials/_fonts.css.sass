@@ -1,4 +1,5 @@
 @import compass/css3
+@import "compass/css3/text-shadow"
 
 =fontsquirrel($name, $file)
   +font-face($name, font-files($file+".woff",$file+".ttf",$file+".svg"),$file+".eot")
@@ -8,3 +9,13 @@
 +fontsquirrel("LektonBold", "lekton-bold-webfont")
 +fontsquirrel("LektonItalic", "lekton-italic-webfont")
 +fontsquirrel("LektonRegular", "lekton-regular-webfont")
+
+//text shadow classes
+.white-shadow
+  +text-shadow(#fff 0px 0px 1px)
+  
+.light-shadow
+  +text-shadow(#aaa 0px 0px 1px)
+  
+.dark-shadow  
+  +text-shadow(#000 0px 0px 1px)

@@ -1,0 +1,7 @@
+-unless photos.empty?
+  %ul.photo-list
+    - photos.each do |photo|
+      %li
+        %a{:href=>"#{photo.image.url}", :rel=>"lightbox[book]"}
+          %img(src="#{photo.image.url(:thumb)}")
+

@@ -32,7 +32,8 @@ footer
     border-bottom: 1px dashed #BEBEBE
   .footer-contact
     text-transform: uppercase
-    letter-spacing: 1px    
+    letter-spacing: 1px
+    @extend .light-shadow
     h5
       color: #fff
       font-family: LektonRegular
@@ -42,11 +43,13 @@ footer
       font-family: LektonBold
       font-size: 12px
   .footer-nav    
-    font-family: LektonBold
+    font-family: LektonRegular
     font-size: 12px
     line-height: 21px
     text-transform: uppercase
-    letter-spacing: 1px    
+    //'obra escrita' exceeds one line
+    //letter-spacing: 1px  
+    @extend .light-shadow
     a
       height: 21px
   .credits
@@ -55,6 +58,7 @@ footer
     font-family: LektonRegular
     font-size: 10px
     letter-spacing: 3px
+    @extend .dark-shadow
     .design
       width: 88px
       height: 30px
@@ -63,14 +67,17 @@ footer
     font-family: LektonRegular
     font-size: 11px
     text-transform: uppercase
-    letter-spacing: 1px    
+    letter-spacing: 1px
+    @extend .white-shadow 
   .links
     ul
       font-family: LektonItalic
+      @extend .dark-shadow
       font-size: 12px
   .blogs
     ul
       font-family: LektonItalic
+      @extend .dark-shadow
       font-size: 10px
       li a
         +social-sprite(blogger)

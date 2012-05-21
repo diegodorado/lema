@@ -1,0 +1,8 @@
+-unless pdfs.empty?
+  %ul.pdf-list
+    - pdfs.each do |pdf|
+      %li
+        %a(href="#{pdf.file.url}") 
+          %span.title #{pdf.title}
+          %span.size #{number_to_human_size(pdf.file.size)}
+

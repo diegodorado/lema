@@ -1,0 +1,460 @@
+
+
+.collapsible.sidebar
+  .collapse
+    color: #999
+    ul
+      margin: 8px 0 0
+      li
+        border-bottom: 1px solid #666
+        margin-bottom: 17px
+    a, p
+      font-family: LektonRegular
+      font-size: 13px
+    a
+      display: block
+      margin-bottom: 14px
+      color: #666
+    p
+      margin-bottom: 17px
+      color: #999
+
+.photo-list
+  list-style: none
+  margin: 6px 0 -10px -10px
+  overflow: hidden
+  li
+    float: left
+    margin: 0 0 10px 10px 
+    a
+      display: block
+      img
+        display: block
+
+
+.pdf-list
+  list-style: none
+  margin: 0 0 -6px 0
+  li a
+    margin-bottom: 6px
+    display: block
+    padding-left: 35px
+    position: relative    
+    font-family: LektonRegular
+    font-size: 13px
+    .title
+      background: #fff
+      color: #4D4D4D
+      height: 32px
+      line-height: 32px
+      padding-left: 12px
+      display: block
+    .size
+      color: #999999
+      position: absolute
+      bottom: 5px
+      right: 5px
+
+.arrow-link
+  display: block
+  font-family: LektonRegular
+  font-size: 12px
+  text-transform: uppercase
+  letter-spacing: 1px  
+  height: 20px
+  line-height: 20px
+  margin-bottom: 6px
+  padding-left: 28px
+  color: #666 !important
+  &:before
+    content: '\00B7'  //prepend middle dot
+
+
+//inverted style
+.arrow-link.inverted
+  height: 18px
+  line-height: 18px
+  &:before
+    content: ''  //no middle dot
+      
+.collapsible      
+  &:last-child .collapse, &.last .collapse
+    margin-bottom: 6px
+  &.open
+    .collapse
+      height: auto
+      margin-bottom: 12px
+      iframe
+        display: block
+    &:last-child .collapse, &.last .collapse
+      margin-bottom: 12px
+
+
+.pagination
+  @extend .light-shadow
+  background: #fff
+  font-family: LektonRegular
+  font-size: 16px
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin: 0
+  //years only applies to trayectoria
+  .years
+    border-bottom: 1px dashed #BEBEBE
+    margin-top: 31px
+    height: 34px
+    margin-bottom: 18px  
+  a, span
+    color: #4D4D4D
+    float: none
+    padding: 0
+    border: 0
+    display: inline-block //todo: fix for ie7
+    white-space: nowrap
+    &:hover
+      background: none
+  .prev_page
+    text-align: left
+    a
+      padding-left: 40px
+  .center
+    text-align: center
+  .next_page
+    text-align: right
+    a
+      padding-right: 40px
+
+
+
+  
+.highlight
+  .wrapper
+    height: 0
+    overflow: hidden
+    h2
+      font-size: 21px
+      @extend .white-shadow
+    h3
+      font-size: 16px
+    a
+      font-family: BuenardRegular
+      font-size: 13px
+    h2,h3
+      font-family: LektonRegular
+      line-height: 21px
+      text-transform: uppercase
+      letter-spacing: 1px  
+      margin-bottom: 23px
+    p
+      font-family: BuenardRegular
+      font-size: 18px
+      line-height: 26px
+      margin: 0 0 32px
+  .handler
+    height: 17px
+    background: #3C3C3B
+    text-align: center
+    cursor: pointer
+    position: relative
+    a
+      display: inline-block
+      margin-top: -4px
+      
+  &.open 
+    .wrapper
+      height: auto
+      padding: 80px 0 0
+
+
+
+article
+  border-bottom: 12px solid #fff
+  &:last-child, &.last
+    //considering margin of media to reach 85px
+    margin-bottom: 73px
+    border: none
+
+article.post
+  margin-top: 42px
+  h2, time
+    @extend .light-shadow
+    font-family: LektonRegular
+    letter-spacing: 1px  
+    line-height: 24px
+  time
+    font-size: 20px
+  h2
+    color: #4D4D4D
+    font-size: 21px
+    text-transform: uppercase
+    margin-bottom: 24px
+    a, a:visited, a:active
+      color: inherit
+  .post-body *
+    font-family: BuenardRegular
+    font-size: 18px
+    margin: 0 0 26px
+    color: #777
+    line-height: 22px
+
+
+//book related
+.book-title
+  overflow: hidden
+  .span3
+    margin-top: 8px
+    text-align: center
+  h2
+    margin-top: 17px
+    color: #fff
+    font-size: 32px
+    text-transform: uppercase
+    line-height: 40px
+  hr
+    margin: 5px 0 17px 0
+    border: 1px solid #fff
+    width: 2000px
+    height: 0
+
+
+
+.book
+  //photo list container is smaller for books
+  .photo-list
+    margin-left: -9px
+    li
+      margin-left: 9px
+  //separate from photos since there's one common arrow-link
+  //for both photos and pdfs
+  .pdf-list
+    margin-top: 12px
+
+  .image-wrapper
+    padding: 10px 9px
+    margin-top: 12px
+    margin-bottom: 12px
+    text-align: center
+    .image
+      border: 1px solid #fff
+      border-width: 1px 2px
+      padding: 24px 23px
+      img
+        border: 5px solid #fff
+  .content
+    padding: 50px 0
+    font-size: 18px
+    font-family: BuenardRegular
+    line-height: 22px
+    p
+      font: inherit
+    .specification
+      margin-bottom: 50px
+    .body
+      color: #666
+      margin-bottom: 44px
+      h4
+        font-family: LektonRegular
+        font-size: 15px
+        text-transform: uppercase
+        letter-spacing: 1px  
+        line-height: 18px
+        margin: 50px 0
+    .links          
+      .arrow-link
+        color: #1D1D1B
+  .sidebar
+    padding: 50px 0
+
+
+.book-list
+  margin: 85px 0
+  list-style: none
+  background: url('stars.jpg')
+  li.book
+    .collapse
+      background: #F7F7EB
+    &.open .collapse
+      height: auto
+
+    h3
+      height: 100px
+      position: relative
+      font-size: 32px
+      padding: 0
+      margin: 0
+      text-transform: uppercase
+      white-space: nowrap
+      border-bottom: 6px solid #F7F7EB
+      .book-link
+        color: #fff
+        line-height: 100px
+        display: block
+        padding-left: 62px
+
+
+
+
+body.show
+  .book
+    background: #fff
+    padding-bottom: 85px
+   
+
+
+
+.collapsible.categories
+  .locale-title
+    clear: both
+    overflow: hidden
+    background: rgba(#3FA9C7, 0.2)
+    height: 48px
+    line-height: 48px
+    text-transform: uppercase
+    letter-spacing: 1px  
+    margin-bottom: -1px //to "eat" border
+    
+    .left, .right
+      color: #999
+      img
+        opacity: 0.2
+    .left
+      float: left
+      padding-left: 8px
+      font-size: 16px
+    .right
+      float: right
+      padding-right: 37px
+      background: url('arrows/blue-link.png') 107px center no-repeat
+      width: 100px
+      text-align: right
+
+  .category-list
+    margin-top: 12px
+    font-size: 16px
+    li
+      border-bottom: 1px solid #ccc
+      line-height: 30px
+      padding: 0 8px
+      a
+        color: #999
+        display: block
+      &:last-child
+        border: 0
+      &.active
+        background: #fff  
+
+  &.active .locale-title, &.open .locale-title, .locale-title:hover
+    background: #fff
+    border: 1px solid #3FA9C7
+    border-width: 1px 0
+    .left, .right
+      img
+        opacity: 1
+
+
+  &.active .locale-title .left, .locale-title .left:hover
+    color: #3FA9C7
+
+  &.open .locale-title .right, .locale-title .right:hover
+    background-image: url('arrows/blue-link-open.png')
+
+  &.active .category-list li a
+    color: #3FA9C7
+  
+
+
+    
+nav.locales
+  font-family: LektonRegular
+  font-size: 15px
+  line-height: 21px
+  margin-bottom: 85px //in case there are few courses
+  h4 
+    line-height: 56px
+    text-transform: uppercase
+    letter-spacing: 1px  
+    .all-courses
+      font-size: 16px
+      display: block
+      line-height: 45px
+      background: #000
+      color: #fff
+      border: 2px solid #3FA9C7
+      padding-left: 6px
+
+.courses-title
+  background: #3FA9C7
+  margin-bottom: 85px
+  img
+    margin: 26px 0 0 13px
+  h2
+    margin-top: 44px
+    color: #fff
+    font-family: LektonRegular
+    font-size: 21px
+    line-height: 21px
+    text-transform: uppercase
+    letter-spacing: 1px  
+  hr
+    margin: 14px 0 8px 0
+    border: 1px solid #fff
+    height: 0
+    
+article.course
+  margin-bottom: 42px
+  .span1
+    text-align: right
+  h3.category, h2.title, .course-body,  .pdf-list
+    margin-bottom: 26px
+  h3.category, h2.title
+    line-height: 25px
+    font-family: LektonBold
+    font-size: 21px
+    margin-bottom: 26px
+    letter-spacing: 1px  
+    
+  h3.category a
+    color: #3FA9C7
+  h2.title a
+    color: #4D4D4D
+    text-transform: uppercase
+  .course-body * //markdown
+    line-height: 22px
+    font-family: BuenardRegular
+    font-size: 18px
+    color: #666
+  .course-tabs
+    list-style: none
+    margin: 0 0 12px
+    padding: 0
+    li 
+      margin-bottom: 6px
+      a
+        font-size: 15px
+        color: #3FA9C7
+      
+    li.active 
+      a
+        display: block
+        background: #3FA9C7
+        height: 20px
+        line-height: 20px
+        color: #fff
+        text-transform: uppercase
+        font-family: LektonRegular
+        font-size: 12px
+        //letter-spacing: 1px  
+        padding-right: 8px
+        &:before
+          //content: '\00B7'  //prepend middle dot
+  .tab-content .tab-pane *
+    line-height: 22px
+    color: #3FA9C7
+    font-family: LektonRegular
+    font-size: 13px
+  
+
+
+
+
+

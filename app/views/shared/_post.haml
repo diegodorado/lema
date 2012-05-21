@@ -9,39 +9,30 @@
         :markdown
           #{post.body}
       -unless post.photos.empty?
-        .collapsible.photos
+        .collapsible.photos{:class=> ('open' if open)}
           %a.arrow-link(href="#") Fotos
           .collapse
-            %ul.photo-list
-              - post.photos.each do |photo|
-                %li
-                  %a{:href=>"#{photo.image.url}", :rel=>"lightbox[post_#{post.id}]"}
-                    %img(src="#{photo.image.url(:thumb)}")
+            = render :partial => 'shared/photo_list',:locals => { :photos => post.photos} 
       -if post.video?
-        .collapsible
+        .collapsible{:class=> ('open' if open)}
           %a.arrow-link(href="#") Video
           .collapse
             =post.video.html_safe
       -if post.audio?
-        .collapsible
+        .collapsible{:class=> ('open' if open)}
           %a.arrow-link(href="#") Audio
           .collapse
             =post.audio.html_safe
       -unless post.pdfs.empty?
-        .collapsible.pdf
+        .collapsible.pdf{:class=> ('open' if open)}
           %a.arrow-link(href="#") Pdf
           .collapse
-            %ul.pdf-list
-              - post.pdfs.each do |pdf|
-                %li
-                  %a(href="#{pdf.file.url}") 
-                    %span.title #{pdf.title}
-                    %span.size #{number_to_human_size(pdf.file.size)}
+            = render :partial => 'shared/pdf_list',:locals => { :pdfs => post.pdfs} 
 
           
     -if post.sidebar_title? and post.sidebar_body? 
       .span2
-        .collapsible.sidebar.open
+        .collapsible.sidebar{:class=> ('open' if open)}
           %a.arrow-link.inverted(href="#") #{post.sidebar_title}
           .collapse
             :markdown

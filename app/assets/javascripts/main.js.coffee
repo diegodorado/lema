@@ -1,4 +1,8 @@
+
 $ ->
+
+  $("body.trayectoria #years_carousel").carousel
+   interval: 500000000
 
   $("body").on "click", ".collapsible .arrow-link", (e) ->
     e.preventDefault()
@@ -7,7 +11,7 @@ $ ->
     #$collapsible = $collapser.next('.collapse')
     #el[0].scrollHeight to get .collapse height
 
-  $("body.obra").on "click", ".book-list h3 a", (e) ->
+  $("body").on "click", ".book-list h3 a", (e) ->
     e.preventDefault()
     $(this).closest('.book').toggleClass 'open'
 
@@ -15,6 +19,8 @@ $ ->
   $("body.capacitacion").on "click", ".collapsible.categories .right", (e) ->
     e.preventDefault()
     $(this).closest('.collapsible').toggleClass 'open'
+
+
 
 
   #todo: only for ie  

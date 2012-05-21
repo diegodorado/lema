@@ -2,15 +2,17 @@
   .container
     .row
       .span3
-        =image_tag 'white-ticho-logo.png' if book.ticho?
+        =image_tag 'white-ticho-logo.png', :width=> 222 if book.ticho?
       .span6
         %h2 #{book.title}
         %hr
 
 .container
   .book.row
-    .span3.image
-      =image_tag book.cover.url
+    .span3
+      .image-wrapper
+        .image
+          =image_tag book.cover.url(:medium)
     .span4.content
       .specification
         :markdown
@@ -22,20 +24,8 @@
       .collapsible.photos.pdf.open
         %a.arrow-link(href="#")  hojear
         .collapse
-          -unless book.photos.empty?
-            %ul.photo-list
-              - book.photos.each do |photo|
-                %li
-                  %a{:href=>"#{photo.image.url}", :rel=>"lightbox[book]"}
-                    %img(src="#{photo.image.url(:thumb)}")
-
-          -unless book.pdfs.empty?
-            %ul.pdf-list
-              - book.pdfs.each do |pdf|
-                %li
-                  %a(href="#{pdf.file.url}") 
-                    %span.title #{pdf.title}
-                    %span.size #{number_to_human_size(pdf.file.size)}
+          = render :partial => 'shared/photo_list',:locals => { :photos => book.photos} 
+          = render :partial => 'shared/pdf_list',:locals => { :pdfs => book.pdfs} 
 
         
     -if book.obra?

@@ -1,17 +1,17 @@
 @import "compass"
 
 header
-  background: url('header-bg.png') top center no-repeat //header background
-  height: 87px
   position: fixed
   top: 0
   right: 0
   left: 0
   z-index: 1000  
   a
+    @extend .light-shadow
     text-transform: uppercase
     display: block
     &:hover
+      @extend .white-shadow
       text-decoration: none
   .container
     padding-top: 32px
@@ -20,7 +20,7 @@ header
     font-size: 20px
     line-height: 20px
   nav
-    font-family: LektonBold
+    font-family: LektonRegular
     font-size: 15px
     ul
       +inline-block-list

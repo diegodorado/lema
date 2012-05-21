@@ -20,71 +20,46 @@ Aparte te estoy debiendo el comportamiento de las animaciones de navegación.
 Por útlimo pidió que tuviera estadísticas, se le puede instalar google analytics?
 
 
-mirá la diferencia en las fuentes y en el color.
 
-en general los colores variaron bastante.
-mirá el encabezado y la foto de lema
-
-
-
-
-
-Diego, te pasamos lo que vimos hasta ahora. El punto 1 y del 7 en adelante aplican para trayectoria, bitácora y agenda. 
+El punto 1 y del 7 en adelante aplican para trayectoria, bitácora y agenda. 
 2 - 6: solo a trayectoria.
-Además adjunto jpgs de cada una de las secciones para que tengas las referencias de color.
 
-1. Encabezdo: 
-- el color del fondo está muy diferente
-- las tipografías están demasiado bold
-- (trayectoria) la línea verde que separa el encabezado  de la biografía debe quedar fija
-- (agenda) la línea violeta debe quedar fija
-- (bitácora) la línea gris debe quedar fija
+
+
 
 2. Contacto / mail, Guillermo Lema / biografía: 
 - las tipografías también están muy blod y en mail, Guillermo Lema y biografía están de otro color.
 
-3. Imagen de Lema: 
-- está empezando a una altura diferente (adjunto captura de pantalla).
-- el color de la imagen está diferente, además perdió nitidez, parece que estuviera quemada la foto
+los colores son los mismos que el AI
 
-4. Entre la imagen de Lema y la línea gris va una línea de color negro de 3 px.
 
-5. Entre la línea gris y la franja blanca también va una línea de 3px, esta vez es del color del fondo.
 
 6. Las palabras LEMA HISTORIAL están en tipografía muy bold
+le bajé el color, porque ya estaba en fuente regular.
 
 7. Primera entrada:
 - fecha, título, contenido están con tipografías muy bold
-- Las palabras: video, foto, etc van en gris; el punto también.
+el contenido le baje un poquito el color, porque no estaba en bold
+
 
 8. Distancias de las solapas y "contenidos media"
-- DISTANCIA ENTRE SOLAPAS CUANDO ESTÁN CERRADAS: es de 6px, esto está OK
-- DISTANCIA ENTRE SOLAPAS CUANDO ESTÁN ABIERTAS:
-- entre la solapa "fotos" y la primera línea de imágenes debe haber 12px, esto está OK
-- entre la primera y segunda línea de imágenes debe haber 6px, esto está OK
-- entre la segunda línea de imágenes y la solapa "video" debe haber 12px, esto también está OK
-- entre la solapa de video y el video hay 6px, OK
-- entre el video y la solapa pdf debe haber también 12px, esta distancia habría que corregirla, se ve mayor que esto
-- distancia entre las solapas de pdfs está OK
-- distancia entre la última solapa de pdf y la línea blanca que divide al siguiente post debe ser de 12px, modificar
+- distancia entre la última solapa de pdf y la línea blanca que divide 
+al siguiente post debe ser de 12px, modificar
 
-9. El alto de la línea que divide un post del otro debe ser de 12px, modificar
-
-10. La distancia entre la línea blanca (que divide un posto del otro) y el comienzo de un post, debe ser de 42 px. Esta misma distancia debe estar igual después del recuadro blanco en donde dice "lema historial" y el primer post. modificar
 
 11. La distancia entre la última solapa del último post y la línea verde del pie, debe ser de 85px.
 
 12. Paginador 
 - debe haber un máximo de 8 años
-- Todas las tipografías están muy bold
-- modificar "entradas recientes" solo por "recientes" "antiguas"
 
 13. Pie:
 -todas las tipografías están muy bold y en colores diferentes  
 
-14. Todavía no vemos el movimiento de las dos capas entre los puntos/estrellas grises y blancos de los fondos de las entradas, además vemos muy grandes los puntos/estrellas
+14. Todavía no vemos el movimiento de las dos capas entre los puntos/estrellas 
+grises y blancos de los fondos de las entradas, además vemos muy grandes los puntos/estrellas
 
 
+corregir fondo libro
 
 
 
