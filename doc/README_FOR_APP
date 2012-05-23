@@ -1,45 +1,7 @@
-TRAYECTORIA
-Guillermo Lema web 01_trayectoria_A-cs3.ai
-Entrada a la sección con 10 entradas por página. 
-La entrada superior (de fecha más reciente) presenta desplegados 
-los menues colapsables de contenidos.
-
-
-Acá habría que ver lo que te comenté de la navegación por año.
- fijate como lo puse. Imaginé que al clickear en la flecha para ir más
-  atrás en los años, estos desplacen a los siguientes 5 que haya registro.
-   Si es muy chino o no es posible vemos cómo resolverlo.
-
-
-
-
-
 Aparte te estoy debiendo el comportamiento de las animaciones de navegación.
-
 
 Por útlimo pidió que tuviera estadísticas, se le puede instalar google analytics?
 
-
-
-El punto 1 y del 7 en adelante aplican para trayectoria, bitácora y agenda. 
-2 - 6: solo a trayectoria.
-
-
-
-
-2. Contacto / mail, Guillermo Lema / biografía: 
-- las tipografías también están muy blod y en mail, Guillermo Lema y biografía están de otro color.
-
-los colores son los mismos que el AI
-
-
-
-6. Las palabras LEMA HISTORIAL están en tipografía muy bold
-le bajé el color, porque ya estaba en fuente regular.
-
-7. Primera entrada:
-- fecha, título, contenido están con tipografías muy bold
-el contenido le baje un poquito el color, porque no estaba en bold
 
 
 8. Distancias de las solapas y "contenidos media"
@@ -49,35 +11,27 @@ al siguiente post debe ser de 12px, modificar
 
 11. La distancia entre la última solapa del último post y la línea verde del pie, debe ser de 85px.
 
-12. Paginador 
-- debe haber un máximo de 8 años
-
-13. Pie:
--todas las tipografías están muy bold y en colores diferentes  
 
 14. Todavía no vemos el movimiento de las dos capas entre los puntos/estrellas 
 grises y blancos de los fondos de las entradas, además vemos muy grandes los puntos/estrellas
 
 
-corregir fondo libro
 
 
 
+En la reunión con Guillermo mientras repasabamos cómo cargar el material vimos que estaban faltando opciones que antes había cuando estaba instalado en el otro servidor:
+> No está la posibilidad de formatear el texto, poner links, ni lista, ni nada por el estilo. Sin esto se complica bastante la carga de información, habría que resolverlo cuánto antes para que pueda empezar a cargar la info definitiva.
+> Hay que facilitar la carga de items en la columna derecha de links. Tanto para los links como en los libros para las direcciones y links.
+> En capacitación falta la opción de bullets para poder cargar las fichas.
+
+Otras dudas: 
+- Videos: cómo controlar relación de aspecto? Tiene que editar el código del iframe para ponerlo a 100% de ancho? qué se hace con el alto? se deja igual?
+- ¿Cómo se hace para cargar más de un video o más de un audio en una entrada? No encontramos la opción, tendría que poderse.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Otras cuestiones del frontend:
+- La primer entrada de cada sección deben aparecer desplegados todos los contenidos que tenga esa entrada (fotos, audio, video, links).
+- En ticho cuando se selecciona un libro pasa directo a la página en lugar de desplegarse como en obra escrita. Deberían tener el mismo funcionamiento.
 
 
 ----------------------------

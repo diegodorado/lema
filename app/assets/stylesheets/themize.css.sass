@@ -120,14 +120,14 @@ $header_bgs: sprite-map("header-bg/*.png")
       .specification, .body h4
         color: $color
 
-  .book-list li.book
-    &.open .book-link
-      background: url('arrows/#{$color_name}-down.png') 18px center no-repeat
-    h3
-      background: rgba($color, 0.2)
-    .book-link
-      background: url('arrows/#{$color_name}-next.png') 18px center no-repeat
-      &:hover
-        color: $color
+  .book-list
+    background: url('stars/#{$color_name}.jpg')
+    li.book
+      &.open .book-link
+        background: url('arrows/#{$color_name}-down.png') 18px center no-repeat
+      .book-link
+        background: url('arrows/#{$color_name}-next.png') 18px center no-repeat
+        &:hover
+          color: $color
            
 
