@@ -1,0 +1,46 @@
+A:momento 20
+  scroll: 0
+  1: 
+    from-blue: 504
+    top: 218
+  2: -220
+    top: 0
+  3:
+  4:
+  5: -200
+  6:
+  7: -98
+    top: 120
+B: momento 21
+  scroll: 206
+  1: 
+    from-blue: 298
+    top: 218
+  2: -98
+    top: 102
+  3: 198
+  4: 140
+  5: -196
+  6: 136
+  7: -34
+    top: 184
+C: momento 22
+  scroll: 446
+  1: 
+    from-blue: 58
+    top: 218
+  2: 
+  3: -52
+  4: 158
+  5: 
+  6: 74
+  7: 34
+    top: 252
+    
+(top en funcion de scroll como relacion lineal)    
+top7 = a7*scroll + b7
+
+120 = a7*0+b7
+184 = a7*206+b7
+252 = a7*446 + b7
+

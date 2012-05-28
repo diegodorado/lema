@@ -25,7 +25,7 @@ _cset :assets_prefix, "assets"
 _cset :assets_role, [:web]
 _cset :normalize_asset_timestamps, false
 
-before 'deploy:finalize_update', 'deploy:assets:symlink'
+before 'deploy:finalize_update', 'assets:symlink'
 before 'deploy:finalize_update', 'deploy:db:symlink'
 #after 'deploy:update_code', 'deploy:assets:precompile'
 
@@ -101,6 +101,11 @@ namespace :assets do
   task :precompile, :roles => assets_role, :except => { :no_release => true } do
     run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
   end
+
+  task :precompile2, :roles => assets_role, :except => { :no_release => true } do
+    run "cd #{latest_release} && rake assets:precompile"
+  end
+
 
   desc <<-DESC
     Run the asset clean rake task. Use with caution, this will delete \
