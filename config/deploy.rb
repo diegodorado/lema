@@ -1,3 +1,5 @@
+#require "bundler/capistrano"
+
 ssh_options[:auth_methods] = ["publickey"]
 ssh_options[:keys] = ["~/.ssh/common_rsa"]
 
@@ -100,6 +102,7 @@ namespace :assets do
   DESC
   task :precompile, :roles => assets_role, :except => { :no_release => true } do
     run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
+    #run "cd #{latest_release} && RAILS_ENV=#{rails_env} #{asset_env} bundle exec rake assets:precompile"
   end
 
   task :precompile2, :roles => assets_role, :except => { :no_release => true } do
