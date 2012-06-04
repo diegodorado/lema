@@ -9,7 +9,7 @@ $header_bgs: sprite-map("header-bg/*.png")
   header
     background-color: $color //rgba($color,0.2)
     border-bottom: 3px solid $border_color
-    background: sprite($header_bgs, $color_name) no-repeat 
+    background: #000 sprite($header_bgs, $color_name) no-repeat 
     height: image-height(sprite-file($header_bgs, $color_name))
     background-position-x: center
     a
@@ -121,7 +121,7 @@ $header_bgs: sprite-map("header-bg/*.png")
         color: $color
 
   .book-list
-    background: url('stars/#{$color_name}.jpg')
+    background: #000 url('stars/#{$color_name}.jpg')
     li.book
       &.open .book-link
         background: url('arrows/#{$color_name}-down.png') 18px center no-repeat

@@ -14,7 +14,12 @@ module ApplicationHelper
     elsif book.ticho?
       ticho_show_path(book.id)
     end
-      
   end
+
+  def link_to_edit(model)
+    klass = model.class.name.downcase
+    link_to '(editar)', rails_admin.edit_path(klass, model.id), :class => "admin-edit-link #{klass}-edit-link" if user_signed_in?
+  end
+
 
 end

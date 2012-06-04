@@ -1,19 +1,8 @@
-%p#console
-
-
 #space
   .container
     .scrollblock
-      =image_tag 'home/space/s1.png', :id => 'space-s1'
-      =image_tag 'home/space/o1-s.png', :id => 'space-o1-s'
-      =image_tag 'home/space/o1.png', :id => 'space-o1'
-      =image_tag 'home/space/o2-s.png', :id => 'space-o2-s'
-      =image_tag 'home/space/o2.png', :id => 'space-o2'
-      =image_tag 'home/space/o3-s.png', :id => 'space-o3-s'
-      =image_tag 'home/space/o3.png', :id => 'space-o3'
-      =image_tag 'home/space/t1-s.png', :id => 'space-t1-s'
-      =image_tag 'home/space/t1.png', :id => 'space-t1'
-      =image_tag 'home/space/t2-s.png', :id => 'space-t2-s'
+      - %w(s1 t1-s t1 t2-s o1-s o1 o2-s o2 o3-s o3).each do |i|
+        =image_tag "home/space/#{i}.png", :id => "space-#{i}"
       #space-tb1
         %h3 Obertura,
         %h4.l1 ir hacia lo abierto que ya comenzó
@@ -68,5 +57,20 @@
 #art
   .container
     .scrollblock
-
-
+      .stick
+      #art-tb1
+        %h3 El arte
+        %p 
+          se ocupa <br/>
+          de reconstruir<br/>
+          la realidad<br/>
+          que el mundo virtual<br/>
+          asesinó.
+      #art-tb2
+        %p 
+          El universo es felizmente <br/>
+          un caos perdido<br/>
+          un eslabón recuperado
+        %h5 GUILLERMO LEMA
+      - %w(blue-b blue-s green-b green-s orange-s red-b red-s yellow-b yellow-s).each do |i|
+        .balls{:id => "art-#{i}"}

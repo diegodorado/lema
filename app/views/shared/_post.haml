@@ -5,6 +5,7 @@
     .span5
       %h2
         %a(href="#") #{post.title}
+        =link_to_edit post
       .post-body
         :markdown
           #{post.body}

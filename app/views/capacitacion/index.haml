@@ -43,6 +43,8 @@
                 %a(href="#{capacitacion_category_path(course.category_id)}") #{course.category.name}
               %h2.title
                 %a(href="#{capacitacion_show_path(course.id)}") #{course.title}
+                =link_to_edit course
+
               .course-body
                 :markdown
                   #{course.body}

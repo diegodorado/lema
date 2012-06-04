@@ -207,7 +207,8 @@
       $.markdownEditor.executeAction($editor, /(.+)([\n]?)/g, "### $1$2", true)
     })
     .delegate(".function-link", "click", function() {
-      $.markdownEditor.executeAction($editor, /(.+)([\n]?)/g, "[Titulo](http://ejemplo.org)", true)
+      $("#markdown-editor-dialog").data("editor", $editor);
+      $('#markdown-editor-dialog').modal();
     })
     .delegate(".function-image", "click", function() {
       $.markdownEditor.executeAction($editor, /(.+)([\n]?)/g, "![Alt text](http://ejemplo.org/img.jpg \"Optional title\")", true)

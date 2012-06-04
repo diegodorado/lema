@@ -21,9 +21,7 @@
             .links
               =link_to 'seguir leyendo', book_path(book), :class => 'arrow-link'
               =link_to 'hojear', book_path(book), :class => 'arrow-link'
-          -if book.obra?
-            .span2.sidebar
+          .span2.sidebar
+            -if book.obra?
               =link_to 'puntos de venta', book_path(book), :class => 'arrow-link'
               =link_to 'comprar online', book_path(book), :class => 'arrow-link'
-            
-

@@ -4,7 +4,7 @@
       .span3
         =image_tag 'white-ticho-logo.png', :width=> 222 if book.ticho?
       .span6
-        %h2 #{book.title}
+        %h2 #{book.title} #{link_to_edit book}
         %hr
 
 .container

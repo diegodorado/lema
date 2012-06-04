@@ -9,6 +9,33 @@
     = javascript_include_tag 'admin'
     = stylesheet_link_tag 'admin'    
   %body.rails_admin
+  
+  
+    #markdown-editor-dialog.modal.hide.fade
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %h3 Insertar un link
+      .modal-body
+        %form.form-horizontal
+          %fieldset
+            .control-group
+              %label.control-label Titulo
+              .controls
+                %input.title{:type => "text"}  
+            .control-group
+              %label.control-label Url
+              .controls
+                %input.url{:type => "text", :placeholder => 'http://'}
+            .control-group
+              %label.control-label Descripción
+              .controls
+                -# .editor-body is to avoid markdown editor
+                %textarea.text.editor-body
+                %p.help-block (Opcional)
+      .modal-footer
+        %a.btn{"data-dismiss" => "modal", :href => "#"} Cancelar
+        %a.btn.btn-primary{:href => "#"} Aceptar
+  
     #loading.label.label-warning{:style => 'display:none; position:fixed; right:20px; bottom:20px; z-index:100000'} Loading...
     .navbar.navbar-fixed-top
       .navbar-inner

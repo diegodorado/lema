@@ -5,7 +5,8 @@ $dark_blue: #0000ff
 body.home
   +themize_layout($dark_blue,home,'dark_blue', $dark_blue)
   #content
-    margin-top: 90px    
+    margin-top: 90px
+    overflow: hidden
 
 .scrollblock
   position: relative
@@ -15,8 +16,10 @@ body.home
 #space
   background: #000 url('home/space/bg.png') center center
   overflow: hidden
+  position: relative    
   .scrollblock
-    height: 1929px
+    height: 1900px
+    overflow: visible
     img
       position: absolute
 
@@ -105,12 +108,12 @@ body.home
 #eye
   background: #000
   overflow: hidden
+  position: relative    
   .scrollblock
-    height: 1320px
-    img
-      position: absolute
+    height: 1500px
 
 #eye-eye
+  position: absolute
   left: 211px
   top: 325px
     
@@ -140,4 +143,195 @@ body.home
     &.last
       margin-top: 38px
 
+
+
+
+#pre-building
+  background: #000
+  overflow: hidden
+  position: relative    
+  color: #fff
+  .scrollblock
+    height: 790px
+
+#pre-building-tb1,#pre-building-tb2
+  position: absolute
+  left: 224px
+
+
+#pre-building-tb1
+  top: 70px
+  h3
+    font-size: 55px
+    line-height: 70px
+    font-family: BuenardRegular
+#pre-building-tb2
+  top: 470px
+  h3
+    font-size: 55px
+    line-height: 55px
+    font-family: BuenardRegular
+  h5
+    font-size: 23px
+    font-family: BuenardRegular
+    line-height: 30px
+    margin-top: 28px
+
+  
+#building
+  position: relative  
+  background: #000
+  overflow: hidden
+  color: #fff
+  border-bottom: 3px solid #de0000
+  .scrollblock
+    overflow: visible
+    height: 2284px
+
+
+@for $i from 1 through 7
+  #building-b#{$i}
+    text-align: center
+    font-size: 200px
+    line-height: 200px
+    color: red 
+    z-index: 10
+    background: url('home/building/b#{$i}.png') top center repeat-y
+    width: image-width('home/building/b#{$i}.png')
+    position: absolute
+    height: 4500px
+    border: 1px solid #de0000
+
+
+#building-b1
+  left: -430px
+  top: 218px  
+  border-width: 40px 0 0
+#building-b2
+  left: 679px
+  top: 0px
+  border-width: 14px 0 0
+#building-b3
+  left: 440px
+  top: 686px
+  border-width: 14px 0 0
+  z-index: 20
+#building-b4
+  left: 1052px
+  top: 342px
+  border-width: 14px 0 0
+  z-index: 20
+#building-b5
+  left: 7px
+  top: 18px
+  border-width: 14px 0 0
+  z-index: 5
+#building-b6
+  left: 224px
+  top: 407px
+  border-width: 30px 0 0
+  z-index: 5
+#building-b7
+  left: 632px
+  top: 125px
+  border-width: 36px 0 0
+
+#building-star
+  position: absolute
+  left: -224px
+  top: 600px
+  z-index: 25
+
+#building-tb1,#building-tb2
+  position: absolute
+  padding-left: 1224px
+  left: -1000px
+  background: #000
+  width: 2000px
+  z-index: 30
+  h3
+    line-height: 56px
+    font-size: 56px
+    font-family: LektonRegular
+  h4
+    font-size: 37px
+    font-family: LektonRegular
+    line-height: 43px
+
+#building-tb1
+  top: 1428px
+  height: 153px
+  h3
+    margin-top: 30px
+#building-tb2
+  top: 1924px
+  height: 153px
+  h4
+    margin-top: 36px
+
+
+
+#art
+  margin-top: 360px
+  overflow: hidden
+  position: relative    
+  color: #fff
+  background: #000 url(home/art/bg.png) no-repeat center top
+  .scrollblock
+    overflow: visible
+  .stick
+    height: 2040px
+
+
+#art-tb1,#art-tb2,#art-tb3
+  position: absolute
+  z-index: 30
+  
+#art-tb1
+  top: 667px
+  left: 0
+  padding-left: 115px
+  color: #000
+  h3
+    font-family: BuenardRegular
+    line-height: 116px
+    font-size: 177px
+  p
+    padding-left: 113px
+    font-family: BuenardRegular
+    font-size: 84px
+    line-height: 84px
+
+#art-tb2
+  @extend .light-shadow
+  top: 1620px
+  left: 225px
+  color: #fff
+  width: 537px
+  p
+    padding-left: 3px
+    font-family: BuenardRegular
+    font-size: 28px
+    line-height: 36px
+    border-bottom: 3px solid #fff
+    padding-bottom: 21px
+    margin-bottom: 25px
+  h5
+    text-align: right
+    font-family: BuenardRegular
+    font-size: 19px
+    letter-spacing: 1px
+
+
+#art .balls
+  z-index: 20
+  position: absolute
+  width: 2000px
+  height: 1500px
+  left: -506px
+  top: 1150px
+
+@each $i in blue-b blue-s green-b green-s orange-s red-b red-s yellow-b yellow-s
+  #art-#{$i} 
+    background: url("home/art/balls/#{$i}.gif") no-repeat center top  
 

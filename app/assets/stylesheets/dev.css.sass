@@ -1,157 +1,36 @@
 body *
   //fix firefox undesired stroke
-  font-weight: normal !important  
+  font-weight: normal !important
 
-#console
-  position: fixed
-  left: 15px
-  width: 500px
-  font-size: 14px
-  font-style: italic
-  background-color: #69697A
-  text-align: left
-  padding: 3px 10px
-  border-radius: 0 0 10px 10px
-  z-index: 9999
-  opacity: .8
-  display: none
-
-#space
+body.ie7.home
   overflow: hidden
-  .scrollblock
-    overflow: visible
+
+        
+.post-edit-link
+  color: red !important
+body.bitacora .post-edit-link
+  color: white !important  
+.book-edit-link
+  color: #ddd !important
+.course-edit-link
+  color: red !important
 
 
-
-#pre-building
-  background: #000
-  overflow: hidden
-  color: #fff
-  .scrollblock
-    height: 790px
-
-#pre-building-tb1,#pre-building-tb2
-  position: absolute
-  left: 224px
-
-
-#pre-building-tb1
-  top: 70px
-  h3
-    font-size: 55px
-    line-height: 70px
-    font-family: BuenardRegular
-#pre-building-tb2
-  top: 470px
-  h3
-    font-size: 55px
-    line-height: 55px
-    font-family: BuenardRegular
-  h5
-    font-size: 23px
-    font-family: BuenardRegular
-    line-height: 30px
-    margin-top: 28px
-
+.collapsible.sidebar
+  .collapse
+    color: #999
+    margin-top: 8px
+    hr
+      height: 0
+      border-bottom: 1px solid #666
+      margin: 17px 0
+    a, p
+      font-family: LektonRegular
+      font-size: 13px
+    a
+      line-height: 30px
+      color: #666
+    p
+      margin: 0
+      color: #999
   
-#building
-  background: #000
-  overflow: hidden
-  color: #fff
-  border-bottom: 3px solid #de0000
-  .scrollblock
-    overflow: visible
-    height: 2284px
-
-
-@for $i from 1 through 7
-  #building-b#{$i}
-    text-align: center
-    font-size: 200px
-    line-height: 200px
-    color: red 
-    z-index: 10
-    background: url('home/building/b#{$i}.png') top center repeat-y
-    width: image-width('home/building/b#{$i}.png')
-    position: absolute
-    height: 4500px
-    border: 1px solid #de0000
-
-
-#building-b1
-  left: -430px
-  top: 218px  
-  border-width: 40px 0 0
-#building-b2
-  left: 679px
-  top: 0px
-  border-width: 14px 0 0
-#building-b3
-  left: 440px
-  top: 686px
-  border-width: 14px 0 0
-  z-index: 20
-#building-b4
-  left: 1052px
-  top: 342px
-  border-width: 14px 0 0
-  z-index: 20
-#building-b5
-  left: 7px
-  top: 18px
-  border-width: 14px 0 0
-  z-index: 5
-#building-b6
-  left: 224px
-  top: 407px
-  border-width: 30px 0 0
-  z-index: 5
-#building-b7
-  left: 632px
-  top: 125px
-  border-width: 36px 0 0
-
-#building-star
-  position: absolute
-  left: -224px
-  top: 600px
-  z-index: 25
-
-#building-tb1,#building-tb2
-  position: absolute
-  padding-left: 1224px
-  left: -1000px
-  background: #000
-  width: 2000px
-  z-index: 30
-  h3
-    line-height: 56px
-    font-size: 56px
-    font-family: LektonRegular
-  h4
-    font-size: 37px
-    font-family: LektonRegular
-    line-height: 43px
-
-#building-tb1
-  top: 1428px
-  height: 153px
-  h3
-    margin-top: 30px
-#building-tb2
-  top: 1924px
-  height: 153px
-  h4
-    margin-top: 36px
-
-
-
-#art
-  margin-top: 360px
-  background: #000 url(home/art/bg.png) no-repeat center top
-  overflow: hidden
-  color: #fff
-  .scrollblock
-    height: 1500px
-
-

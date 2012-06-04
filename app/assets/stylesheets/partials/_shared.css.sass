@@ -1,23 +1,5 @@
 
 
-.collapsible.sidebar
-  .collapse
-    color: #999
-    ul
-      margin: 8px 0 0
-      li
-        border-bottom: 1px solid #666
-        margin-bottom: 17px
-    a, p
-      font-family: LektonRegular
-      font-size: 13px
-    a
-      display: block
-      margin-bottom: 14px
-      color: #666
-    p
-      margin-bottom: 17px
-      color: #999
 
 .photo-list
   list-style: none
@@ -80,6 +62,9 @@
 .collapsible      
   &:last-child .collapse, &.last .collapse
     margin-bottom: 6px
+  .collapse
+    iframe
+      display: none
   &.open
     .collapse
       height: auto
@@ -156,7 +141,6 @@
     text-align: center
     cursor: pointer
     position: relative
-    z-index: 1000
     a
       display: inline-block
       margin-top: -4px
