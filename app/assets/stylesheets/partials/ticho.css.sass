@@ -1,0 +1,27 @@
+@import "themize"
+$orange: #FF931E    
+
+body.ticho
+  +themize_layout($orange,ticho,'orange', $orange)
+  +themize($orange,ticho,'orange')
+
+  .highlight
+    .wrapper
+      background: #000
+      .span2
+        margin-top: 48px
+      h2, a, p
+        color: #B3B3B3
+
+  .book
+    h3
+      .pdf-link
+        position: absolute
+        +replace-text('icons/white-pdf-big.png')
+        top: 0
+        right: 0
+        height: 100px
+        width: 70px
+        display: block
+        &:hover
+          background-image: image-url('icons/orange-pdf-big.png')  

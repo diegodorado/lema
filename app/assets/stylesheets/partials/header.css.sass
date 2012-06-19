@@ -1,0 +1,31 @@
+@import "compass"
+
+header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 1000  
+  a
+    @extend .light-shadow
+    text-transform: uppercase
+    display: block
+    &:hover
+      //@extend .white-shadow
+  .container
+    padding-top: 32px
+  .brand
+    font-family: LektonRegular
+    font-size: 20px
+    line-height: 20px
+  nav
+    font-family: LektonRegular
+    font-size: 15px
+    ul
+      +inline-block-list
+      a
+        padding: 9px 20px
+      .first a
+        padding-left: 0
+      .last a
+        padding-right: 0

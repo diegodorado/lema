@@ -1,3 +1,32 @@
+@import "compass"
+@import "arrows2/*.png"
+@import "links/*.png"
+
+$arrows2-sprite-dimensions: true
+$links-sprite-dimensions: true
+
+
++all-arrows2-sprites
++all-links-sprites
+
+
+.arrow-link.plain
+  &:before
+    content: ''  //no middle dot
+
+.book
+  .arrow-link
+    color: #fff !important
+    &.plain, &.inverted
+      color: #1d1d1b !important
+
+i.arrows2-green
+  display: block
+  -webkit-transition: all 1s ease-in-out
+  &:hover
+    -webkit-transform: rotate(90deg)
+
+
 body *
   //fix firefox undesired stroke
   font-weight: normal !important
@@ -16,3 +45,366 @@ body.bitacora .post-edit-link
   color: red !important
 
 
+.book-list
+  li.book
+    h3
+      .book-link
+        font-family: LektonRegular
+
+
+
+
+
+
+
+
+
+#space
+  background: #000 image-url('home/space/bg.png') center center
+  overflow: hidden
+  position: relative    
+  .scrollblock
+    height: 1800px
+    overflow: visible
+
+
+@each $i in s1 t1-s t1 t2-s o1-s o1 o2-s o2 o3-s o3
+  #space-#{$i} 
+    position: absolute
+    background: image-url("home/space/#{$i}.png") no-repeat
+    width: image-width("home/space/#{$i}.png")
+    height: image-height("home/space/#{$i}.png")
+
+#space-s1
+  top: 902px
+  left: -155px
+
+#space-o1, #space-o1-s
+  left: 30px
+  top: 604px
+
+#space-o2, #space-o2-s
+  right: 42px
+  top: 394px  
+
+#space-o3, #space-o3-s
+  left: 215px
+  top: 571px
+
+#space-t1, #space-t1-s
+  right: 334px
+  top: 121px
+
+#space-t2-s
+  right: -78px
+  top: 1500px
+
+
+#space-tb1,#space-tb2,#space-tb3
+  position: absolute
+  font-family: BuenardRegular
+
+#space-tb1
+  left: 112px
+  top: 299px
+  h3
+    border-bottom: 4px solid #fff
+    color: #999
+    width: 537px
+    line-height: 45px
+    margin: 0
+    font-size: 29px
+    text-transform: uppercase
+    letter-spacing: 4px
+  h4
+    color: #fff
+    margin-top: 20px
+    font-size: 30px    
+    margin-left: 110px
+    &.l1
+      margin-top: 25px
+      margin-left: 193px
+
+#space-tb2
+  right: 76px
+  top: 703px
+  width: 288px
+  border: 1px solid #fff
+  background: #000
+  p
+    font-family: LektonRegular
+    color: #fff
+    line-height: 17px
+    margin: 26px 33px
+    font-size: 15px
+    letter-spacing: -1px
+    text-align: justify
+
+#space-tb3
+  left: 222px
+  top: 1342px
+  h3
+    color: #fff
+    line-height: 45px
+    margin: 0
+    font-size: 52px
+    letter-spacing: 2px
+  p
+    color: #fff
+    margin-top: 64px
+    font-size: 23px
+    margin-left: 331px
+    font-family: BuenardRegular
+
+
+#eye
+  background: #000
+  overflow: hidden
+  position: relative    
+  .scrollblock
+    height: 1650px
+
+#eye-eye
+  position: absolute
+  left: 211px
+  top: 0
+  background: image-url('home/eye/eye.gif') no-repeat
+  width: image-width('home/eye/eye.gif')
+  height: image-height('home/eye/eye.gif')
+
+
+    
+#eye-tb1
+  color: #fff
+  position: absolute
+  left: 224px
+  top: 300px
+  width: 560px
+  h3
+    font-size: 55px
+    font-family: BuenardRegular
+    line-height: 70px
+  h4
+    margin-top: 60px
+    font-size: 23px
+    font-family: BuenardRegular
+    line-height: 23px
+    &.last
+      margin-top: 39px
+  h5
+    color: #b1b1b1
+    font-size: 36px
+    font-family: LektonItalic
+    line-height: 48px
+    letter-spacing: 1px
+    margin-top: 51px
+    &.last
+      margin-top: 38px
+
+
+
+
+#pre-building
+  background: #000
+  overflow: hidden
+  position: relative    
+  color: #fff
+  .scrollblock
+    height: 790px
+
+#pre-building-tb1,#pre-building-tb2
+  position: absolute
+  left: 224px
+
+
+#pre-building-tb1
+  top: 70px
+  h3
+    font-size: 55px
+    line-height: 70px
+    font-family: BuenardRegular
+#pre-building-tb2
+  top: 470px
+  h3
+    font-size: 55px
+    line-height: 55px
+    font-family: BuenardRegular
+  h5
+    font-size: 23px
+    font-family: BuenardRegular
+    line-height: 30px
+    margin-top: 28px
+
+  
+#building
+  position: relative  
+  background: #000
+  overflow: hidden
+  color: #fff
+  border-bottom: 3px solid #de0000
+  .scrollblock
+    overflow: visible
+    height: 2284px
+
+
+@for $i from 1 through 7
+  #building-b#{$i}
+    text-align: center
+    font-size: 200px
+    line-height: 200px
+    color: red 
+    z-index: 10
+    background: image-url('home/building/b#{$i}.png') top center repeat-y
+    width: image-width('home/building/b#{$i}.png')
+    position: absolute
+    height: 4500px
+    border: 1px solid #de0000
+
+
+#building-b1
+  left: -430px
+  top: 218px  
+  border-width: 40px 0 0
+#building-b2
+  left: 679px
+  top: 0px
+  border-width: 14px 0 0
+#building-b3
+  left: 440px
+  top: 686px
+  border-width: 14px 0 0
+  z-index: 20
+#building-b4
+  left: 1052px
+  top: 342px
+  border-width: 14px 0 0
+  z-index: 20
+#building-b5
+  left: 7px
+  top: 18px
+  border-width: 14px 0 0
+  z-index: 5
+#building-b6
+  left: 224px
+  top: 407px
+  border-width: 30px 0 0
+  z-index: 5
+#building-b7
+  left: 632px
+  top: 125px
+  border-width: 36px 0 0
+
+#building-star
+  position: absolute
+  left: -224px
+  top: 600px
+  z-index: 25
+
+#building-tb1,#building-tb2
+  position: absolute
+  padding-left: 1224px
+  left: -1000px
+  background: #000
+  width: 2000px
+  z-index: 30
+  h3
+    line-height: 56px
+    font-size: 56px
+    font-family: LektonRegular
+  h4
+    font-size: 37px
+    font-family: LektonRegular
+    line-height: 43px
+
+#building-tb1
+  top: 1428px
+  height: 153px
+  h3
+    margin-top: 30px
+#building-tb2
+  top: 1924px
+  height: 153px
+  h4
+    margin-top: 36px
+
+
+
+#art
+  overflow: hidden
+  position: relative    
+  color: #fff
+  background: #fff image-url('home/art/bg.jpg') no-repeat center top
+  height: 1780px
+  .scrollblock
+    overflow: visible
+
+
+#art-tb2,#art-tb3
+  position: absolute
+  z-index: 30
+  
+#art-tb1
+  position: absolute
+  top: 1027px
+  left: 0
+  padding-left: 115px
+  color: #000
+  h3
+    font-family: BuenardRegular
+    line-height: 116px
+    font-size: 177px
+  p
+    padding-left: 113px
+    font-family: BuenardRegular
+    font-size: 84px
+    line-height: 84px
+
+
+
+#balls 
+  background: #000
+  position: relative
+  height: 900px
+  .ball
+    z-index: 20
+    position: absolute
+    width: 1400px
+    height: 900px
+    left: -206px
+    top: 0px
+
+
+#balls-saw
+  background: image-url("home/balls/saw.png") repeat-x center top
+  height: image-height("home/balls/saw.png")
+  width: 3000px
+  z-index: 40
+  position: absolute
+  left: 0
+  top: 0
+
+#balls-tb1
+  @extend .light-shadow
+  position: absolute
+  top: 1620px
+  left: 225px
+  color: #fff
+  width: 537px
+  p
+    padding-left: 3px
+    font-family: BuenardRegular
+    font-size: 28px
+    line-height: 36px
+    border-bottom: 3px solid #fff
+    padding-bottom: 21px
+    margin-bottom: 25px
+  h5
+    text-align: right
+    font-family: BuenardRegular
+    font-size: 19px
+    letter-spacing: 1px
+
+
+@each $i in '1-big-red' '2-big-green' '3-big-blue' '4-medium-blue_red' '5-small-orange_yellow_green'
+  #ball-#{$i} 
+    background: image-url("home/balls/#{$i}.png") no-repeat center top

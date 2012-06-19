@@ -19,8 +19,8 @@
               :markdown
                 #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
             .links
-              =link_to 'seguir leyendo', book_path(book), :class => 'arrow-link'
-              =link_to 'hojear', book_path(book), :class => 'arrow-link'
+              =link_to 'seguir leyendo', book_path(book), :class => 'arrow-link plain'
+              =link_to 'hojear', book_path(book), :class => 'arrow-link plain'
           .span2.sidebar
             -if book.obra?
               =link_to 'puntos de venta', book_path(book), :class => 'arrow-link'

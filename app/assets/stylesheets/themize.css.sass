@@ -6,6 +6,14 @@ $header_bgs: sprite-map("header-bg/*.png")
 
 
 =themize_layout($color, $name, $color_name, $border_color)
+  a
+    +transition(color 0.5s ease-in-out)    
+    &:hover, &.active
+      color: $color
+      text-decoration: none
+
+
+
   header
     background-color: $color //rgba($color,0.2)
     border-bottom: 3px solid $border_color
@@ -13,14 +21,12 @@ $header_bgs: sprite-map("header-bg/*.png")
     height: image-height(sprite-file($header_bgs, $color_name))
     background-position-x: center
     a
-      +link-colors(#fff,$color,$color)
-      &.active
-        color: $color
+      color: #fff
 
   #content
     margin-top: image-height(sprite-file($header_bgs, $color_name)) + 3
     @if $name != home
-      background: url('white-stars.png'), url('grey-stars.png')
+      background: image-url('white-stars.png'), image-url('grey-stars.png')
       @if $name != bitacora
         background-color: #EDECED
 
@@ -56,7 +62,7 @@ $header_bgs: sprite-map("header-bg/*.png")
 
       
   footer
-    .links h5, .blogs h5, a:hover
+    .links h5, .blogs h5
       color: $color
     .share-links ul li a:hover
       +box-shadow($color 0 0 20px)
@@ -69,7 +75,7 @@ $header_bgs: sprite-map("header-bg/*.png")
 
 =themize($color, $name, $color_name)
   .pdf-list li a
-    background: url('icons/#{$color_name}-pdf.png') 0px center no-repeat
+    background: image-url('icons/#{$color_name}-pdf.png') 0px center no-repeat
     .title
       border: 1px solid $color
 
@@ -78,31 +84,33 @@ $header_bgs: sprite-map("header-bg/*.png")
     .current, a:hover
       color: $color
     .prev_page a
-      background: url('arrows/#{$color_name}-prev.png') left center no-repeat
+      background: image-url('arrows/#{$color_name}-prev.png') left center no-repeat
     .next_page a
-      background: url('arrows/#{$color_name}-next.png') right center no-repeat
+      background: image-url('arrows/#{$color_name}-next.png') right center no-repeat
 
   .highlight
     .wrapper h3
       color: $color
     .handler a
-      background: url('arrows/#{$color_name}-down.png') center center no-repeat
+      background: image-url('arrows/#{$color_name}-down.png') center center no-repeat
       width: image-width('arrows/#{$color_name}-down.png')
       height: image-height('arrows/#{$color_name}-down.png')
     &.open .handler a
-      background-image: url('arrows/#{$color_name}-up.png')
+      background-image: image-url('arrows/#{$color_name}-up.png')
 
   .arrow-link
-    background: $color url('arrows/white-link.png') 10px center no-repeat
+    background: $color image-url('arrows/white-link.png') 10px center no-repeat
   .collapsible.open .arrow-link, .arrow-link:hover
-    background-image: url('arrows/white-link-open.png')
+    background-image: image-url('arrows/white-link-open.png')
 
   //inverted style
   .arrow-link.inverted
     border: 1px solid $color
-    background: #fff url('arrows/#{$color_name}-link.png') 10px center no-repeat
+    background: #fff image-url('arrows/#{$color_name}-link.png') 10px center no-repeat
+  .arrow-link.plain
+    background: transparent image-url('arrows/#{$color_name}-link.png') 10px center no-repeat
   .collapsible.open .arrow-link.inverted, .arrow-link.inverted:hover
-    background-image: url('arrows/#{$color_name}-link-open.png')
+    background-image: image-url('arrows/#{$color_name}-link-open.png')
 
 
   article.post
@@ -121,12 +129,12 @@ $header_bgs: sprite-map("header-bg/*.png")
         color: $color
 
   .book-list
-    background: #000 url('stars/#{$color_name}.jpg')
+    background: #000 image-url('stars/#{$color_name}.jpg')
     li.book
       &.open .book-link
-        background: url('arrows/#{$color_name}-down.png') 18px center no-repeat
+        background: image-url('arrows/#{$color_name}-down.png') 18px center no-repeat
       .book-link
-        background: url('arrows/#{$color_name}-next.png') 18px center no-repeat
+        background: image-url('arrows/#{$color_name}-next.png') 18px center no-repeat
         &:hover
           color: $color
            

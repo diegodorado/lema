@@ -4,35 +4,37 @@ initScrollorama= ->
     blocks: ".scrollblock"
     enablePin: false
 
-  space = (object, end,duration=1000)->
+  space = (object, end,duration=1000, delay=0)->
     end = end + parseInt($("#space-#{object}").css('top'),10)
-    delay = 0
     scrollorama.animate "#space-#{object}", {duration: duration, property: "top",  end: end, delay: delay}
 
   space "s1", -500
   space "o1-s", 400
   space "o1", -1000
-  space "o2-s", 800, 1000
+  space "o2-s", 1900, 1100
   space "o2", -100
-  space "o3-s", 200
+  #space "o3-s", 200
   space "o3", -2500
-  space "t1-s", 1800, 1000
+  space "t1-s", 2000, 1000
   space "t1", 200
-  space "t2-s", 200
+  space "t2-s", -1200, 1000, 800
 
 
 
-  scrollorama.animate "#eye-eye", {duration: 700,    property: "top",  end: 850, delay: 800}
+  scrollorama.animate "#eye-eye", {duration: 1900,    property: "top",  end: 960, delay: 0}
 
 
   duration = 2500
+  end1 = duration * 0.22 + 0
   end2 = duration * 0.49 + 0
   end3 = duration * -1.04 + 686
   end4 = duration * 0.075 + 342
-  end5 = duration * 0.019 + 18
+  end5 = duration * 0.39 + 18
   end6 = duration * -0.26 + 407
   end7 = duration * 0.29 + 120
+  duration = 5000
 
+  scrollorama.animate "#building-b1", {duration: duration, property: "top",  end: end1}
   scrollorama.animate "#building-b2", {duration: duration, property: "top",  end: end2}
   scrollorama.animate "#building-b3", {duration: duration, property: "top",  end: end3}
   scrollorama.animate "#building-b4", {duration: duration, property: "top",  end: end4}
@@ -42,9 +44,8 @@ initScrollorama= ->
 
   balls = (ball, end,delay=0)->
     duration = 1000
-    end = 1150 + end
     delay = delay + 1000
-    scrollorama.animate "#art-#{ball}", {duration: duration, property: "top",  end: end, delay: delay}
+    #scrollorama.animate "#art-#{ball}", {duration: duration, property: "top",  end: end, delay: delay}
 
   balls "blue-b", 300, -200
   balls "blue-s", 100, 100
@@ -56,8 +57,8 @@ initScrollorama= ->
   balls "yellow-b", 200,300
   balls "yellow-s", 200, 100
 
-  scrollorama.animate "#art-tb2 h5", {duration: 500, property: "margin-top",  start: 300, delay: 1600}
-  scrollorama.animate "#art-tb2", {duration: 300, property: "top",  end: 1820, delay: 2000}
+  #scrollorama.animate "#art-tb2 h5", {duration: 500, property: "margin-top",  start: 300, delay: 1600}
+  #scrollorama.animate "#art-tb2", {duration: 300, property: "top",  end: 1820, delay: 2000}
 
 
 
@@ -87,6 +88,13 @@ $ ->
 
 
   $("body.ie7 article:last-child").addClass "last"
+
+  # FF and Opera background-position-x FIX
+  hbp = $('header').css('backgroundPosition').split(" ")
+  #now contains an array like ["0px", "Kpx"]
+  hbp[0] = '50%'
+  $('header').css 'backgroundPosition', hbp.join(' ')
+
 
 
   $(window).load ->

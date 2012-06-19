@@ -2,7 +2,8 @@
   .container
     .scrollblock
       - %w(s1 t1-s t1 t2-s o1-s o1 o2-s o2 o3-s o3).each do |i|
-        =image_tag "home/space/#{i}.png", :id => "space-#{i}"
+        .space-object{:id => "space-#{i}"}        
+        
       #space-tb1
         %h3 Obertura,
         %h4.l1 ir hacia lo abierto que ya comenzó
@@ -18,7 +19,7 @@
 #eye
   .container
     .scrollblock
-      =image_tag 'home/eye/eye.gif', :id => 'eye-eye'
+      #eye-eye
       #eye-tb1
         %h3 La forma es la geometría <br/>por la que trepamos los <br/>monos-sapiens
         %h4 y uno de ellos dice:
@@ -57,7 +58,6 @@
 #art
   .container
     .scrollblock
-      .stick
       #art-tb1
         %h3 El arte
         %p 
@@ -66,11 +66,21 @@
           la realidad<br/>
           que el mundo virtual<br/>
           asesinó.
-      #art-tb2
+
+#balls
+  #balls-saw
+  .container
+    .scrollblock
+      #balls-tb1
         %p 
           El universo es felizmente <br/>
           un caos perdido<br/>
           un eslabón recuperado
         %h5 GUILLERMO LEMA
-      - %w(blue-b blue-s green-b green-s orange-s red-b red-s yellow-b yellow-s).each do |i|
-        .balls{:id => "art-#{i}"}
+      - %w(1-big-red 2-big-green 3-big-blue 4-medium-blue_red 5-small-orange_yellow_green).each do |i|
+        .ball{:id => "ball-#{i}"}        
+
+
+
+
+        

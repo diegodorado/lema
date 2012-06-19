@@ -101,8 +101,8 @@ namespace :assets do
       set :asset_env, "RAILS_GROUPS=assets"
   DESC
   task :precompile, :roles => assets_role, :except => { :no_release => true } do
-    run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
-    #run "cd #{latest_release} && RAILS_ENV=#{rails_env} #{asset_env} bundle exec rake assets:precompile"
+    #run "cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile"
+    run "cd #{latest_release} && RAILS_ENV=#{rails_env} #{asset_env} bundle exec rake assets:precompile"
   end
 
   task :precompile2, :roles => assets_role, :except => { :no_release => true } do

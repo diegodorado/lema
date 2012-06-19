@@ -4,5 +4,19 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require 'bp'
  *= require 'main' 
+ *= require 'tb'
+ *= require 'partials/fonts'
+ *= require 'partials/header'
+ *= require 'partials/footer'
+ *= require 'partials/agenda'
+ *= require 'partials/bitacora'
+ *= require 'partials/capacitacion'
+ *= require 'partials/home'
+ *= require 'partials/obra'
+ *= require 'partials/ticho'
+ *= require 'partials/trayectoria'
+ *= require 'partials/shared'
+ *= require 'devise'
+ *= require 'lightbox'
 */
 
