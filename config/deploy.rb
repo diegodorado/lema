@@ -21,11 +21,16 @@ set :scm_verbose, true
 
 set :use_sudo, false
 
+set :keep_releases,  3
+
 
 _cset :asset_env, "RAILS_GROUPS=assets"
 _cset :assets_prefix, "assets"
 _cset :assets_role, [:web]
 _cset :normalize_asset_timestamps, false
+
+
+
 
 before 'deploy:finalize_update', 'assets:symlink'
 before 'deploy:finalize_update', 'deploy:db:symlink'
