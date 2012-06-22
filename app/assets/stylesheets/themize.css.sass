@@ -23,12 +23,13 @@ $header_bgs: sprite-map("header-bg/*.png")
     a
       color: #fff
 
-  #content
-    margin-top: image-height(sprite-file($header_bgs, $color_name)) + 3
-    @if $name != home
-      background: image-url('white-stars.png'), image-url('grey-stars.png')
-      @if $name != bitacora
-        background-color: #EDECED
+  @if $name != home
+    @if $name == bitacora
+      background-color: #000
+    @else
+      background-color: #EDECED
+    #white-stars, #grey-stars
+      top: (image-height(sprite-file($header_bgs, $color_name)) + 3)
 
 
   //common for posts

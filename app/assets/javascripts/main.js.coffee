@@ -43,22 +43,18 @@ initScrollorama= ->
   scrollorama.animate "#building-b7", {duration: duration, property: "top",  end: end7}
 
   balls = (ball, end,delay=0)->
-    duration = 1000
-    delay = delay + 1000
-    #scrollorama.animate "#art-#{ball}", {duration: duration, property: "top",  end: end, delay: delay}
+    duration = 1100
+    scrollorama.animate "#ball-#{ball}", {duration: duration, property: "top",  end: end, delay: delay}
 
-  balls "blue-b", 300, -200
-  balls "blue-s", 100, 100
-  balls "green-b", -200
-  balls "green-s", 0, 100
-  balls "orange-s", 100, 100
-  balls "red-b", -300,100
-  balls "red-s", 200, 100
-  balls "yellow-b", 200,300
-  balls "yellow-s", 200, 100
+  balls '1-big-red', -500
+  balls '2-big-green', -200
+  balls '3-big-blue', -800
+  balls '4-medium-blue_red', -1000
+  balls '5-small-orange_yellow_green', -2000
 
-  #scrollorama.animate "#art-tb2 h5", {duration: 500, property: "margin-top",  start: 300, delay: 1600}
-  #scrollorama.animate "#art-tb2", {duration: 300, property: "top",  end: 1820, delay: 2000}
+
+  scrollorama.animate "#balls-tb1 h5", {duration: 500, property: "margin-top",  start: 300, delay: 500}
+  #scrollorama.animate "#balls-tb1", {duration: 300, property: "top",  end: 500, delay: 600}
 
 
 
@@ -124,7 +120,17 @@ $ ->
     $(this).tab('show')
 
 
-  initScrollorama() if  $("body.home").size()
+  if  $("body.home").size()
+    initScrollorama() 
+  else
+    #scrollorama
+    window.scrollorama = $.scrollorama
+      blocks: ".scrollblock"
+      enablePin: false
+  
+    scrollorama.animate "#white-stars", {duration: 10000, property: "top",  end: 1000, delay: 0}
+    scrollorama.animate "#grey-stars", {duration: 10000, property: "top",  end: 500, delay: 0}
+
 
   #open external links in new window
   $(document.links).filter( () -> @hostname != window.location.hostname).attr('target', '_blank')

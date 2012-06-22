@@ -17,4 +17,6 @@ Lema::Application.routes.draw do
   match '/capacitacion/course/:id' => 'capacitacion#show', :as => :capacitacion_show
 
 
+  match '/feed' => 'bitacora#feed', :as => :feed,
+
 end

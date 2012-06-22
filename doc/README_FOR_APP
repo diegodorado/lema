@@ -4,47 +4,18 @@ Generales:
 - animaciones de apertura y cierre en todas las solapas colapsables.
 - animaciones de las flechas que giran en las solapas.
 - fondos animaciones: de las dos capas independientes (capa de círculos blancos y capa círculos grises).
-- fondo: era un psd de 2000px de ancho que debería ir centrado. Los círculos grises quedan por fuera del área de contenido, al igual que las blancas más grandes.
+- fondo: era un psd de 2000px de ancho que debería ir centrado. 
+Los círculos grises quedan por fuera del área de contenido, al igual que las blancas más grandes.
 
 secciones:
-- trayectoria:
 - obra escrita
-> faltan márgenes en los planos rojos del libro y de las solapas de la derecha (adjunto obra escrita 2.jpg) 
+> faltan márgenes en los planos rojos del libro y de las solapas de la
+ derecha (adjunto obra escrita 2.jpg) 
 - bitácora
-> El fondo hace mucho ruido y molesta para ver el contenido, te paso un psd con un fondo similar al otro pero más limpio y con la capa de círculos grises sin opacidad para que se vea.
-- agenda
-> cambiar a blanco las palabras en gris que están sobre el plano violeta.
+> El fondo hace mucho ruido y molesta para ver el contenido, 
+te paso un psd con un fondo similar al otro pero más limpio y con la capa 
+de círculos grises sin opacidad para que se vea.
 
 
 00 generales
 > vemos muy bold toda la tipografía respecto a los jpgs de muestra (van algunas capturas).
-
-
-05 esferas
-> Tomar como tope para el texto el margen superior respecto al encabezado y no respecto al pie como está ahora. Queda raro que quede aire arriba y que el texto quede pegado al pie
-> vemos pixeladas las esferas, como sin anti-alias.
-> faltan algunas capas más para que haya más densidad como en la referencia (va captura).
-> que la capa de esferas azules se desplace hacia arriba hasta que desaparezca la esfera azul más grande.
-
-
-
-----------------------------
-Estamos gestionando el pago por las modificaciones a hechas a OTC para esta semana. Por favor confírmame si está bien así:
-
-- ($100) · Banner de los más comentados de 2011 
-
-- ($100) · Banner flash campari 
-
-- ($500)· Links de comentarios y compartir para Especiales
-· Ajuste de margen inferior de videos
-· Modificación del sharer de facebook para que agregue titulo y miniatur
-· Reemplazo de links de youtube por vimeo
-· Reemplazo de swf de campari.
-· Optimizacion de css y javascript (unificacion de scripts y minificacion) 
-
-- ($400) · widget de los más comentados.
-
-Total $ 1100.
-
-arenal 3425 5º 26. Si quiere que la mande en un sobre cerrado a nombre de Pablo Argento y 
-que lo entreguen en la cabina de seguridad o lo dejen en el buzon.

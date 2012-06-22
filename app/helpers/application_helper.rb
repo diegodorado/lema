@@ -8,6 +8,18 @@ module ApplicationHelper
     content_for :app_js_load , "app.load(#{options.to_json});\n".html_safe
   end
 
+
+  #todo: make single post view
+  # and lead to proper routes
+  def posts_url
+    trayectoria_url
+  end
+  def post_url(post)
+    trayectoria_url
+  end
+  
+  
+
   def book_path(book)
     if book.obra?
       obra_show_path(book.id)

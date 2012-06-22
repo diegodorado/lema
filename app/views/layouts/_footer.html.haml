@@ -2,7 +2,7 @@
   .container
     .row
       .span1
-        %a.logo(href="#")
+        %a.logo(href="#{root_path}")
       .span8
         .row.share-links
           .span3.offset5
@@ -19,7 +19,7 @@
                 %a.social-plus(href="#")
               %li
                 %a.social-delicious(href="#")
-            %a.span-hack.social-rss(href="#") RSS
+            %a.span-hack.social-rss(href="#{feed_path}") RSS
         .row
           .span8.divider
         .row
@@ -32,20 +32,14 @@
             .row
               .span1
                 %ul
-                  %li
-                    %a(href="#") Trayectoria
-                  %li
-                    %a(href="#") Obra Escrita
-                  %li
-                    %a(href="#") Agenda
+                  %li #{link_to "Trayectoria", trayectoria_path}
+                  %li #{link_to "Obra Escrita", obra_path}
+                  %li #{link_to "Agenda", agenda_path}
               .span2
                 %ul
-                  %li
-                    %a(href="#") Bitacora
-                  %li
-                    %a(href="#") Ticho Ediciones
-                  %li
-                    %a(href="#") Capacitación          
+                  %li #{link_to "Bitacora", bitacora_path}
+                  %li #{link_to "Ticho Ediciones", ticho_path}
+                  %li #{link_to "Capacitación", capacitacion_path}
           .span2.links
             %h5 links
             .row
