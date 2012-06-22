@@ -61,12 +61,11 @@ body.bitacora .post-edit-link
     overflow: visible
   
 #white-stars
-  background: image-url('white-stars.png') repeat-y center top
+  z-index: -1
 #grey-stars
-  background: image-url('grey-stars.png') repeat-y center top
+  z-index: -2
 
 #white-stars,#grey-stars
-  z-index: -1
   +transition(top 1s ease)
   width: 2000px
   height: 15000px

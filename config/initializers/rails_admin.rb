@@ -336,6 +336,23 @@ RailsAdmin.config do |config|
       :full_name
     end
 
+  end
+
+  config.model FooterLink do
+    weight 5
+
+    label "Link al Pie" 
+    label_plural "Links al Pie"
+    
+    field :location, :enum do
+      label "Ubicacion"
+    end
+    
+    field :title do
+      label "Titulo"
+    end
+    field :url
+
 
   end
 

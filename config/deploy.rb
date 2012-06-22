@@ -33,7 +33,7 @@ _cset :normalize_asset_timestamps, false
 
 
 before 'deploy:finalize_update', 'assets:symlink'
-before 'deploy:finalize_update', 'deploy:db:symlink'
+before 'deploy:finalize_update', 'db:symlink'
 #after 'deploy:update_code', 'deploy:assets:precompile'
 
 
@@ -59,18 +59,21 @@ end
 
 
 
-namespace :deploy do
-  namespace :db do
-    task :symlink, :roles => assets_role, :except => { :no_release => true } do
-      run <<-CMD
-        ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/production.sqlite3
-      CMD
-    end
+namespace :db do
+  task :symlink, :roles => assets_role, :except => { :no_release => true } do
+    run <<-CMD
+      ln -s #{shared_path}/db/production.sqlite3 #{latest_release}/db/production.sqlite3
+    CMD
+  end
 
-    task :push do
-      status = system("scp db/development.sqlite3 #{user}@#{application}:#{shared_path}/db/production.sqlite3")
-      puts status ? "OK" : "FAILED"
-    end
+  task :push do
+    status = system("scp db/development.sqlite3 #{user}@#{application}:#{shared_path}/db/production.sqlite3")
+    puts status ? "OK" : "FAILED"
+  end
+
+  task :pull do
+    status = system("scp #{user}@#{application}:#{shared_path}/db/production.sqlite3 db/development.sqlite3")
+    puts status ? "OK" : "FAILED"
   end
 end
 

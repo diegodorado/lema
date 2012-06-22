@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504085545) do
+ActiveRecord::Schema.define(:version => 20120622165343) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(:version => 20120504085545) do
     t.text     "specification"
     t.text     "objective"
     t.text     "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "footer_links", :force => true do |t|
+    t.string   "location"
+    t.string   "title"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

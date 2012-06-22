@@ -1,2 +1,5 @@
-.container
-  = render :partial => 'shared/book_list',:locals => { :books => @books}
+#stars-container.container
+  .scrollblock
+    #white-stars
+    #grey-stars
+    = render :partial => 'shared/book_list',:locals => { :books => @books}

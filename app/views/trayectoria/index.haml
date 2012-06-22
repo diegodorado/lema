@@ -19,10 +19,13 @@
     .row
       .span7.offset2
         %h2 lema historial
-    
-.container
-  -@posts.each_with_index do |p, i|
-    = render :partial => 'shared/post',:locals => { :post => p, :open => (i==0)} 
+
+#stars-container.container
+  .scrollblock
+    #white-stars
+    #grey-stars    
+    -@posts.each_with_index do |p, i|
+      = render :partial => 'shared/post',:locals => { :post => p, :open => (i==0)} 
 
 = paginate @posts, {:years => @years, :current_year => @current_year }
 

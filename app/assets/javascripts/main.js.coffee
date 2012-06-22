@@ -1,9 +1,4 @@
-initScrollorama= ->
-  #scrollorama
-  window.scrollorama = $.scrollorama
-    blocks: ".scrollblock"
-    enablePin: false
-
+obertura= ->
   space = (object, end,duration=1000, delay=0)->
     end = end + parseInt($("#space-#{object}").css('top'),10)
     scrollorama.animate "#space-#{object}", {duration: duration, property: "top",  end: end, delay: delay}
@@ -120,16 +115,16 @@ $ ->
     $(this).tab('show')
 
 
+  #scrollorama
+  window.scrollorama = $.scrollorama
+    blocks: ".scrollblock"
+    enablePin: false
+
   if  $("body.home").size()
-    initScrollorama() 
+    obertura() 
   else
-    #scrollorama
-    window.scrollorama = $.scrollorama
-      blocks: ".scrollblock"
-      enablePin: false
-  
-    scrollorama.animate "#white-stars", {duration: 10000, property: "top",  end: 1000, delay: 0}
-    scrollorama.animate "#grey-stars", {duration: 10000, property: "top",  end: 500, delay: 0}
+    scrollorama.animate "#white-stars", {duration: 10000, property: "top",  end: 2000, delay: 0}
+    scrollorama.animate "#grey-stars", {duration: 10000, property: "top",  end: 800, delay: 0}
 
 
   #open external links in new window
