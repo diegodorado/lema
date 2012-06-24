@@ -16,10 +16,19 @@ class Post < ActiveRecord::Base
     [['Agenda', :ag],['Agenda y Trayectoria', :at],['Bitacora', :bt]]
   end
 
+  def audio
+    a = self['audio']
+    a.sub! /width=\"\d*\"/, 'width="100%"'
+    a.sub! /height=\"\d*\"/, 'height="166"'
+    a
+  end
+
+
   def video
     v = self['video']
+    v.sub! /width=\"\d*\"/, 'width="100%"'
+    v.sub! /height=\"\d*\"/, 'height="315"'
     unless v.match(/youtube/).nil?
-      v.sub! /width=\"\d*\"/, 'width="100%"'
       url = v.match(/(src=\")(.*?)(\")/)[2]
       url = url + (url.match(/\?/).nil? ? '?' : '&') + 'wmode=transparent'
       v.sub! /(src=\")(.*?)(\")/, "src=\"#{url}\""

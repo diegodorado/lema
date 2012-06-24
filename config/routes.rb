@@ -4,6 +4,7 @@ Lema::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index"
+  match '/links' => 'home#links', :as => :links
   match '/trayectoria' => 'trayectoria#index'
   match '/obra-escrita' => 'obra#index', :as => :obra
   match '/obra-escrita/:id' => 'obra#show', :as => :obra_show

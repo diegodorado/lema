@@ -120,7 +120,7 @@ $ ->
     blocks: ".scrollblock"
     enablePin: false
 
-  if  $("body.home").size()
+  if  $("body.home.index").size()
     obertura() 
   else
     scrollorama.animate "#white-stars", {duration: 10000, property: "top",  end: 2000, delay: 0}

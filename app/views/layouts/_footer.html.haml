@@ -41,35 +41,25 @@
                   %li #{link_to "Ticho Ediciones", ticho_path}
                   %li #{link_to "Capacitación", capacitacion_path}
           .span2.links
-            %h5 links
+            %h5 #{link_to "links", links_path}
             .row
               .span1
                 %ul
-                  %li
-                    %a(href="#") ubu.com
-                  %li
-                    %a(href="#") absda.com
-                  %li
-                    %a(href="#") ubu.com
-                  %li
-                    %a(href="#") absda.com
+                  -#todo: abstract these lists or use a helper
+                  -@footer_links.select{|fl| fl.location == 'col1'}[0..3].each do |fl|
+                    %li
+                      =link_to fl.title, fl.url
               .span1
                 %ul
-                  %li
-                    %a(href="#") ubu.com
-                  %li
-                    %a(href="#") absda.com
-                  %li
-                    %a(href="#") ubu.com
+                  -@footer_links.select{|fl| fl.location == 'col2'}[0..3].each do |fl|
+                    %li
+                      =link_to fl.title, fl.url
           .span1.blogs
-            %h5 blogs
+            %h5 #{link_to "blogs", links_path}
             %ul
-              %li
-                %a(href="#") crieta
-              %li
-                %a(href="#") imago mundi
-              %li
-                %a(href="#") teatro lema
+              -@footer_links.select{|fl| fl.location == 'blog'}[0..3].each do |fl|
+                %li
+                  =link_to fl.title, fl.url
     .row.credits
       .span3.offset3
         %a(href="#") fotografía GABRIEL MASSERA

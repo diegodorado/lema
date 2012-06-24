@@ -352,6 +352,9 @@ RailsAdmin.config do |config|
       label "Titulo"
     end
     field :url
+    field :description do
+      label "Descripcion"
+    end
 
 
   end

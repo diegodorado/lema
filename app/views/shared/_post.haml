@@ -15,12 +15,12 @@
           .collapse
             = render :partial => 'shared/photo_list',:locals => { :photos => post.photos} 
       -if post.video?
-        .collapsible{:class=> ('open' if open)}
+        .collapsible.video{:class=> ('open' if open)}
           %a.arrow-link(href="#") Video
           .collapse
             =post.video.html_safe
       -if post.audio?
-        .collapsible{:class=> ('open' if open)}
+        .collapsible.audio{:class=> ('open' if open)}
           %a.arrow-link(href="#") Audio
           .collapse
             =post.audio.html_safe

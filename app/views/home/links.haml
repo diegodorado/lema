@@ -1,0 +1,20 @@
+.heading
+  .container
+    .row
+      .span7.offset2
+        %h2 links
+
+#stars-container.container
+  .scrollblock
+    #white-stars
+    #grey-stars
+
+    #links.row
+      .span7.offset2
+        -@footer_links.each do |fl|
+          .link
+            %h3 #{link_to fl.title, fl.url}
+            .markdown
+              :markdown
+                #{fl.description}
+

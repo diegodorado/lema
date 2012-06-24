@@ -31,10 +31,12 @@ $header_bgs: sprite-map("header-bg/*.png")
     background: image-url('stars/white.png') repeat-y center top
   #grey-stars
     background: image-url('stars/grey.png') repeat-y center top
-    
-  @if $name == home
-    #white-stars, #grey-stars
-      display: none
+  
+  // commented because it is used on links  
+  //@if $name == home
+  //  #white-stars, #grey-stars
+  //   display: none
+  
 
   @if $name == bitacora
     background-color: #000

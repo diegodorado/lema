@@ -9,68 +9,8 @@ $links-sprite-dimensions: true
 +all-arrows2-sprites
 +all-links-sprites
 
-
-.arrow-link.plain
-  &:before
-    content: ''  //no middle dot
-
-.book
-  .arrow-link
-    color: #fff !important
-    &.plain, &.inverted
-      color: #1d1d1b !important
-
 i.arrows2-green
   display: block
   -webkit-transition: all 1s ease-in-out
   &:hover
     -webkit-transform: rotate(90deg)
-
-
-body *
-  //fix firefox undesired stroke
-  font-weight: normal !important
-
-body.ie7.home
-  overflow: hidden
-
-        
-.post-edit-link
-  color: red !important
-body.bitacora .post-edit-link
-  color: white !important  
-.book-edit-link
-  color: #ddd !important
-.course-edit-link
-  color: red !important
-
-
-.book-list
-  li.book
-    h3
-      .book-link
-        font-family: LektonRegular
-        
-#content
-  overflow: hidden
-
-#stars-container
-  position: relative
-  overflow: visible
-  .scrollblock
-    overflow: visible
-  
-#white-stars
-  z-index: -1
-#grey-stars
-  z-index: -2
-
-#white-stars,#grey-stars
-  +transition(top 1s ease)
-  width: 2000px
-  height: 15000px
-  position: absolute
-  top: 0px
-  left: -506px
-
-
