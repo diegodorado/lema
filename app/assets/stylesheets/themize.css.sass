@@ -4,6 +4,11 @@
 $footer_logos: sprite-map("footer-logo/*.png")
 $header_bgs: sprite-map("header-bg/*.png")
 
+@import "arrows/*.png"
+$arrows-sprite-dimensions: true
+
+
+
 
 =themize_layout($color, $name, $color_name, $border_color)
   a
@@ -12,17 +17,13 @@ $header_bgs: sprite-map("header-bg/*.png")
       color: $color
       text-decoration: none
 
-
-
   header
-    background-color: $color //rgba($color,0.2)
     border-bottom: 3px solid $border_color
     background: #000 sprite($header_bgs, $color_name) no-repeat 
     height: image-height(sprite-file($header_bgs, $color_name))
     background-position-x: center
     a
       color: #fff
-
 
   #content
     margin-top: image-height(sprite-file($header_bgs, $color_name)) + 3
@@ -107,25 +108,32 @@ $header_bgs: sprite-map("header-bg/*.png")
     .wrapper h3
       color: $color
     .handler a
-      background: image-url('arrows/#{$color_name}-down.png') center center no-repeat
-      width: image-width('arrows/#{$color_name}-down.png')
-      height: image-height('arrows/#{$color_name}-down.png')
-    &.open .handler a
-      background-image: image-url('arrows/#{$color_name}-up.png')
+      +arrows-sprite('#{$color_name}-down')
 
   .arrow-link
-    background: $color image-url('arrows/white-link.png') 10px center no-repeat
-  .collapsible.open .arrow-link, .arrow-link:hover
-    background-image: image-url('arrows/white-link-open.png')
+    background: $color
+    i
+      +arrows-sprite('white-link')
 
-  //inverted style
+  .arrow-link.book-link
+    background: transparent
+    i
+      +arrows-sprite('#{$color_name}-next')
+
   .arrow-link.inverted
     border: 1px solid $color
-    background: #fff image-url('arrows/#{$color_name}-link.png') 10px center no-repeat
+    background: #fff
+    i
+      +arrows-sprite('#{$color_name}-link')
+
   .arrow-link.plain
-    background: transparent image-url('arrows/#{$color_name}-link.png') 10px center no-repeat
-  .collapsible.open .arrow-link.inverted, .arrow-link.inverted:hover
-    background-image: image-url('arrows/#{$color_name}-link-open.png')
+    background: transparent
+    i
+      +arrows-sprite('#{$color_name}-link')
+
+  .arrow-link
+  .collapsible.open > .arrow-link
+
 
 
   article.post
@@ -145,12 +153,4 @@ $header_bgs: sprite-map("header-bg/*.png")
 
   .book-list
     background: #000 image-url('stars/#{$color_name}.jpg')
-    li.book
-      &.open .book-link
-        background: image-url('arrows/#{$color_name}-down.png') 18px center no-repeat
-      .book-link
-        background: image-url('arrows/#{$color_name}-next.png') 18px center no-repeat
-        &:hover
-          color: $color
-           
 

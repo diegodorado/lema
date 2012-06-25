@@ -11,22 +11,22 @@
           #{post.body}
       -unless post.photos.empty?
         .collapsible.photos{:class=> ('open' if open)}
-          %a.arrow-link(href="#") Fotos
+          =arrow_link 'Fotos', '#', ''
           .collapse
             = render :partial => 'shared/photo_list',:locals => { :photos => post.photos} 
       -if post.video?
         .collapsible.video{:class=> ('open' if open)}
-          %a.arrow-link(href="#") Video
+          =arrow_link 'Video', '#', ''
           .collapse
             =post.video.html_safe
       -if post.audio?
         .collapsible.audio{:class=> ('open' if open)}
-          %a.arrow-link(href="#") Audio
+          =arrow_link 'Audio', '#', ''
           .collapse
             =post.audio.html_safe
       -unless post.pdfs.empty?
         .collapsible.pdf{:class=> ('open' if open)}
-          %a.arrow-link(href="#") Pdf
+          =arrow_link 'Pdf', '#', ''
           .collapse
             = render :partial => 'shared/pdf_list',:locals => { :pdfs => post.pdfs} 
 
@@ -34,7 +34,7 @@
     -if post.sidebar_title? and post.sidebar_body? 
       .span2
         .collapsible.sidebar{:class=> ('open' if open)}
-          %a.arrow-link.inverted(href="#") #{post.sidebar_title}
+          =arrow_link post.sidebar_title, '#', 'inverted'
           .collapse
             :markdown
               #{post.sidebar_body}

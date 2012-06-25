@@ -15,7 +15,7 @@
       .span3
         .image-wrapper
           .image
-            =image_tag book.cover.url(:medium)
+            =image_tag book.cover.url(:medium), :size=> '222x344'
       .span4.content
         .specification
           :markdown
@@ -25,7 +25,7 @@
             #{book.body}
 
         .collapsible.photos.pdf.open
-          %a.arrow-link(href="#")  hojear
+          =arrow_link('hojear', '#', '')
           .collapse
             = render :partial => 'shared/photo_list',:locals => { :photos => book.photos} 
             = render :partial => 'shared/pdf_list',:locals => { :pdfs => book.pdfs} 
@@ -34,12 +34,12 @@
       -if book.obra?
         .span2.sidebar
           .collapsible.open
-            %a.arrow-link.inverted(href="#")  puntos de venta
+            =arrow_link 'puntos de venta', '#', 'inverted'
             .collapse
               :markdown
                 #{book.points_of_sale}
           .collapsible.open
-            %a.arrow-link.inverted(href="#")  comprar online
+            =arrow_link 'comprar online', '#', 'inverted'
             .collapse
               :markdown
                 #{book.buy_online}

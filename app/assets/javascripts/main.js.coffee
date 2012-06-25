@@ -59,17 +59,18 @@ $ ->
    #long interval to avoid cycle
    interval: 500000000
 
-  $("body").on "click", ".collapsible .arrow-link", (e) ->
+  $("body").on "click", ".collapsible > .arrow-link", (e) ->
     e.preventDefault()
     $(this).closest('.collapsible').toggleClass 'open'
     #$collapser = $(this)
     #$collapsible = $collapser.next('.collapse')
     #el[0].scrollHeight to get .collapse height
 
-  $("body").on "click", ".book-list h3 a", (e) ->
-    e.preventDefault()
-    $(this).closest('.book').toggleClass 'open'
 
+  $("body").on "click", ".arrow-link .pdf-link", (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    window.location = $(this).attr('href')
 
   $("body.capacitacion").on "click", ".collapsible.categories .right", (e) ->
     e.preventDefault()
@@ -90,24 +91,11 @@ $ ->
 
   $(window).load ->
     #font fully loaded
-    $wrapper = $(".highlight .wrapper")
-    if $wrapper.size()
-      height = $wrapper.height()
-      $wrapper.data 'height', height
-      $wrapper.height height
 
   $("body").on "click", ".highlight .handler", (e) ->
     e.preventDefault()
     $highlight = $(this).closest('.highlight')
-    $wrapper = $highlight.find('.wrapper')
-
-    if $highlight.hasClass 'open'
-      $wrapper.css 'height', $wrapper.css('min-height')
-    else
-      $wrapper.height $wrapper.data('height')
-    
     $highlight.toggleClass 'open'
-
 
 
   $('.course-tabs a').click (e) ->

@@ -17,7 +17,25 @@ module ApplicationHelper
   def post_url(post)
     trayectoria_url
   end
+
+  def content_box
+    haml_tag :div, :class => "holder" do
+      haml_tag :div, :class => "top"
+      haml_tag :div, :class => "content" do
+        yield
+      end
+      haml_tag :div, :class => "bottom"
+    end
+  end
   
+
+  def arrow_link(text, path, klass)
+    link_to path, :class => "arrow-link #{klass}" do
+      haml_tag :i
+      haml_tag :span, text
+      yield if block_given?
+    end
+  end
   
 
   def book_path(book)

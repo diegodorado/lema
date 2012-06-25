@@ -1,16 +1,12 @@
-@import "compass"
-@import "arrows2/*.png"
-@import "links/*.png"
+body.ticho
+  .highlight.open .wrapper
+    height: 258px
 
-$arrows2-sprite-dimensions: true
-$links-sprite-dimensions: true
+body.bitacora
+  .highlight.open .wrapper
+    height: 310px
 
+body.trayectoria
+  .highlight.open .wrapper
+    height: 803px
 
-+all-arrows2-sprites
-+all-links-sprites
-
-i.arrows2-green
-  display: block
-  -webkit-transition: all 1s ease-in-out
-  &:hover
-    -webkit-transform: rotate(90deg)

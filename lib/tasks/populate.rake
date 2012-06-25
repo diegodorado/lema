@@ -6,7 +6,7 @@ namespace :db do
 
     [Post, Book, Category, Course].each(&:delete_all)
 
-    Post.populate 1200 do |post|
+    Post.populate 120 do |post|
       post.title = Populator.words(4..10).titleize
       post.body = Populator.sentences(2..15)
       post.published_at = 10.years.ago..Time.now

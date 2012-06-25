@@ -1,16 +1,15 @@
 %ul.book-list
   -books.each do |book|
-    %li.book
-      %h3
-        =link_to truncate(book.title,:length => 50), book_path(book), :class=>'book-link'
+    %li.book.collapsible
+      =arrow_link(truncate(book.title,:length => 50), book_path(book), 'book-link') do
         -if book.ticho? and not book.pdfs.empty?
-          =link_to 'pdf', book.pdfs.first.file.url, :class=>'pdf-link'
+          %span.pdf-link{:href=> book.pdfs.first.file.url}
       .collapse
         .row
           .span3
             .image-wrapper
               .image
-                =image_tag book.cover.url(:medium)
+                =image_tag book.cover.url(:medium), :size=> '222x344'
           .span4.content
             .specification
               :markdown
@@ -19,9 +18,9 @@
               :markdown
                 #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
             .links
-              =link_to 'seguir leyendo', book_path(book), :class => 'arrow-link plain'
-              =link_to 'hojear', book_path(book), :class => 'arrow-link plain'
+              =arrow_link('seguir leyendo', book_path(book), 'plain')
+              =arrow_link('hojear', book_path(book), 'plain')
           .span2.sidebar
             -if book.obra?
-              =link_to 'puntos de venta', book_path(book), :class => 'arrow-link'
-              =link_to 'comprar online', book_path(book), :class => 'arrow-link'
+              =arrow_link('puntos de venta', book_path(book), '')
+              =arrow_link('comprar online', book_path(book), '')
