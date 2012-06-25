@@ -26,7 +26,8 @@
                   =image_tag "flags/#{locale}.png"
                   =I18n.t 'language_name', :locale => locale
                 %a.right(href="#")
-                  =I18n.t 'categories', :locale => locale
+                  %span #{I18n.t 'categories', :locale => locale}
+                  %i
               .collapse
                 %ul.category-list
                   -categories.each do |category|

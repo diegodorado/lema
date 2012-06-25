@@ -18,6 +18,12 @@
 .collapsible.open.audio .collapse
   height: 166px
 
+@for $i from 1 through 10
+  .collapsible.open.photos.lines#{$i} .collapse
+    height: 110px*$i - 4px
+  .collapsible.open.pdf.lines#{$i} .collapse
+    height: 40px*$i - 6px
+
 
 .collapsible.sidebar
   .collapse
@@ -374,11 +380,19 @@ body.show
       padding-left: 8px
       font-size: 16px
     .right
+      position: relative
       float: right
       padding-right: 37px
-      background: image-url('arrows/blue-link.png') 107px center no-repeat
       width: 100px
       text-align: right
+      i
+        +transition(all 1s ease-in-out)      
+        position: absolute
+        display: block
+        top: 18px
+        right: 18px
+
+
 
   .category-list
     margin-top: 12px
@@ -407,8 +421,8 @@ body.show
   &.active .locale-title .left, .locale-title .left:hover
     color: #3FA9C7
 
-  &.open .locale-title .right, .locale-title .right:hover
-    background-image: image-url('arrows/blue-link-open.png')
+  &.open .locale-title .right i
+    +transform(rotate(90deg))
 
   &.active .category-list li a
     color: #3FA9C7

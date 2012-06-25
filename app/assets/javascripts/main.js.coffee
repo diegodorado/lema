@@ -62,9 +62,6 @@ $ ->
   $("body").on "click", ".collapsible > .arrow-link", (e) ->
     e.preventDefault()
     $(this).closest('.collapsible').toggleClass 'open'
-    #$collapser = $(this)
-    #$collapsible = $collapser.next('.collapse')
-    #el[0].scrollHeight to get .collapse height
 
 
   $("body").on "click", ".arrow-link .pdf-link", (e) ->
@@ -72,13 +69,9 @@ $ ->
     e.stopPropagation()
     window.location = $(this).attr('href')
 
-  $("body.capacitacion").on "click", ".collapsible.categories .right", (e) ->
-    e.preventDefault()
-    $(this).closest('.collapsible').toggleClass 'open'
 
 
-
-
+  #ie7 last-child FIX
   $("body.ie7 article:last-child").addClass "last"
 
   # FF and Opera background-position-x FIX
@@ -91,6 +84,23 @@ $ ->
 
   $(window).load ->
     #font fully loaded
+    console.log $('nav.locales .collapsible .collapse')
+    $('nav.locales .collapsible .collapse').each (i, el)->
+      $(el).data 'height', $(el).height()
+      console.log $(el).data('height')
+
+
+  $("body.capacitacion").on "click", ".collapsible.categories .right", (e) ->
+    e.preventDefault()
+    collapsible = $(this).closest('.collapsible')
+    collapse = collapsible.find('.collapse')
+    if collapse.height() is 0
+      collapse.height( collapse.find('.category-list').height() + 12 ) #plus ul margin-top
+    else
+      collapse.height 0
+    
+    collapsible.toggleClass 'open'
+
 
   $("body").on "click", ".highlight .handler", (e) ->
     e.preventDefault()

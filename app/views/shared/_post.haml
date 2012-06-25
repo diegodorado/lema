@@ -10,7 +10,9 @@
         :markdown
           #{post.body}
       -unless post.photos.empty?
-        .collapsible.photos{:class=> ('open' if open)}
+        - klass = 'lines'+(post.photos.size/5.0).ceil.to_s
+        - klass << ' open' if open
+        .collapsible.photos{:class=> klass}
           =arrow_link 'Fotos', '#', ''
           .collapse
             = render :partial => 'shared/photo_list',:locals => { :photos => post.photos} 
@@ -25,7 +27,9 @@
           .collapse
             =post.audio.html_safe
       -unless post.pdfs.empty?
-        .collapsible.pdf{:class=> ('open' if open)}
+        - klass = 'lines'+post.pdfs.size.to_s
+        - klass << ' open' if open
+        .collapsible.pdf{:class=> klass}
           =arrow_link 'Pdf', '#', ''
           .collapse
             = render :partial => 'shared/pdf_list',:locals => { :pdfs => post.pdfs} 
