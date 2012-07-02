@@ -4,11 +4,12 @@
       %time #{I18n.localize post.published_at, :format => '%Y-%b-%d'}
     .span5
       %h2
-        %a(href="#") #{post.title}
+        %a.title(href="#") #{post.title}
         =link_to_edit post
       .post-body
-        :markdown
-          #{post.body}
+        .markdown
+          :markdown
+            #{post.body}
       -unless post.photos.empty?
         - klass = 'lines'+(post.photos.size/5.0).ceil.to_s
         - klass << ' open' if open
@@ -37,9 +38,10 @@
           
     -if post.sidebar_title? and post.sidebar_body? 
       .span2
-        .collapsible.sidebar{:class=> ('open' if open)}
-          =arrow_link post.sidebar_title, '#', 'inverted'
-          .collapse
-            :markdown
-              #{post.sidebar_body}
-            
+        .sidebar
+          .collapsible{:class=> ('open' if open)}
+            =arrow_link post.sidebar_title, '#', 'inverted'
+            .collapse
+              .markdown
+                :markdown
+                  #{post.sidebar_body}

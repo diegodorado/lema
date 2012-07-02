@@ -1,17 +1,19 @@
-.highlight.open
-  .wrapper.collapse
-    .container
-      .row
-        .span2
-          %h3 contacto
-          %a(href="mailto:glema@guillermolema.com.ar") glema@guillermolema.com.ar
-        .span7
-          %h2 GUILLERMO LEMA (1964)
-          %p
-            Escritor que atraviesa la poesía, la narrativa literaria y el ensayo filosófico de un modo integrador. Trabaja fuera de género para lograr fidelidad entre sus ideas y sus obras. Realiza textos para música clásica contemporánea. Performer, en sus poesías sonoras busca recuperar la escucha de la musicalidad de diversas lenguas. De formación literaria y filosófica autodidacta, cursó estudios formales en música. Egresado de la Universidad de Ciencias Económicas (UBA), integra en su obra los conocimientos propios de materias “exactas”, así como recupera el sentido humanista de las ciencias económicas. Fue profesor en la Facultad de Filosofía y Letras de Brno, República Checa. Sus obras escritas fueron traducidas al checo, al danés y al francés. Autor e intérprete de la obra de teatro “Variaciones sobre un crimen perfecto”, fue representada en el Festival Casabierta 2011, Facultad de Artes ASAB, Bogotá, Colombia. Director, guionista y actor de un largometraje y varios cortometrajes que fueron proyectados en diversos festivales de Argentina y el mundo.
-      .row
-        .span9
-          =image_tag 'lema-trayectoria.png'
+.highlight{:class=> ('open' if request.fullpath == trayectoria_path)}
+  .collapse
+    .wrapper
+      .container
+        .row
+          .span2
+            .side-data
+              %h3 contacto
+              %a(href="mailto:glema@guillermolema.com.ar") glema@guillermolema.com.ar
+          .span7
+            %h2 GUILLERMO LEMA (1964)
+            %p
+              Escritor que atraviesa la poesía, la narrativa literaria y el ensayo filosófico de un modo integrador. Trabaja fuera de género para lograr fidelidad entre sus ideas y sus obras. Realiza textos para música clásica contemporánea. Performer, en sus poesías sonoras busca recuperar la escucha de la musicalidad de diversas lenguas. De formación literaria y filosófica autodidacta, cursó estudios formales en música. Egresado de la Universidad de Ciencias Económicas (UBA), integra en su obra los conocimientos propios de materias “exactas”, así como recupera el sentido humanista de las ciencias económicas. Fue profesor en la Facultad de Filosofía y Letras de Brno, República Checa. Sus obras escritas fueron traducidas al checo, al danés y al francés. Autor e intérprete de la obra de teatro “Variaciones sobre un crimen perfecto”, fue representada en el Festival Casabierta 2011, Facultad de Artes ASAB, Bogotá, Colombia. Director, guionista y actor de un largometraje y varios cortometrajes que fueron proyectados en diversos festivales de Argentina y el mundo.
+        .row
+          .span9
+            =image_tag 'lema-trayectoria.png'
   .handler
     %a(href="#")
 .heading

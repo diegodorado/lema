@@ -50,8 +50,9 @@
                   =link_to_edit course
 
                 .course-body
-                  :markdown
-                    #{course.body}
+                  .markdown
+                    :markdown
+                      #{course.body}
 
 
                 -unless course.pdfs.empty?
@@ -79,13 +80,16 @@
               .span5
                 .tab-content
                   .tab-pane.active.specification
-                    :markdown
-                      #{course.specification}
+                    .markdown
+                      :markdown
+                        #{course.specification}
                   .tab-pane.objective
-                    :markdown
-                      #{course.objective}
+                    .markdown
+                      :markdown
+                        #{course.objective}
                   .tab-pane.summary
-                    :markdown
-                      #{course.summary}
+                    .markdown
+                      :markdown
+                        #{course.summary}
 
 = paginate @courses

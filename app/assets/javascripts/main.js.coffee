@@ -6,11 +6,11 @@ obertura= ->
   space "s1", -500
   space "o1-s", 400
   space "o1", -1000
-  space "o2-s", 1900, 1100
+  space "o2-s", 3300, 1100
   space "o2", -100
   #space "o3-s", 200
   space "o3", -2500
-  space "t1-s", 2000, 1000
+  space "t1-s", 3500, 1000
   space "t1", 200
   space "t2-s", -1200, 1000, 800
 
@@ -41,11 +41,11 @@ obertura= ->
     duration = 1100
     scrollorama.animate "#ball-#{ball}", {duration: duration, property: "top",  end: end, delay: delay}
 
-  balls '1-big-red', -500
-  balls '2-big-green', -200
-  balls '3-big-blue', -800
-  balls '4-medium-blue_red', -1000
-  balls '5-small-orange_yellow_green', -2000
+  balls '1-big-red', -150
+  balls '2-big-green', -20
+  balls '3-big-blue', -80
+  balls '4-medium-blue_red', -120
+  balls '5-small-orange_yellow_green', -100
 
 
   scrollorama.animate "#balls-tb1 h5", {duration: 500, property: "margin-top",  start: 300, delay: 500}
@@ -59,35 +59,43 @@ $ ->
    #long interval to avoid cycle
    interval: 500000000
 
-  $("body").on "click", ".collapsible > .arrow-link", (e) ->
-    e.preventDefault()
-    $(this).closest('.collapsible').toggleClass 'open'
-
-
-  $("body").on "click", ".arrow-link .pdf-link", (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-    window.location = $(this).attr('href')
-
-
-
-  #ie7 last-child FIX
-  $("body.ie7 article:last-child").addClass "last"
-
-  # FF and Opera background-position-x FIX
-  hbp = $('header').css('backgroundPosition').split(" ")
-  #now contains an array like ["0px", "Kpx"]
-  hbp[0] = '50%'
-  $('header').css 'backgroundPosition', hbp.join(' ')
 
 
 
   $(window).load ->
     #font fully loaded
-    console.log $('nav.locales .collapsible .collapse')
-    $('nav.locales .collapsible .collapse').each (i, el)->
-      $(el).data 'height', $(el).height()
-      console.log $(el).data('height')
+    
+    #disable css transitions
+    $('body').addClass 'no-transitions'
+    
+    #sets open sidebar height
+    $(".sidebar .collapsible.open > .arrow-link").each (i,el) ->
+      collapsible = $(el).closest('.collapsible')
+      collapse = collapsible.find('.collapse')
+      collapse.height( collapse.find('.markdown').height() + 0 ) #plus ul margin-top
+
+    #sets open highlight wrapper height
+    $(".highlight.open .collapse").each (i,el) ->
+      $(el).height(  $(el).find('.wrapper').outerHeight())  # plus wrapper padding
+
+      
+    #enable css transitions
+    setTimeout (-> $('body').removeClass 'no-transitions') , 500
+
+
+
+
+  $("body").on "click", ".sidebar .collapsible > .arrow-link", (e) ->
+    collapse = $(this).closest('.collapsible').find('.collapse')
+    if collapse.height() is 0
+      collapse.height( collapse.find('.markdown').height() + 0 ) #plus ul margin-top
+    else
+      collapse.height 0
+
+
+  $("body").on "click", ".collapsible > .arrow-link", (e) ->
+    e.preventDefault()
+    $(this).closest('.collapsible').toggleClass 'open'
 
 
   $("body.capacitacion").on "click", ".collapsible.categories .right", (e) ->
@@ -101,11 +109,40 @@ $ ->
     
     collapsible.toggleClass 'open'
 
-
   $("body").on "click", ".highlight .handler", (e) ->
+    console.log e
     e.preventDefault()
-    $highlight = $(this).closest('.highlight')
-    $highlight.toggleClass 'open'
+    highlight = $(this).closest('.highlight')
+    collapse = highlight.find('.collapse')
+    if collapse.height() is 85 #min height
+      collapse.height( collapse.find('.wrapper').outerHeight() + 16)  # plus wrapper padding
+    else
+      collapse.height 85
+
+    highlight.toggleClass 'open'
+      
+    
+    #$highlight = $(this).closest('.highlight')
+    #$highlight.toggleClass 'open'
+
+
+
+
+  $("body").on "click", ".arrow-link .pdf-link", (e) ->
+    e.preventDefault()
+    e.stopPropagation() #to avoid arrow-link effect
+    window.location = $(this).attr('href')
+
+
+
+  #ie7 last-child FIX
+  $("body.ie7 article:last-child").addClass "last"
+
+  # FF and Opera background-position-x FIX
+  hbp = $('header').css('backgroundPosition').split(" ")
+  #now contains an array like ["0px", "Kpx"]
+  hbp[0] = '50%'
+  $('header').css 'backgroundPosition', hbp.join(' ')
 
 
   $('.course-tabs a').click (e) ->

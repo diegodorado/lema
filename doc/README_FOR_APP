@@ -1,5 +1,35 @@
 Por útlimo pidió que tuviera estadísticas, se le puede instalar google analytics?
 
-Generales:
-- animaciones de apertura y cierre en todas las solapas colapsables.
-- animaciones de las flechas que giran en las solapas.
+
+> (Paginador.png).
+> ícono del pdf
+
+
+GENERALES:
+> fondo: los dos planos de esferas recién se empiezan a mover cuando scrolleo 
+bastante (por el final de la segunda entrada en bitácora, por el final de la 
+primera con todo desplegado en trayectoria). No sé si es solucionable.
+
+> en chrome no me funciona el fundido en los rollovers (solo en mi computadora, una imac de 20`).
+ En las otras mac en chrome funciona ok.
+
+SECCIONES:
+
+- obertura:
+00 generales
+> seguimos viendo un poco gruesa las fuentes que van sobre fondo oscuros 
+(sobre todo la Buenard). Probar oscurecer un poco para que parezca más fina.
+01 figuras 
+> se ve cuando salen las figuras en el negro, que desaparezcan más abajo.
+> en firefox no se centrado el texto en el recuadro "a una infinitud de puntos 
+fijos... presente"
+02 ojo
+> el ojo lo vemos flotando con un movimiento raro, que no baje, que deslice parejo. 
+Debería quedar fijo en el fondo y desplazarse los textos por encima más rápido.
+
+
+- capacitación
+> donde dice buscar en cursos debería funcionar el buscador. Al cliquear en la palabra 
+tendría que desaparecer y para que aperezca el cursor de tipeo para hacer la búsqueda
+ dentro de la sección. (No lo había probado hasta el momento, creí que ya estaba).
+

@@ -13,7 +13,7 @@ $arrows-sprite-dimensions: true
 =themize_layout($color, $name, $color_name, $border_color)
   a
     +transition(color 0.5s ease-in-out)    
-    &:hover, &.active
+    &, &:hover, &.active
       color: $color
       text-decoration: none
 
@@ -45,6 +45,15 @@ $arrows-sprite-dimensions: true
       background-image: image-url('stars/white-bitacora.png')
     #grey-stars
       background-image: image-url('stars/grey-bitacora.png')
+
+  #years_carousel
+    a.current
+      color: $color
+    .carousel-control
+      background: image-url('arrows/#{$color_name}-prev-lite.png') center center no-repeat
+      &.right
+        background: image-url('arrows/#{$color_name}-next-lite.png') center center no-repeat
+
 
 
   //common for posts

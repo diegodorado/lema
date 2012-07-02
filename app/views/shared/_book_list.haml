@@ -10,17 +10,21 @@
             .image-wrapper
               .image
                 =image_tag book.cover.url(:medium), :size=> '222x344'
-          .span4.content
-            .specification
-              :markdown
-                #{book.specification}
-            .body
-              :markdown
-                #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
-            .links
-              =arrow_link('seguir leyendo', book_path(book), 'plain')
-              =arrow_link('hojear', book_path(book), 'plain')
-          .span2.sidebar
-            -if book.obra?
-              =arrow_link('puntos de venta', book_path(book), '')
-              =arrow_link('comprar online', book_path(book), '')
+          .span4
+            .content
+              .specification
+                .markdown
+                  :markdown
+                    #{book.specification}
+              .body
+                .markdown
+                  :markdown
+                    #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
+              .links
+                =arrow_link('seguir leyendo', book_path(book), 'plain')
+                =arrow_link('hojear', book_path(book), 'plain')
+          .span2
+            .sidebar
+              -if book.obra?
+                =arrow_link('puntos de venta', book_path(book), '')
+                =arrow_link('comprar online', book_path(book), '')

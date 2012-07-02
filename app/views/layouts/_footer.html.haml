@@ -57,7 +57,7 @@
           .span1.blogs
             %h5 #{link_to "blogs", links_path}
             %ul
-              -@footer_links.select{|fl| fl.location == 'blog'}[0..3].each do |fl|
+              -@footer_links.select{|fl| fl.location == 'blog'}[0..2].each do |fl|
                 %li
                   =link_to fl.title, fl.url
     .row.credits

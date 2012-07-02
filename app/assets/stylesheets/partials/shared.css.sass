@@ -9,6 +9,10 @@
 .course-edit-link
   color: red !important
 
+//used to temporary bypass transitions via js 
+body.no-transitions *
+  +transition(none !important)
+
 
 //collapsible open heights
 .collapsible.open.book .collapse
@@ -99,7 +103,7 @@
     left: 10px
     top: 5px    
     display: block
-    +transition(all 1s ease-in-out)
+    +transition(all 0.35s ease)
   &:before
     content: '\00B7'  //prepend middle dot
 
@@ -128,8 +132,13 @@
 .arrow-link.inverted
   height: 18px
   line-height: 18px
+  i
+    top: 4px
   &:before
     content: ''  //no middle dot
+
+
+
       
 .collapsible
   &:last-child .collapse, &.last .collapse
@@ -196,29 +205,40 @@
     text-transform: uppercase
 
   
+  
+
+  
 .highlight
-  .wrapper
-    height: 0
+  .collapse
     overflow: hidden
-    h2
-      font-size: 21px
-      @extend .white-shadow
-    h3
-      font-size: 16px
-    a
-      font-family: BuenardRegular
-      font-size: 13px
-    h2,h3
-      font-family: LektonRegular
-      line-height: 21px
-      text-transform: uppercase
-      letter-spacing: 1px  
-      margin-bottom: 23px
-    p
-      font-family: BuenardRegular
-      font-size: 18px
-      line-height: 26px
-      margin: 0 0 32px
+    height: 85px
+    .wrapper
+      .side-data
+        visibility: hidden
+      h2
+        font-size: 21px
+        line-height: 85px
+        @extend .white-shadow
+        +transition(all 0.35s ease)
+      h3
+        font-size: 16px
+        line-height: 21px
+      a
+        font-family: BuenardRegular
+        font-size: 13px
+      h2,h3
+        font-family: LektonRegular
+        text-transform: uppercase
+        letter-spacing: 1px  
+        margin-bottom: 23px
+      p
+        font-family: BuenardRegular
+        font-size: 18px
+        line-height: 26px
+        margin: 0 0 32px
+      img
+        display: block
+        margin-bottom: 3px
   .handler
     height: 17px
     background: #3C3C3B
@@ -228,12 +248,17 @@
     a
       display: inline-block
       margin-top: -4px
-      +transition(all 1s ease-in-out)
+      +transition(all 0.35s ease)
       
   &.open 
-    .wrapper
+    .collapse
       height: auto
-      padding: 80px 0 0
+      .wrapper
+        padding: 80px 0 0
+        .side-data
+          visibility: visible
+        h2
+          line-height: 21px
     .handler a
       +transform(rotate(180deg))
 
@@ -263,7 +288,7 @@ article.post
     margin-bottom: 24px
     a, a:visited, a:active
       color: inherit
-  .post-body *
+  .post-body .markdown *
     font-family: BuenardRegular
     font-size: 18px
     margin: 0 0 26px
@@ -309,8 +334,7 @@ article.post
 
   .image-wrapper
     padding: 10px 9px
-    margin-top: 12px
-    margin-bottom: 12px
+    margin: 6px 0 12px 12px  //theres a border of 6px on top.. that would be 12px
     text-align: center
     .image
       border: 1px solid #fff
@@ -342,6 +366,7 @@ article.post
         color: #1D1D1B
   .sidebar
     padding: 50px 0
+    margin-right: 12px
 
 
 .book-list
@@ -354,6 +379,7 @@ article.post
 
 body.show
   .book
+    padding-top: 6px  
     background: #fff
     padding-bottom: 85px
    
@@ -386,7 +412,7 @@ body.show
       width: 100px
       text-align: right
       i
-        +transition(all 1s ease-in-out)      
+        +transition(all 0.35s ease)
         position: absolute
         display: block
         top: 18px
@@ -521,6 +547,22 @@ article.course
   
 
 
-
-
-
+#years_carousel
+  padding: 0 80px
+  a
+    cursor: pointer
+    background: none
+    color: #4D4D4D
+  .carousel-control
+    top: -15px
+    left: 15px
+    width: 40px
+    height: 40px
+    margin-top: 0
+    text-indent: 110%
+    overflow: hidden
+    background: none
+    border: none
+    &.right
+      left: auto
+      right: 15px

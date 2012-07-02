@@ -1,14 +1,18 @@
-body.ticho
-  .highlight.open .wrapper
-    height: 258px
+body 
+  h1, h2, h3, h4, h5, h6, *
+    //fix firefox undesired stroke
+    font-weight: normal !important
+  
 
-body.bitacora
-  .highlight.open .wrapper
-    height: 310px
+article.post h2 a.title:hover
+  cursor: text
 
-body.trayectoria
-  .highlight.open .wrapper
-    height: 803px
 
-.collapsible.open.sidebar .collapse
-  //height: 600px
+.markdown
+  word-break: break-word
+
+
+#balls 
+  .ball
+    top: 100px
+  
