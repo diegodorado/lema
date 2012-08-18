@@ -8,7 +8,7 @@
         .row
           .span3
             .image-wrapper
-              .image
+              =link_to book_path(book), :class=> 'image' do
                 =image_tag book.cover.url(:medium), :size=> '222x344'
           .span4
             .content
@@ -22,9 +22,22 @@
                     #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
               .links
                 =arrow_link('seguir leyendo', book_path(book), 'plain')
-                =arrow_link('hojear', book_path(book), 'plain')
-          .span2
-            .sidebar
-              -if book.obra?
-                =arrow_link('puntos de venta', book_path(book), '')
-                =arrow_link('comprar online', book_path(book), '')
+                =arrow_link('hojear', book_path(book), 'plain hojear-link')
+                .hidden
+                  = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
+                
+          -if book.obra?
+            .span2
+              .sidebar
+                .collapsible
+                  =arrow_link 'puntos de venta', '#', ''
+                  .collapse
+                    .markdown
+                      :markdown
+                        #{book.points_of_sale}
+                .collapsible
+                  =arrow_link 'comprar online', '#', ''
+                  .collapse
+                    .markdown
+                      :markdown
+                        #{book.buy_online}                

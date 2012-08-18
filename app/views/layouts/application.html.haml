@@ -1,4 +1,4 @@
-!!! 5
+!!!5
 /[if lt IE 7] <html lang="en" class="no-js ie6">
 /[if IE 7 ]    <html lang="en" class="no-js ie7">
 /[if IE 8 ]    <html lang="en" class="no-js ie8">
@@ -13,26 +13,23 @@
     %meta{:content => "Guillermo Lema Site", :name => "description"}/
     %meta{:content => "diegodorado@gmail.com", :name => "author"}/
     / Mobile viewport optimized: j.mp/bplateviewport
-    %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0"}
     / Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references
     %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     = javascript_include_tag 'modernizr'
     = stylesheet_link_tag 'application'
     = stylesheet_link_tag 'dev'
+    
     = csrf_meta_tag
     
   %body{:class => body_classes.join(' ')}
     =render :partial => "layouts/header"
-    #content{:role => "main"}
+    #content
       .container
         =render :partial => "layouts/alerts"
       = yield
     =render :partial => "layouts/footer"
-    -#load users and chat for all pages
-    -# = app_js_load :users=> user_list, :user_id=> user_id, :chat=> true
-    -# = javascript_tag yield :app_js_load
-    -# = javascript_tag "app.start();"
 
     =render :partial => "layouts/ga"
     =render :partial => "layouts/chrome-frame"

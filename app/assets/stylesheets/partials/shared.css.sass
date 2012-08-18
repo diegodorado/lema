@@ -15,12 +15,14 @@ body.no-transitions *
 
 
 //collapsible open heights
-.collapsible.open.book .collapse
+.collapsible.open.book > .collapse
   height: 448px
 .collapsible.open.video .collapse
   height: 315px
-.collapsible.open.audio .collapse
+.collapsible.open.audio.single .collapse
   height: 166px
+.collapsible.open.audio.playlist .collapse
+  height: 450px
 
 @for $i from 1 through 10
   .collapsible.open.photos.lines#{$i} .collapse
@@ -212,6 +214,7 @@ body.no-transitions *
   .collapse
     overflow: hidden
     height: 85px
+    +transition(none) //will animate with jquery
     .wrapper
       .side-data
         visibility: hidden
@@ -219,7 +222,6 @@ body.no-transitions *
         font-size: 21px
         line-height: 85px
         @extend .white-shadow
-        +transition(all 0.35s ease)
       h3
         font-size: 16px
         line-height: 21px
@@ -236,6 +238,7 @@ body.no-transitions *
         font-size: 18px
         line-height: 26px
         margin: 0 0 32px
+        text-align: justify
       img
         display: block
         margin-bottom: 3px
@@ -266,6 +269,8 @@ body.no-transitions *
 
 
 article
+  clear: both
+  overflow: hidden
   border-bottom: 12px solid #fff
   &:last-child, &.last
     //considering margin of media to reach 85px
@@ -288,13 +293,15 @@ article.post
     margin-bottom: 24px
     a, a:visited, a:active
       color: inherit
-  .post-body .markdown *
-    font-family: BuenardRegular
-    font-size: 18px
-    margin: 0 0 26px
-    color: #777
-    line-height: 22px
-
+  .post-body .markdown 
+    *
+      font-family: BuenardRegular
+      font-size: 18px
+      margin: 0 0 26px
+      color: #777
+      line-height: 22px
+    strong
+      font-family: BuenardBold
 
 //book related
 .book-title
@@ -303,6 +310,7 @@ article.post
     margin-top: 8px
     text-align: center
   h2
+    font-family: LektonRegular
     margin-top: 17px
     color: #fff
     font-size: 32px
@@ -337,6 +345,7 @@ article.post
     margin: 6px 0 12px 12px  //theres a border of 6px on top.. that would be 12px
     text-align: center
     .image
+      display: block
       border: 1px solid #fff
       border-width: 1px 2px
       padding: 24px 23px
@@ -344,23 +353,26 @@ article.post
         border: 5px solid #fff
   .content
     padding: 50px 0
-    font-size: 18px
-    font-family: BuenardRegular
-    line-height: 22px
-    p
-      font: inherit
+
     .specification
       margin-bottom: 50px
     .body
-      color: #666
       margin-bottom: 44px
-      h4
-        font-family: LektonRegular
-        font-size: 15px
-        text-transform: uppercase
-        letter-spacing: 1px  
-        line-height: 18px
-        margin: 50px 0
+      color: #666
+    .specification, .body
+      .markdown 
+        *
+          font-size: 18px
+          font-family: BuenardRegular
+          line-height: 22px
+        strong
+          font-family: BuenardBold
+        h4
+          font-size: 15px
+          text-transform: uppercase
+          letter-spacing: 1px  
+          margin: 50px 0
+
     .links          
       .arrow-link
         color: #1D1D1B
@@ -474,23 +486,6 @@ nav.locales
       border: 2px solid #3FA9C7
       padding-left: 6px
 
-.courses-title
-  background: #3FA9C7
-  margin-bottom: 85px
-  img
-    margin: 26px 0 0 13px
-  h2
-    margin-top: 44px
-    color: #fff
-    font-family: LektonRegular
-    font-size: 21px
-    line-height: 21px
-    text-transform: uppercase
-    letter-spacing: 1px  
-  hr
-    margin: 14px 0 8px 0
-    border: 1px solid #fff
-    height: 0
     
 article.course
   margin-bottom: 42px
@@ -510,11 +505,14 @@ article.course
   h2.title a
     color: #4D4D4D
     text-transform: uppercase
-  .course-body * //markdown
-    line-height: 22px
-    font-family: BuenardRegular
-    font-size: 18px
-    color: #666
+  .course-body .markdown
+    *
+      line-height: 22px
+      font-family: BuenardRegular
+      font-size: 18px
+      color: #666
+    strong
+      font-family: BuenardBold
   .course-tabs
     list-style: none
     margin: 0 0 12px
@@ -539,12 +537,14 @@ article.course
         padding-right: 8px
         &:before
           //content: '\00B7'  //prepend middle dot
-  .tab-content .tab-pane *
-    line-height: 22px
-    color: #3FA9C7
-    font-family: LektonRegular
-    font-size: 13px
-  
+  .tab-content .tab-pane .markdown
+    *
+      line-height: 22px
+      color: #3FA9C7
+      font-family: LektonRegular
+      font-size: 13px
+    strong  
+      font-family: LektonBold
 
 
 #years_carousel

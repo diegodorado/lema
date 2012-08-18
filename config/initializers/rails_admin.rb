@@ -198,6 +198,12 @@ RailsAdmin.config do |config|
       label "Titulo"
       group :default
     end
+    
+    field :published_at, :date do
+      date_format :simple
+      label "Publicado el"
+      group :default
+    end
 
     field :section, :enum do
       label 'Seccion'
@@ -255,8 +261,8 @@ RailsAdmin.config do |config|
       exclude_fields_if do
         true
       end
-      include_fields :title, :section
-      sort_by :title
+      include_fields :title, :section, :published_at
+      sort_by :published_at
     end
 
     edit do

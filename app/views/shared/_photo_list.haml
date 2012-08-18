@@ -2,6 +2,6 @@
   %ul.photo-list
     - photos.each do |photo|
       %li
-        %a{:href=>"#{photo.image.url}", :rel=>"lightbox[book]"}
+        %a{:href=>"#{photo.image.url}", :rel=>"lightbox[#{id}]"}
           %img(src="#{photo.image.url(:thumb)}")
 

@@ -3,7 +3,7 @@ class Book < ActiveRecord::Base
   validates :section, :presence => true  
   validates :title, :presence => true  
   validates :body, :presence => true  
-
+  validates :published_at, :presence => true 
 
   has_attached_file :cover, {
       :styles => { :medium => "222x344#", :thumb => "100x100#" }

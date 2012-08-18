@@ -27,4 +27,14 @@ class CapacitacionController < ApplicationController
 
     render 'index'
   end
+
+  def search
+    @query = params[:search_query]
+    @courses = Course.with_query(@query).order(:title).page(params[:page]).per(10)
+    @locales = Category.locales_with_categories
+
+    render 'index'
+  end
+
+  
 end

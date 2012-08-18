@@ -16,26 +16,24 @@
         .collapsible.photos{:class=> klass}
           =arrow_link 'Fotos', '#', ''
           .collapse
-            = render :partial => 'shared/photo_list',:locals => { :photos => post.photos} 
+            = render :partial => 'shared/photo_list',:locals => { :photos => post.photos, :id=> post.id} 
       -if post.video?
         .collapsible.video{:class=> ('open' if open)}
           =arrow_link 'Video', '#', ''
           .collapse
             =post.video.html_safe
       -if post.audio?
-        .collapsible.audio{:class=> ('open' if open)}
+        - klass = post.playlist? ? 'playlist' : 'single'
+        - klass << ' open' if open
+        .collapsible.audio{:class=> klass}
           =arrow_link 'Audio', '#', ''
           .collapse
             =post.audio.html_safe
       -unless post.pdfs.empty?
-        - klass = 'lines'+post.pdfs.size.to_s
-        - klass << ' open' if open
-        .collapsible.pdf{:class=> klass}
-          =arrow_link 'Pdf', '#', ''
+        .collapsible.pdf.open
           .collapse
             = render :partial => 'shared/pdf_list',:locals => { :pdfs => post.pdfs} 
 
-          
     -if post.sidebar_title? and post.sidebar_body? 
       .span2
         .sidebar

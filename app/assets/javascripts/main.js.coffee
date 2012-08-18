@@ -55,6 +55,9 @@ obertura= ->
 
 $ ->
 
+
+
+
   $("body.trayectoria #years_carousel").carousel
    #long interval to avoid cycle
    interval: 500000000
@@ -110,20 +113,27 @@ $ ->
     collapsible.toggleClass 'open'
 
   $("body").on "click", ".highlight .handler", (e) ->
-    console.log e
     e.preventDefault()
     highlight = $(this).closest('.highlight')
     collapse = highlight.find('.collapse')
-    if collapse.height() is 85 #min height
-      collapse.height( collapse.find('.wrapper').outerHeight() + 16)  # plus wrapper padding
-    else
-      collapse.height 85
 
-    highlight.toggleClass 'open'
+    if collapse.height() is 85 #min height
+      h = collapse.find('.wrapper').outerHeight() + 16  # plus wrapper padding
+    else
+      h = 85
+
+    collapse.find('.wrapper .container').animate
+      opacity: 0
+    ,200, ->
+      collapse.animate
+        height: h
+      ,200, ->
+        highlight.toggleClass 'open'
+        collapse.find('.wrapper .container').animate
+          opacity: 1
+        ,200
       
     
-    #$highlight = $(this).closest('.highlight')
-    #$highlight.toggleClass 'open'
 
 
 
@@ -135,14 +145,32 @@ $ ->
 
 
 
+  $("body").on "click", ".arrow-link.hojear-link", (e) ->
+    e.preventDefault()
+    $(@).next('.hidden').find('.photo-list a:first').click()
+
+
   #ie7 last-child FIX
-  $("body.ie7 article:last-child").addClass "last"
+  $("html.ie7 article:last-child").addClass "last"
 
   # FF and Opera background-position-x FIX
   hbp = $('header').css('backgroundPosition').split(" ")
   #now contains an array like ["0px", "Kpx"]
   hbp[0] = '50%'
   $('header').css 'backgroundPosition', hbp.join(' ')
+
+
+  $("#search_query").on( "focus", (ev) ->
+    $(@).val ""  if $(@).val() is $(@).attr("placeholder")
+  ).on('blur',(ev) ->
+    $(@).val $(@).attr("placeholder")  if $(@).val() is ""
+  ).trigger 'blur'
+
+  $("#search_submit").on "click", (ev) ->
+    $sq = $("#search_query")
+    if $sq.val() is $sq.attr("placeholder")
+      ev.preventDefault()
+      $sq.trigger 'focus'
 
 
   $('.course-tabs a').click (e) ->

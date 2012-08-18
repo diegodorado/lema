@@ -8,15 +8,15 @@
           .span3.offset5
             %ul.span-hack
               %li
-                %a.social-youtube(href="#")
+                %a.social-youtube(href="http://www.youtube.com/user/AquilesKafka/feed")
               %li
-                %a.social-vimeo(href="#")
+                %a.social-vimeo(href="http://vimeo.com/user12627247")
               %li
-                %a.social-flickr(href="#")
+                %a.social-flickr(href="http://www.flickr.com/people/61984640@N05/")
               %li
-                %a.social-facebook(href="#")
+                %a.social-facebook(href="http://facebook.com/guillermo.lema.50")
               %li
-                %a.social-plus(href="#")
+                %a.social-soundcloud(href="http://soundcloud.com/guillermo-lema")
               %li
                 %a.social-delicious(href="#")
             %a.span-hack.social-rss(href="#{feed_path}") RSS
@@ -25,21 +25,21 @@
         .row
           .span2.footer-contact
             %h5
-              %a(href="#") Guillermo Lema
+              %a(href="mailto:infoguillermolema@gmail.com") Guillermo Lema
             %h6
-              %a(href="#") contacto
+              %a(href="mailto:infoguillermolema@gmail.com") contacto
           .span3.footer-nav
             .row
               .span1
                 %ul
-                  %li #{link_to "Trayectoria", trayectoria_path}
-                  %li #{link_to "Obra Escrita", obra_path}
-                  %li #{link_to "Agenda", agenda_path}
+                  %li #{link_to "Trayectoria", trayectoria_path, :class=> ('active' if current_page?(trayectoria_path))}
+                  %li #{link_to "Obra Escrita", obra_path, :class=> ('active' if current_page?(obra_path))}
+                  %li #{link_to "Agenda", agenda_path, :class=> ('active' if current_page?(agenda_path))}
               .span2
                 %ul
-                  %li #{link_to "Bitacora", bitacora_path}
-                  %li #{link_to "Ticho Ediciones", ticho_path}
-                  %li #{link_to "Capacitación", capacitacion_path}
+                  %li #{link_to "Bitacora", bitacora_path, :class=> ('active' if current_page?(bitacora_path))}
+                  %li #{link_to "Ticho Ediciones", ticho_path, :class=> ('active' if current_page?(ticho_path))}
+                  %li #{link_to "Capacitación", capacitacion_path, :class=> ('active' if current_page?(capacitacion_path))}                
           .span2.links
             %h5 #{link_to "links", links_path}
             .row
@@ -62,6 +62,6 @@
                   =link_to fl.title, fl.url
     .row.credits
       .span3.offset3
-        %a(href="#") fotografía GABRIEL MASSERA
+        %a(href="http://www.flickr.com/photos/gamassera") fotografía GABRIEL MASSERA
       .span1
-        %a.design(href="#") diseño
+        %a.design(href="http://www.entrecasaestudio.com.ar/") diseño

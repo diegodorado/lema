@@ -25,8 +25,6 @@ $arrows-sprite-dimensions: true
     a
       color: #fff
 
-  #content
-    margin-top: image-height(sprite-file($header_bgs, $color_name)) + 3
   background-color: #EDECED
   #white-stars
     background: image-url('stars/white.png') repeat-y center top
@@ -83,10 +81,15 @@ $arrows-sprite-dimensions: true
       .next_page,.prev_page
         height: 65px
 
-
+  //lightbox
+  .lb-close
+    border: 3px solid $color
 
       
   footer
+    a
+      color: #fff
+  
     .links h5, .blogs h5
       color: $color
     .share-links ul li a:hover

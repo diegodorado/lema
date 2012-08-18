@@ -1,6 +1,6 @@
 class TichoController < ApplicationController
   def index
-    @books = Book.where('section=?', :te).order(:title)
+    @books = Book.where('section=?', :te).order('published_at DESC')
   end
   
   def show

@@ -16,6 +16,7 @@ Lema::Application.routes.draw do
   match '/capacitacion/locale/:locale' => 'capacitacion#locale', :as => :capacitacion_locale
   match '/capacitacion/category/:category_id' => 'capacitacion#category', :as => :capacitacion_category
   match '/capacitacion/course/:id' => 'capacitacion#show', :as => :capacitacion_show
+  match '/capacitacion/search' => 'capacitacion#search', :as => :capacitacion_search
 
 
   match '/feed' => 'bitacora#feed', :as => :feed

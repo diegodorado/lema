@@ -1,10 +1,11 @@
 .courses-title
   .container
     .row
+      = form_tag capacitacion_search_path, :method => 'get'
       .span1
-        =image_tag 'search.png'
+        = button_tag "Buscar", :id => 'search_submit'
       .span8
-        %h2 Buscar en Cursos
+        = text_field_tag :search_query, '', :placeholder => 'Buscar en Cursos'
         %hr
 
 #stars-container.container
@@ -36,6 +37,8 @@
                       %a{:href=> capacitacion_category_path(category.id)}
                         =category.name
       .span6
+        -if @courses.size == 0
+          .no-courses-matched No hay coincidencias con su busqueda
         -@courses.each do |course|
           -locale = course.category.locale
           %article.course[course]

@@ -5,6 +5,12 @@ class Course < ActiveRecord::Base
 
   accepts_nested_attributes_for :pdfs, :allow_destroy => true
 
+  acts_as_indexed :fields => [:title, :body,:specification,:objective, :summary, :category_name ]
+
+  def category_name
+    "#{self.category.locale_name} #{self.category.name}"
+  end
+
   def to_post
     post = Post.new
     post.title = "Curso: #{title}"

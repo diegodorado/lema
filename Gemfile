@@ -13,7 +13,8 @@ gem 'paperclip', '3.0.2' # , '2.7.0' #this is for ruby 1.8.7
 
 gem "redcarpet",'2.1.0'
 #gem "friendly_id", "~> 4.0.0.beta8"
-
+gem 'nokogiri'
+gem 'acts_as_indexed'
 
 group :assets do
   gem 'sass-rails',   '3.1.4'
