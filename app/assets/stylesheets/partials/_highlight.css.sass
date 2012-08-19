@@ -1,0 +1,58 @@
+@import "compass"
+
+  
+.highlight
+  .collapse
+    overflow: hidden
+    height: 85px
+    +transition(none) //will animate with jquery
+    .wrapper
+      .side-data
+        visibility: hidden
+      h2
+        font-size: 21px
+        line-height: 85px
+        @extend .white-shadow
+      h3
+        font-size: 16px
+        line-height: 21px
+      a
+        font-family: BuenardRegular
+        font-size: 13px
+      h2,h3
+        font-family: LektonRegular
+        text-transform: uppercase
+        letter-spacing: 1px  
+        margin-bottom: 23px
+      p
+        font-family: BuenardRegular
+        font-size: 18px
+        line-height: 26px
+        margin: 0 0 32px
+        text-align: justify
+      img
+        display: block
+        margin-bottom: 3px
+  .handler
+    height: 17px
+    background: #3C3C3B
+    text-align: center
+    cursor: pointer
+    position: relative
+    a
+      display: inline-block
+      margin-top: -4px
+      +transition(all 0.35s ease)
+      
+  &.open 
+    .collapse
+      height: auto
+      .wrapper
+        padding: 80px 0 0
+        .side-data
+          visibility: visible
+        h2
+          line-height: 21px
+    .handler a
+      +transform(rotate(180deg))
+

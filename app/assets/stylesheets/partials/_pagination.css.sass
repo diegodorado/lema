@@ -1,0 +1,57 @@
+@import 'compass'
+
+.pagination
+  @extend .light-shadow
+  background: #fff
+  font-family: LektonRegular
+  font-size: 16px
+  text-transform: uppercase
+  letter-spacing: 1px
+  margin: 0
+  position: relative
+  z-index: 3  //due to absolute stars
+  //years only applies to trayectoria
+  .years
+    border-bottom: 1px dashed #BEBEBE
+    margin-top: 31px
+    height: 34px
+    margin-bottom: 18px  
+  .page a
+    color: #4D4D4D
+  a, span
+    float: none
+    padding: 0
+    border: 0
+    +inline-block
+    &:hover
+      background: none
+  .prev_page
+    text-align: left
+    a
+      padding-left: 40px
+  .center
+    text-align: center
+  .next_page
+    text-align: right
+    a
+      padding-right: 40px
+
+#years_carousel
+  padding: 0 80px
+  a
+    cursor: pointer
+    background: none
+    color: #4D4D4D
+  .carousel-control
+    top: -15px
+    left: 15px
+    width: 40px
+    height: 40px
+    margin-top: 0
+    text-indent: 110%
+    overflow: hidden
+    background: none
+    border: none
+    &.right
+      left: auto
+      right: 15px

@@ -1,0 +1,29 @@
+@import "compass"
+
+article.post
+  margin-top: 42px
+  h2, time
+    @extend .light-shadow
+    font-family: LektonRegular
+    letter-spacing: 1px  
+    line-height: 24px
+  time
+    font-size: 20px
+  h2
+    color: #4D4D4D
+    font-size: 21px
+    text-transform: uppercase
+    margin-bottom: 24px
+    a, a:visited, a:active
+      color: inherit
+      cursor: text
+  .post-body .markdown 
+    *
+      font-family: BuenardRegular
+      font-size: 18px
+      margin: 0 0 26px
+      color: #777
+      line-height: 22px
+    strong
+      font-family: BuenardBold
+

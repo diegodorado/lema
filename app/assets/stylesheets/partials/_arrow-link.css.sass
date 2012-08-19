@@ -1,0 +1,53 @@
+@import "compass"
+
+.arrow-link
+  display: block
+  font-family: LektonRegular
+  font-size: 12px
+  text-transform: uppercase
+  letter-spacing: 1px  
+  height: 20px
+  line-height: 20px
+  margin-bottom: 6px
+  padding-left: 28px
+  color: #666 !important
+  white-space: nowrap  
+  position: relative
+  i
+    position: absolute
+    left: 10px
+    top: 5px    
+    display: block
+    +transition(all 0.35s ease)
+  &:before
+    content: '\00B7'  //prepend middle dot
+
+
+.arrow-link.plain
+  &:before
+    content: ''  //no middle dot
+
+
+.arrow-link.book-link
+  height: 100px
+  font-size: 32px
+  border-bottom: 6px solid #F7F7EB
+  margin-bottom: 0
+  color: #fff !important
+  line-height: 100px
+  padding-left: 62px
+  i
+    left: 18px
+    top: 35px    
+  &:before
+    content: ''  //no middle dot
+
+
+//inverted style
+.arrow-link.inverted
+  height: 18px
+  line-height: 18px
+  i
+    top: 4px
+  &:before
+    content: ''  //no middle dot

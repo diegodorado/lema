@@ -1,0 +1,95 @@
+@import "compass"
+
+
+.book-title
+  overflow: hidden
+  .span3
+    margin-top: 8px
+    text-align: center
+  h2
+    font-family: LektonRegular
+    margin-top: 17px
+    color: #fff
+    font-size: 32px
+    text-transform: uppercase
+    line-height: 40px
+  hr
+    margin: 5px 0 17px 0
+    border: 1px solid #fff
+    width: 2000px
+    height: 0
+
+
+
+.book
+  //photo list container is smaller for books
+  .arrow-link
+    color: #fff !important
+    &.plain, &.inverted
+      color: #1d1d1b !important
+
+  .photo-list
+    margin-left: -9px
+    li
+      margin-left: 9px
+  //separate from photos since there's one common arrow-link
+  //for both photos and pdfs
+  .pdf-list
+    margin-top: 12px
+
+  .image-wrapper
+    padding: 10px 9px
+    margin: 6px 0 12px 12px  //theres a border of 6px on top.. that would be 12px
+    text-align: center
+    .image
+      display: block
+      border: 1px solid #fff
+      border-width: 1px 2px
+      padding: 24px 23px
+      img
+        border: 5px solid #fff
+  .content
+    padding: 50px 0
+
+    .specification
+      margin-bottom: 50px
+    .body
+      margin-bottom: 44px
+      color: #666
+    .specification, .body
+      .markdown 
+        *
+          font-size: 18px
+          font-family: BuenardRegular
+          line-height: 22px
+        strong
+          font-family: BuenardBold
+        h4
+          font-size: 15px
+          text-transform: uppercase
+          letter-spacing: 1px  
+          margin: 50px 0
+
+    .links          
+      .arrow-link
+        color: #1D1D1B
+  .sidebar
+    padding: 50px 0
+    margin-right: 12px
+
+
+.book-list
+  margin: 85px 0
+  list-style: none
+  li.book
+    .collapse
+      background: #F7F7EB
+
+
+body.show
+  .book
+    padding-top: 6px  
+    background: #fff
+    padding-bottom: 85px
+   
+

@@ -21,7 +21,6 @@ $arrows-sprite-dimensions: true
     border-bottom: 3px solid $border_color
     background: #000 sprite($header_bgs, $color_name) no-repeat 
     height: image-height(sprite-file($header_bgs, $color_name))
-    background-position-x: center
     a
       color: #fff
 
@@ -30,11 +29,6 @@ $arrows-sprite-dimensions: true
     background: image-url('stars/white.png') repeat-y center top
   #grey-stars
     background: image-url('stars/grey.png') repeat-y center top
-  
-  // commented because it is used on links  
-  //@if $name == home
-  //  #white-stars, #grey-stars
-  //   display: none
   
 
   @if $name == bitacora
@@ -88,8 +82,7 @@ $arrows-sprite-dimensions: true
       
   footer
     a
-      color: #fff
-  
+      color: #fff  
     .links h5, .blogs h5
       color: $color
     .share-links ul li a:hover
@@ -146,12 +139,6 @@ $arrows-sprite-dimensions: true
 
   .collapsible.categories .locale-title .right i
     +arrows-sprite('blue-link')
-
-
-  .arrow-link
-  .collapsible.open > .arrow-link
-
-
 
 
 

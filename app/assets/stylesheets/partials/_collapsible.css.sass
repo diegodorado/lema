@@ -1,0 +1,54 @@
+@import "compass"
+
+
+.collapsible
+  &:last-child .collapse, &.last .collapse
+    margin-bottom: 6px
+  > .collapse
+    iframe
+      display: none
+  &.open
+    > .arrow-link i
+      +transform(rotate(90deg))
+    > .collapse
+      height: auto
+      margin-bottom: 12px
+      iframe
+        display: block
+    &:last-child > .collapse, &.last > .collapse
+      margin-bottom: 12px
+
+//collapsible open heights
+.collapsible.open.book > .collapse
+  height: 448px
+.collapsible.open.video .collapse
+  height: 315px
+.collapsible.open.audio.single .collapse
+  height: 166px
+.collapsible.open.audio.playlist .collapse
+  height: 450px
+
+@for $i from 1 through 10
+  .collapsible.open.photos.lines#{$i} .collapse
+    height: 110px*$i - 4px
+  .collapsible.open.pdf.lines#{$i} .collapse
+    height: 40px*$i - 6px
+
+
+.collapsible.sidebar
+  .collapse
+    color: #999
+    margin-top: 8px
+    hr
+      height: 0
+      border-bottom: 1px solid #666
+      margin: 17px 0
+    a, p
+      font-family: LektonRegular
+      font-size: 13px
+    a
+      line-height: 30px
+      color: #666
+    p
+      margin: 0
+      color: #999
