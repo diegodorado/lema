@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  validates :image, :presence => true  
+  validates :image, :attachment_presence => true
 
   has_attached_file :image, {
       :styles => { :medium => "540x300>", :thumb => "100x100#" } #,
