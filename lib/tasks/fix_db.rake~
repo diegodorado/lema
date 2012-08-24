@@ -1,0 +1,11 @@
+namespace :db do
+  desc "Fix posts in db"
+  task :fix => :environment do
+
+    Post.each do |post|
+      post.save
+    end
+
+
+  end
+end

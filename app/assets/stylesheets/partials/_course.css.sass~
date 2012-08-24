@@ -54,10 +54,10 @@ article.course
     *
       line-height: 22px
       color: #3FA9C7
-      font-family: LektonBold
-      font-size: 14px
-    strong  
       font-family: LektonRegular
+      font-size: 13px
+    strong  
+      font-family: LektonBold
 
 
 

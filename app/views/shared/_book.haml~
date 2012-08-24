@@ -27,11 +27,11 @@
               .markdown
                 :markdown
                   #{book.body}
-            -unless book.photos.empty?
-              .collapsible.photos
-                =arrow_link('hojear', '#', '')
-                .collapse
-                  = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
+
+            .collapsible.photos
+              =arrow_link('hojear', '#', '')
+              .collapse
+                = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
             .collapsible.pdf.open
               .collapse
                 = render :partial => 'shared/pdf_list',:locals => { :pdfs => book.pdfs} 

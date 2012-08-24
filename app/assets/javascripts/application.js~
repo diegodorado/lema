@@ -12,6 +12,5 @@
 //= require bootstrap-tab
 //= require lightbox
 //= require jquery.scrollorama
-//= require bgpos
 //= require main
 

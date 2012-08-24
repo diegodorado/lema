@@ -60,7 +60,7 @@ class Post < ActiveRecord::Base
   end
 
   def validate_video_iframe
-    iframe = validate_iframe(:video)
+    iframe = validate_iframe(:audio)
     return if iframe.nil?
     
     iframe.attributes['height'].value = '315'

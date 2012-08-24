@@ -35,6 +35,13 @@ OBERTURA
 - El problema de visualización (ya te enviamos un mail al respecto)
 
 
+OBRA ESCRITA Y TICHO
+- Cuando no hay contenidos en Hojear no debería aparecer la solapa
+
+
+AGENDA
+- Funciona mal, entradas de más de un mes de antigüedad no están 
+desapareciendo de la agenda.
 
 BITACORA
 - Entrada "El protector bien temperado"
@@ -52,5 +59,12 @@ Sigue quedando un hueco en segunda linea (bitacora-subterranes.png)
 Al chequear en el backend, en imagenes, se ve que falta foto #52, debe 
 haberse cargado mal, en ese caso tendría que no deje guardar, o ignorarlo 
 desde el frontend. O decime vos qué ocurre y cuál sería la solución.
+
+
+CAPACITACIÓN
+- http://lema.cooph.com.ar/capacitacion/locale/en
+Agrandar 1 punto la tipografía azul de las carecterísitcas técnicas y 
+llevarla a bold por defecto (si es posible al hacer bold en el editor 
+que ponga la versión regular)
 
 

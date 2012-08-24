@@ -33,8 +33,8 @@
   width: image-width('lightbox/close.png')
   height: image-height('lightbox/close.png')
   position: absolute
-  left: -20px
-  top: -20px
+  left: -#{image-width('lightbox/close.png')}-3*2
+  top: -#{image-height('lightbox/close.png')}-3*2 //consider borders
   
   
 .lb-loader

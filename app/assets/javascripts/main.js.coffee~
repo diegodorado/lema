@@ -190,8 +190,3 @@ $ ->
 
 
 
-  #disable post title links
-  $("article.post a.title").on "click", (ev) ->
-    ev.preventDefault()
-
-

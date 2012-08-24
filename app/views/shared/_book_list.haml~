@@ -22,10 +22,9 @@
                     #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
               .links
                 =arrow_link('seguir leyendo', book_path(book), 'plain')
-                -unless book.photos.empty?
-                  =arrow_link('hojear', book_path(book), 'plain hojear-link')
-                  .hidden
-                    = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
+                =arrow_link('hojear', book_path(book), 'plain hojear-link')
+                .hidden
+                  = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
                 
           -if book.obra?
             .span2
