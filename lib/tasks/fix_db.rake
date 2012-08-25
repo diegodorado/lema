@@ -8,4 +8,13 @@ namespace :db do
 
 
   end
+
+end
+
+namespace :pc do
+  desc "reproccess thumbs"
+  task :reproccess => :environment do
+    Book.all.each {|b| b.cover.reprocess! if b.cover}
+  end
+
 end
