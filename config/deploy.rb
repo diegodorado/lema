@@ -21,7 +21,7 @@ set :deploy_via, :remote_cache
 
 set :use_sudo, false
 
-set :keep_releases,  3
+set :keep_releases,  2
 
 
 _cset :asset_env, "RAILS_GROUPS=assets"

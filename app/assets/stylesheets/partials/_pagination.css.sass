@@ -15,16 +15,20 @@
     border-bottom: 1px dashed #BEBEBE
     margin-top: 31px
     height: 34px
-    margin-bottom: 18px  
-  .page a
-    color: #4D4D4D
-  a, span
+    margin-bottom: 18px
+  a
     float: none
+    display: block
     padding: 0
     border: 0
+  
+  .page 
     +inline-block
-    &:hover
-      background: none
+    a
+      color: #4D4D4D
+      display: inline
+      &:hover
+        background: none
   .prev_page
     text-align: left
     a
