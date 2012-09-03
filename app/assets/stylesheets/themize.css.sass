@@ -38,6 +38,11 @@ $arrows-sprite-dimensions: true
     #grey-stars
       background-image: image-url('stars/grey-bitacora.png')
 
+  @if $name == capacitacion
+    #white-stars
+      background-image: image-url('stars/white-capacitacion.png')
+
+
   #years_carousel
     a.current
       color: $color
@@ -159,4 +164,11 @@ $arrows-sprite-dimensions: true
 
   .book-list
     background: #000 image-url('stars/#{$color_name}.jpg')
+
+
+  .sidebar
+    .markdown
+      a:hover
+        color: $color
+
 

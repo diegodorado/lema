@@ -30,15 +30,17 @@
           -if book.obra?
             .span2
               .sidebar
-                .collapsible
-                  =arrow_link 'puntos de venta', '#', ''
-                  .collapse
-                    .markdown
-                      :markdown
-                        #{book.points_of_sale}
-                .collapsible
-                  =arrow_link 'comprar online', '#', ''
-                  .collapse
-                    .markdown
-                      :markdown
-                        #{book.buy_online}                
+                -unless book.points_of_sale.empty?
+                  .collapsible
+                    =arrow_link 'puntos de venta', '#', ''
+                    .collapse
+                      .markdown
+                        :markdown
+                          #{book.points_of_sale}
+                -unless book.buy_online.empty?
+                  .collapsible
+                    =arrow_link 'comprar online', '#', ''
+                    .collapse
+                      .markdown
+                        :markdown
+                          #{book.buy_online}

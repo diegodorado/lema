@@ -17,21 +17,21 @@ fr:
   specification: fiche
   objective: objectif
   summary: contenu
-  categories: categories
+  categories: catégories
    
 it:
   language_name: Italiano
   specification: scheda
   objective: obiettivo
   summary: contenuto
-  categories: categories
+  categories: categorie
   
 cs:
   language_name: Čeština
   specification: karta
   objective: cíl
   summary: obsah
-  categories: categories
+  categories: kategorie
  
 en:
   language_name: English
