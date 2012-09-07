@@ -117,7 +117,7 @@ $ ->
     highlight = $(this).closest('.highlight')
     collapse = highlight.find('.collapse')
 
-    if collapse.height() is 85 #min height
+    if collapse.height() < 100 #min height is 85
       h = collapse.find('.wrapper').outerHeight() + 16  # plus wrapper padding
     else
       h = 85
