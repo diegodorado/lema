@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120818083534) do
+ActiveRecord::Schema.define(:version => 20130304004637) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120818083534) do
     t.string   "section"
     t.text     "specification"
     t.datetime "published_at"
+    t.boolean  "draft"
   end
 
   create_table "categories", :force => true do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120818083534) do
     t.text     "summary"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "draft"
   end
 
   create_table "footer_links", :force => true do |t|
@@ -104,6 +106,17 @@ ActiveRecord::Schema.define(:version => 20120818083534) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "settings", :force => true do |t|
+    t.string   "var",                      :null => false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], :name => "index_settings_on_thing_type_and_thing_id_and_var", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

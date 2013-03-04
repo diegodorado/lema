@@ -133,6 +133,14 @@ RailsAdmin.config do |config|
     field :category do
       label "Categoria"
     end
+
+    field :draft do
+      label "Borrador"
+      help "No publicar este curso."          
+      group :default
+    end
+
+    
     field :body do
       label "Contenido"
       group :default
@@ -175,7 +183,7 @@ RailsAdmin.config do |config|
       exclude_fields_if do
         true
       end
-      include_fields :title, :category
+      include_fields :title, :category, :draft
       sort_by :title
     end
 
@@ -207,6 +215,12 @@ RailsAdmin.config do |config|
 
     field :section, :enum do
       label 'Seccion'
+      group :default
+    end
+
+    field :draft do
+      label "Borrador"
+      help "No publicar este libro."          
       group :default
     end
 
@@ -261,7 +275,7 @@ RailsAdmin.config do |config|
       exclude_fields_if do
         true
       end
-      include_fields :title, :section, :published_at
+      include_fields :title, :section, :draft, :published_at
       sort_by :published_at
     end
 

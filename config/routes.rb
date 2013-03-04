@@ -21,4 +21,8 @@ Lema::Application.routes.draw do
 
   match '/feed' => 'bitacora#feed', :as => :feed
 
+  
+  get '/settings/toggle/:key' => 'settings#toggle', :as => 'settings_toggle'
+  post '/settings/change' => 'settings#change', :as => 'settings_change'
+
 end

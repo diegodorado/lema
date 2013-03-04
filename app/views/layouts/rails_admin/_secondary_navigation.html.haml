@@ -1,0 +1,27 @@
+%ul.nav.pull-right
+  - actions(:root).each do |action|
+    %li= link_to wording_for(:menu, action), { :action => action.action_name, :controller => 'rails_admin/main' }, :class => 'pjax'
+  - if main_app_root_path = (main_app.root_path rescue false)
+    %li= link_to 'Inicio', main_app_root_path
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        %span Configuración
+        %i.icon-cog
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href =>main_app.settings_toggle_path('bitacora_on'), :data=>{:remote=>true}}
+            %i{:class=> "icon-#{Setting.bitacora_on ? 'ok' : 'remove'}"}
+            %span Link a Bitacora
+        %li
+          %a{:href =>main_app.settings_toggle_path('agenda_on'), :data=>{:remote=>true}}
+            %i{:class=> "icon-#{Setting.agenda_on ? 'ok' : 'remove'}"}
+            %span Link a Agenda
+            
+  - if _current_user
+    - if user_link = edit_user_link
+      %li= user_link
+    %li= link_to content_tag('span', t('admin.misc.log_out'), :class => 'label label-important'), main_app.url_for(:action => 'destroy', :controller => 'devise/sessions'), :method => Devise.sign_out_via
+    - if _current_user.respond_to?(:email) && _current_user.email.present?
+      %li= image_tag "#{(request.ssl? ? 'https://secure' : 'http://www')}.gravatar.com/avatar/#{Digest::MD5.hexdigest _current_user.email}?s=30", :style => 'padding-top:5px'
+
