@@ -117,7 +117,7 @@ $ ->
     highlight = $(this).closest('.highlight')
     collapse = highlight.find('.collapse')
 
-    if collapse.height() < 100 #min height is 85
+    if collapse.height() is 85 #min height
       h = collapse.find('.wrapper').outerHeight() + 16  # plus wrapper padding
     else
       h = 85
@@ -188,10 +188,5 @@ $ ->
   #open external links in new window
   $(document.links).filter( () -> @hostname != window.location.hostname).attr('target', '_blank')
 
-
-
-  #disable post title links
-  $("article.post a.title").on "click", (ev) ->
-    ev.preventDefault()
 
 

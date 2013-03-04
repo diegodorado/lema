@@ -1,12 +1,12 @@
 #require "bundler/capistrano"
 
-ssh_options[:auth_methods] = ["publickey"]
-ssh_options[:keys] = ["~/.ssh/common_rsa"]
+ssh_options[:forward_agent] = true
 
 default_run_options[:pty] = true
 
-set :repository,  "git://github.com/diegodorado/lema.git"
+set :repository,  "git@github.com:diegodorado/lema.git"
 set :scm, :git
+set :scm_verbose, true
 
 #set :application,  "guillermolema.com.ar"
 set :application,  "cooph.com.ar"
@@ -17,11 +17,11 @@ server application , :app, :web, :db, :primary => true
 set :user, "lema"
 set :deploy_to, "/home/lema"
 set :deploy_via, :remote_cache
-set :scm_verbose, true
+
 
 set :use_sudo, false
 
-set :keep_releases,  3
+set :keep_releases,  2
 
 
 _cset :asset_env, "RAILS_GROUPS=assets"

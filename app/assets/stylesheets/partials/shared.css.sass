@@ -60,6 +60,13 @@ body.no-transitions *
 .markdown
   word-break: break-word
 
+  ul
+    margin-left: 15px 
+    li
+      list-style: none
+      text-indent: -0.5em // helps make it look more like it's a bullet.
+      &:before 
+        content: '\b7\a0' // \b7 is a middot, \a0 is a space
 
 .heading
   margin-top: 3px
@@ -87,6 +94,12 @@ article
     //considering margin of media to reach 85px
     margin-bottom: 73px
     border: none
+
+.sidebar
+  .markdown
+    color: #999
+    a
+      color: #666
 
 
 

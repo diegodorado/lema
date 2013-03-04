@@ -5,8 +5,10 @@ class Book < ActiveRecord::Base
   validates :body, :presence => true  
   validates :published_at, :presence => true 
 
+  validates :cover, :attachment_presence => true
+
   has_attached_file :cover, {
-      :styles => { :medium => "222x344#", :thumb => "100x100#" }
+      :styles => { :original => "400x600>", :medium => "222x344#", :thumb => "100x100#" }
     }
 
 

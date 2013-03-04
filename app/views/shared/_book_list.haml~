@@ -22,25 +22,22 @@
                     #{truncate(book.body, :omission => " ...", :length => 180, :separator => ' ')}
               .links
                 =arrow_link('seguir leyendo', book_path(book), 'plain')
-                -unless book.photos.empty?
-                  =arrow_link('hojear', book_path(book), 'plain hojear-link')
-                  .hidden
-                    = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
+                =arrow_link('hojear', book_path(book), 'plain hojear-link')
+                .hidden
+                  = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
                 
           -if book.obra?
             .span2
               .sidebar
-                -unless book.points_of_sale.empty?
-                  .collapsible
-                    =arrow_link 'puntos de venta', '#', ''
-                    .collapse
-                      .markdown
-                        :markdown
-                          #{book.points_of_sale}
-                -unless book.buy_online.empty?
-                  .collapsible
-                    =arrow_link 'comprar online', '#', ''
-                    .collapse
-                      .markdown
-                        :markdown
-                          #{book.buy_online}
+                .collapsible
+                  =arrow_link 'puntos de venta', '#', ''
+                  .collapse
+                    .markdown
+                      :markdown
+                        #{book.points_of_sale}
+                .collapsible
+                  =arrow_link 'comprar online', '#', ''
+                  .collapse
+                    .markdown
+                      :markdown
+                        #{book.buy_online}                

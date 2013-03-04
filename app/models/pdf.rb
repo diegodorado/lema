@@ -1,6 +1,7 @@
 class Pdf < ActiveRecord::Base
   validates :title, :presence => true  
-  validates :file, :presence => true  
+
+  validates :file, :attachment_presence => true
 
 
   #todo: validate content type

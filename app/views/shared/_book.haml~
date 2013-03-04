@@ -27,11 +27,11 @@
               .markdown
                 :markdown
                   #{book.body}
-            -unless book.photos.empty?
-              .collapsible.photos
-                =arrow_link('hojear', '#', '')
-                .collapse
-                  = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
+
+            .collapsible.photos
+              =arrow_link('hojear', '#', '')
+              .collapse
+                = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
             .collapsible.pdf.open
               .collapse
                 = render :partial => 'shared/pdf_list',:locals => { :pdfs => book.pdfs} 
@@ -40,17 +40,15 @@
         -if book.obra?
           .span2
             .sidebar
-              -unless book.points_of_sale.empty?
-                .collapsible
-                  =arrow_link 'puntos de venta', '#', 'inverted'
-                  .collapse
-                    .markdown
-                      :markdown
-                        #{book.points_of_sale}
-              -unless book.buy_online.empty?
-                .collapsible
-                  =arrow_link 'comprar online', '#', 'inverted'
-                  .collapse
-                    .markdown
-                      :markdown
-                        #{book.buy_online}
+              .collapsible
+                =arrow_link 'puntos de venta', '#', 'inverted'
+                .collapse
+                  .markdown
+                    :markdown
+                      #{book.points_of_sale}
+              .collapsible
+                =arrow_link 'comprar online', '#', 'inverted'
+                .collapse
+                  .markdown
+                    :markdown
+                      #{book.buy_online}

@@ -2,10 +2,9 @@
 @import "bootstrap/mixins"
 
 body.sessions.new
-  height: 100%
-  padding: 0
   header, footer
     display: none
+  height: 100%
   #content 
     background: #aaa
     position: relative

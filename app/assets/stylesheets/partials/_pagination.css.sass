@@ -15,16 +15,18 @@
     border-bottom: 1px dashed #BEBEBE
     margin-top: 31px
     height: 34px
-    margin-bottom: 18px  
-  .page a
-    color: #4D4D4D
-  a, span
+    margin-bottom: 18px
+  a
     float: none
     padding: 0
     border: 0
+  .page 
     +inline-block
-    &:hover
-      background: none
+    a
+      color: #4D4D4D
+      display: inline
+      &:hover
+        background: none
   .prev_page
     text-align: left
     a
@@ -35,6 +37,9 @@
     text-align: right
     a
       padding-right: 40px
+  .prev_page, .next_page
+    a
+      display: block
 
 #years_carousel
   padding: 0 80px
