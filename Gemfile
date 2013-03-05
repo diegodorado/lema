@@ -17,6 +17,10 @@ gem "redcarpet",'2.1.0'
 gem 'nokogiri'
 gem 'acts_as_indexed'
 
+
+
+
+
 group :assets do
   gem 'sass-rails',   '3.1.4'
   gem 'compass-rails' , '1.0.1'
@@ -25,11 +29,14 @@ group :assets do
   gem 'uglifier', '1.0.3'
 end
 
+gem 'aws-sdk'
+
 group :production do
   gem 'pg'
 end
 
 group :development do
+  gem "figaro"
   gem 'thin'
   gem "annotate"
   gem 'sqlite3'

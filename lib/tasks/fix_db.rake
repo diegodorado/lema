@@ -3,7 +3,10 @@ namespace :db do
   task :fix => :environment do
     posts = Post.all
     posts.each do |post|
-      post.save
+      puts post.id if post.video.length > 250
+      puts post.id if post.audio.length > 250
+      puts post.id if post.sidebar_title.length > 250
+      puts post.id if post.title.length > 250
     end
 
 
