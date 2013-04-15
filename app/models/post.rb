@@ -69,9 +69,11 @@ class Post < ActiveRecord::Base
 
     return self.errors.add :video, "Only youtube or vimeo are allowed" if src.match('youtube|vimeo').nil?
 
-    if src.include? 'youtube'
-      iframe.attributes['src'].value = src + (src.include?('?') ? '&' : '?') + 'wmode=transparent'
-    end
+    iframe.attributes['src'].value = src.sub(/(youtube[^\?]*)(.*)/,'\1?wmode=transparent')
+
+    #if src.include? 'youtube'
+    #  iframe.attributes['src'].value = src.sub(/$|\?.*/,'?wmode=transparent')
+    #end
 
     self.video = iframe.to_html
 
