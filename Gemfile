@@ -10,7 +10,7 @@ gem 'jquery-rails', '1.0.19'
 gem "rails-settings-cached"
 
 gem 'kaminari', '0.13.0'
-gem 'paperclip', '3.0.3' # , '2.7.0' #this is for ruby 1.8.7
+gem 'paperclip', '3.4.0' # , '2.7.0' #this is for ruby 1.8.7
 
 gem "redcarpet",'2.1.0'
 #gem "friendly_id", "~> 4.0.0.beta8"
