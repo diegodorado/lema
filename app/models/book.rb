@@ -23,7 +23,7 @@ class Book < ActiveRecord::Base
   accepts_nested_attributes_for :pdfs, :allow_destroy => true
 
   def section_enum
-    [['Obra Escrita', :oe],['Ticho Ediciones', :te]]
+    [['Obra Escrita', :oe],['Proyectos', :te]]
   end
   
   def ticho?

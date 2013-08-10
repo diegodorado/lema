@@ -250,7 +250,7 @@ RailsAdmin.config do |config|
 
 
     field :points_of_sale do
-      label "Puntos de Venta"
+      label "Puntos de Venta / Mas Informacion"
       group :sidebar
     end
     field :buy_online do
@@ -267,7 +267,7 @@ RailsAdmin.config do |config|
 
     group :sidebar do
       label "Extra"
-      help "Datos para Obra escrita."
+      help "Columna lateral."
       active true
     end
 

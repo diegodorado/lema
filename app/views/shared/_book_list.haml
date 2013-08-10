@@ -27,20 +27,19 @@
                   .hidden
                     = render :partial => 'shared/photo_list',:locals => { :photos => book.photos, :id => book.id} 
                 
-          -if book.obra?
-            .span2
-              .sidebar
-                -unless book.points_of_sale.empty?
-                  .collapsible
-                    =arrow_link 'puntos de venta', '#', ''
-                    .collapse
-                      .markdown
-                        :markdown
-                          #{book.points_of_sale}
-                -unless book.buy_online.empty?
-                  .collapsible
-                    =arrow_link 'comprar online', '#', ''
-                    .collapse
-                      .markdown
-                        :markdown
-                          #{book.buy_online}
+          .span2
+            .sidebar
+              -unless book.points_of_sale.empty?
+                .collapsible
+                  =arrow_link (book.obra? ? 'puntos de venta' : 'mas información'), '#', ''
+                  .collapse
+                    .markdown
+                      :markdown
+                        #{book.points_of_sale}
+              -unless book.buy_online.empty?
+                .collapsible
+                  =arrow_link 'comprar online', '#', ''
+                  .collapse
+                    .markdown
+                      :markdown
+                        #{book.buy_online}

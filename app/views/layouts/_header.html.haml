@@ -12,5 +12,5 @@
               %li #{link_to "Agenda", agenda_path, :class=> ('active' if current_page?(agenda_path))}
             - if Setting.bitacora_on
               %li #{link_to "Bitacora", bitacora_path, :class=> ('active' if current_page?(bitacora_path))}
-            %li #{link_to "Ticho Ediciones", ticho_path, :class=> ('active' if current_page?(ticho_path))}
+            %li #{link_to "Proyectos", ticho_path, :class=> ('active' if current_page?(ticho_path))}
             %li.last #{link_to "Capacitación", capacitacion_path, :class=> ('active' if current_page?(capacitacion_path))}

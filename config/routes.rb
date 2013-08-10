@@ -10,8 +10,8 @@ Lema::Application.routes.draw do
   match '/obra-escrita/:id' => 'obra#show', :as => :obra_show
   match '/agenda' => 'agenda#index'
   match '/bitacora' => 'bitacora#index'
-  match '/ticho-ediciones' => 'ticho#index', :as => :ticho
-  match '/ticho-ediciones/:id' => 'ticho#show', :as => :ticho_show
+  match '/proyectos' => 'ticho#index', :as => :ticho
+  match '/proyectos/:id' => 'ticho#show', :as => :ticho_show
   match '/capacitacion' => 'capacitacion#index'
   match '/capacitacion/locale/:locale' => 'capacitacion#locale', :as => :capacitacion_locale
   match '/capacitacion/category/:category_id' => 'capacitacion#category', :as => :capacitacion_category
